@@ -84,6 +84,9 @@ module character(
                 else if(move_backward) begin 
                     next_state = s_move_backward;
                 end
+				else if(hit_flag || special_hit_flag) begin
+					next_state = s_hitstun;
+				end
                 else begin 
                     //  default case should be added for safety
                     next_state = s_idle;
@@ -97,6 +100,9 @@ module character(
                 if(!move_forward) begin
                     next_state = s_idle;
                 end
+				else if(hit_flag || special_hit_flag) begin
+					next_state = s_hitstun;
+				end
                 else begin 
                     next_state = s_move_forward;
                 end
