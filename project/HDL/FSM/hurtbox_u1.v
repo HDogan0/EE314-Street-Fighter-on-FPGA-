@@ -54,7 +54,7 @@ assign player_hurtbox_y = SCREEN_H - PLAYER_Y_OFFSET - PLAYER_H;  // tabandan da
 assign player_hurtbox_w = PLAYER_W;
 
 assign player_hurtbox_h = PLAYER_H; //DİKKAT2: burada böyle yapınca hurtbox oyuncu biraz elevationa sahip olduğu için ekranın en altından başlayabilir. ama sorun değil orayla kimsenin işi yok nolacak. p2 için de aynısı geçerli
-
+//ek hurtbox
 assign attack_hurtbox_x = player_x + PLAYER_W / 2 + 10;
 
 assign attack_hurtbox_y = (player_state == `s_special_attack) ? HURTBOX_Y_SPECIAL :
