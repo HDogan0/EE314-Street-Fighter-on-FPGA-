@@ -2,7 +2,7 @@ module character(
     input clk,                                          // input clk of the module
     input rst,                                          // reset of the module
     input default_attack_trigger,                       // default attack flag coming from "attack_input" module
-    input special_attack_trigger,                       // special attack flag coming from "attack_input" module (CHARGED ATTACK NOT THE DOUBLE)
+	input special_attack_trigger,                       // special attack flag coming from "attack_input" module (CHARGED ATTACK NOT THE DOUBLE) (DOUBLE IS IN THIS FILE)
     input move_forward,                                 // user move forward input
     input move_backward,                                // user move backwatd input
     input hit_flag,                                     // normal attack flag
