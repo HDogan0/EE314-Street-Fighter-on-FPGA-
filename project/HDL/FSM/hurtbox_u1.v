@@ -59,7 +59,6 @@ assign attack_hurtbox_x = player_x + PLAYER_W / 2 + 10;
 
 assign attack_hurtbox_y = (player_state == `s_special_attack) ? HURTBOX_Y_SPECIAL :
                           (player_state == `s_default_attack) ? HURTBOX_Y_BASIC   : 0;
-//player_state == `s_special_attack gibi karşılaştırmalar için s_Special_attack i de ekstra tanımlanmalı
 assign attack_hurtbox_w = HURTBOX_W;
 
 assign attack_hurtbox_h = HURTBOX_H
