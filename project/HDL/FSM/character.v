@@ -146,7 +146,8 @@ module character(
                 else if(frame_counter >= (default_attack_startup_frame_number + default_attack_active_frame_number) && default_attack_trigger && attack_success) begin 
                     next_state = s_special_attack;
                 end
-
+				//burada speciala geçmek attack_inputta speciala geçirmiyor o sebeple special_hit_flag de 1 olmuyor ve KO olmuyor.
+				//ek değişken tanımlayıp attack_input.v a input verilebilir default=0 gibi yapıp ama inst loop içinde olmazsa o da çalışmaz. 
                 else begin 
                     next_state = s_default_attack;
                 end
