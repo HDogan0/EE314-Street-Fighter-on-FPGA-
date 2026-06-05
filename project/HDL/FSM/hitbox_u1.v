@@ -55,7 +55,7 @@ assign player_hitbox_x = player_x + PLAYER_W / 2; // basic veya sp. atak yaparke
 
 assign player_hitbox_y = (player_state == `s_special_attack) ? HITBOX_Y_SPECIAL :
                          (player_state == `s_default_attack) ? HITBOX_Y_BASIC   : 0;
-//player_state == `s_special_attack gibi karşılaştırmalar için s_Special_attack i de ekstra tanımlanmalı                         
+
 assign player_hitbox_w = (player_state == `s_special_attack) ? HITBOX_W_SPECIAL : 
                          (player_state == `s_default_attack) ? HITBOX_W_BASIC;  : 0;
 
