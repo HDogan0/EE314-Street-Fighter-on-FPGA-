@@ -9,7 +9,7 @@ module hurtbox (
     input  wire        player_left,
     input  wire        player_right,
     input  wire        player_hitbox_active,
-    input  wire  [3:0]  ",
+	input  wire  [2:0] player_state,
 
     // player karakterinin sol-üst köşesinin X koordinatı (0..639).
     output reg  [9:0]  player_x,   
