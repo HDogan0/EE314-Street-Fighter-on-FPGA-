@@ -14,14 +14,6 @@ module hitbox (
     // 10-bit, hepsi pozitif değer.
     
     // player ana gövde hurtbox: her zaman aktif, sabit boyut
-    output wire [9:0]  player_hurtbox_body_x,
-    output wire [9:0]  player_hurtbox_body_y, 
-    output wire [9:0]  player_hurtbox_body_w,
-    output wire [9:0]  player_hurtbox_body_h,
-
-    // player uzantı hurtbox: sadece recovery state'lerinde aktif (whiff-punish için)
-	 //(jack) belgeden anladığım kadarıyla hurtbox atak anında da olmalı ve hitbox ile aynı ebatlara sahip değil
-	 // o sebeple ayrıca eklicem atak ve recoveryde olacak şekilde
     // ayak/kol kısmı, gövdeyi büyütmek yerine ayrı bir kutu olarak eklenir. ama bunu dışarıya ekstra bir output olarak değil hit detectora kontrol vererek yap.
     // yani hitbox sonradan hurtboxa dönüşüyor ya, onu burada ayrı bir external hurtbox olarak tanımlamaya gerek yok, top modül frame ticke bakıp hangi statede 
     // olduğunu bulsun ve ona göre desin ki tamam artık recovery statede o zaman hitboxu da hurtbox olarak alıyım kesişimler ona göre kontrol edilsin.
