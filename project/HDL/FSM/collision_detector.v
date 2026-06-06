@@ -2,7 +2,6 @@ module collision_detector(
     input [9:0] atk_hit_x, atk_hit_y, atk_hit_w, atk_hit_h,
     input [9:0] def_hurt_x, def_hurt_y, def_hurt_w, def_hurt_h,
     input [9:0] def_recovery_hurt_x, def_recovery_hurt_y, def_recovery_hurt_w, def_recovery_hurt_h,
-    input def_active,
     input atk_active,
     input hurt_recovery,
     output wire hit
@@ -43,6 +42,6 @@ module collision_detector(
                       (atk_hit_bottom > def_recovery_hurt_top);
 
     //  assign hit flag
-    assign hit = def_active && atk_active && (hit_main || (hurt_recovery && hit_second));
+    assign hit = hit_main || (hurt_recovery && hit_second);
 
 endmodule
