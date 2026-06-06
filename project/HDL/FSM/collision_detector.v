@@ -23,7 +23,7 @@ module collision_detector(
     assign def_hurt_top    = def_hurt_y; 
     assign def_hurt_bottom = def_hurt_y + def_hurt_h;
     assign def_hurt_left   = def_hurt_x;
-    assign def_hurt_right  = def_hurt_x + def_hurt_w; // Assuming def_hurt_x acts as width here, or adjust based on your exact input meaning
+    assign def_hurt_right  = def_hurt_x + def_hurt_w;
 
     // 3. Defender Recovery Hurtbox Assignments
     assign def_recovery_hurt_top    = def_recovery_hurt_y;
