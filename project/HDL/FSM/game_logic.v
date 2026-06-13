@@ -7,7 +7,7 @@ input p1_attack, p2_attack,
 output reg [2:0] p1_state, p2_state,//al ver değişkeni top modülde takip için
 output reg [6:0] p1_frame, p2_frame,//başka çözüm yolu bulamadım daha kısa ve kolay
 output reg [1:0] p1_block, p2_block,
-output reg [2:0] p1_ko_num, p2_ko_num
+output reg [1:0] p1_ko_num, p2_ko_num
 );
 
 reg internal_rst;
