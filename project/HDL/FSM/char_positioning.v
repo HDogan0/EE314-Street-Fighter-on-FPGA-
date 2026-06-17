@@ -19,23 +19,56 @@ module char_positioning(
     
     always @(posedge game_clk or posedge rst) begin 
         if(rst) begin 
-            // Initialize positions, hardcode to avoid latches 
-            px_facing_left <= 10'd100;
-            px_facing_right <= 10'd476;
+            px_facing_left <= 10'd476;   // character on RIGHT
+            px_facing_right <= 10'd100;  // character on LEFT
         end
         else begin 
             
-            // --- Character Facing RIGHT (The one on the Left Side) ---
-            if (p_facing_right_state == s_move_forward)         next_x_facing_right = px_facing_right + 10'd3; // Moves Right
-            else if (p_facing_right_state == s_move_backward)   next_x_facing_right = px_facing_right - 10'd2; // Moves Left
-            else if (p_facing_right_state == s_special_attack)  next_x_facing_right = px_facing_right + 10'd1; // Moves Right
-            else                                                next_x_facing_right = px_facing_right;            
+            // --- Character on LEFT (logical name: "facing_right") ---
+            // Use safe clamping to avoid unsigned underflow/overflow
+            if (p_facing_right_state == s_move_forward) begin
+                // move right, clamp to screen (character right edge <= SCREEN_WIDTH)
+                if (px_facing_right >= SCREEN_WIDTH - CHAR_WIDTH - 10'd3)
+                    next_x_facing_right = SCREEN_WIDTH - CHAR_WIDTH;
+                else
+                    next_x_facing_right = px_facing_right + 10'd3;
+            end else if (p_facing_right_state == s_move_backward) begin
+                // move left, avoid underflow
+                if (px_facing_right <= 10'd2)
+                    next_x_facing_right = 10'd0;
+                else
+                    next_x_facing_right = px_facing_right - 10'd2;
+            end else if (p_facing_right_state == s_special_attack) begin
+                if (px_facing_right >= SCREEN_WIDTH - CHAR_WIDTH - 10'd1)
+                    next_x_facing_right = SCREEN_WIDTH - CHAR_WIDTH;
+                else
+                    next_x_facing_right = px_facing_right + 10'd1;
+            end else begin
+                next_x_facing_right = px_facing_right;
+            end
 
-            // --- Character Facing LEFT (The one on the Right Side) ---
-            if (p_facing_left_state == s_move_forward)          next_x_facing_left = px_facing_left - 10'd3; // Moves Left
-            else if (p_facing_left_state == s_move_backward)    next_x_facing_left = px_facing_left + 10'd2; // Moves Right
-            else if (p_facing_left_state == s_special_attack)   next_x_facing_left = px_facing_left - 10'd1; // Moves Left
-            else                                                next_x_facing_left = px_facing_left;
+            // --- Character on RIGHT (logical name: "facing_left") ---
+            // Use safe clamping to avoid unsigned underflow/overflow
+            if (p_facing_left_state == s_move_forward) begin
+                // move left, avoid underflow
+                if (px_facing_left <= 10'd3)
+                    next_x_facing_left = 10'd0;
+                else
+                    next_x_facing_left = px_facing_left - 10'd3;
+            end else if (p_facing_left_state == s_move_backward) begin
+                // move right, clamp to screen
+                if (px_facing_left >= SCREEN_WIDTH - CHAR_WIDTH - 10'd2)
+                    next_x_facing_left = SCREEN_WIDTH - CHAR_WIDTH;
+                else
+                    next_x_facing_left = px_facing_left + 10'd2;
+            end else if (p_facing_left_state == s_special_attack) begin
+                if (px_facing_left <= 10'd1)
+                    next_x_facing_left = 10'd0;
+                else
+                    next_x_facing_left = px_facing_left - 10'd1;
+            end else begin
+                next_x_facing_left = px_facing_left;
+            end
 
             // 2. Resolve Collisions
 

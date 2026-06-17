@@ -1,6 +1,6 @@
 `include "states.vh"
 module game_logic(
-input clk, rst,
+input clk, rst, // 60hz clock
 input p1_forward, p2_forward,
 input p1_backward, p2_backward,
 input p1_attack, p2_attack,
@@ -12,12 +12,7 @@ output reg internal_rst_char_position
 );
 
 reg internal_rst;
-wire int_clk;//alttaki logic çok hızlı döndürmesin diye ama yeterli hızlı olmayabilir kontrol edilsin
-localparam SIXTY_HZ_DIV = 833333;
-prescaler #(.div_param(SIXTY_HZ_DIV)) clock_60hz(
-        .clk(clk),
-        .out(int_clk)
-    );
+
 //  attack logic for p1
 wire p1_special_attack, p1_default_attack;
 attack_input attack_char_p1(
@@ -213,7 +208,7 @@ always @(*) begin
     end
 end
 
-always @(posedge int_clk or posedge rst) begin //karşılıklı special hit
+always @(posedge clk or posedge rst) begin //karşılıklı special hit
     if (rst) begin
         internal_rst <= 0;
     end
