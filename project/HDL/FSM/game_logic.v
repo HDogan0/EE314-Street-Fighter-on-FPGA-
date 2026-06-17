@@ -1,4 +1,4 @@
-`include "../utility/states.vh"
+`include "states.vh"
 module game_logic(
 input clk, rst,
 input p1_forward, p2_forward,
@@ -7,7 +7,8 @@ input p1_attack, p2_attack,
 output reg [2:0] p1_state, p2_state,//al ver değişkeni top modülde takip için
 output reg [6:0] p1_frame, p2_frame,//başka çözüm yolu bulamadım daha kısa ve kolay
 output reg [1:0] p1_block, p2_block,
-output reg [1:0] p1_ko_num, p2_ko_num
+output reg [1:0] p1_ko_num, p2_ko_num,
+output reg internal_rst_char_position
 );
 
 reg internal_rst;
@@ -136,12 +137,12 @@ hurtbox hurtbox_p2(
     .attack_hurtbox_h(p2_def_rec_hurt_h)
 );
 hitbox hitbox_p2(
-    .player_state(p1_CS),
-    .player_x(p1_x),
-    .player_hitbox_x(p1_atk_hit_x),
-    .player_hitbox_y(p1_atk_hit_y),
-    .player_hitbox_w(p1_atk_hit_w),
-    .player_hitbox_h(p1_atk_hit_h)
+    .player_state(p2_CS),
+    .player_x(p2_x),
+    .player_hitbox_x(p2_atk_hit_x),
+    .player_hitbox_y(p2_atk_hit_y),
+    .player_hitbox_w(p2_atk_hit_w),
+    .player_hitbox_h(p2_atk_hit_h)
 );
 
 collision_detector p1_coldet(
@@ -232,6 +233,7 @@ always @(*) begin
     p2_frame = p2_frame_tick;
     p1_block = p1_remaining_blockings;
     p2_block = p2_remaining_blockings;
+    internal_rst_char_position = internal_rst;
 end
 
 endmodule
