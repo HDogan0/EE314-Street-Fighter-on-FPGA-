@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Top_Module
-Wed Jun 17 16:03:33 2026
+Thu Jun 18 00:21:15 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -18,42 +18,28 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  10. State Machine - |Top_Module|vga_driver:vga_driver_inst|h_state
  11. State Machine - |Top_Module|game_logic:game_logic_inst|character:p2_character|state
  12. State Machine - |Top_Module|game_logic:game_logic_inst|character:p1_character|state
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
+ 13. User-Specified and Inferred Latches
+ 14. Registers Removed During Synthesis
  15. General Register Statistics
  16. Inverted Register Statistics
  17. Multiplexer Restructuring Statistics (Restructuring Performed)
  18. Parameter Settings for User Entity Instance: prescaler:clock_1hz
  19. Parameter Settings for User Entity Instance: prescaler:vga_clock
  20. Parameter Settings for User Entity Instance: prescaler:clock_60_hz
- 21. Parameter Settings for User Entity Instance: game_logic:game_logic_inst|prescaler:clock_60hz
- 22. Parameter Settings for User Entity Instance: game_logic:game_logic_inst|attack_input:attack_char_p1|prescaler:clock_100hz
- 23. Parameter Settings for User Entity Instance: game_logic:game_logic_inst|attack_input:attack_char_p2|prescaler:clock_100hz
- 24. Parameter Settings for User Entity Instance: game_logic:game_logic_inst|character:p1_character|prescaler:clock_60hz
- 25. Parameter Settings for User Entity Instance: game_logic:game_logic_inst|character:p2_character|prescaler:clock_60hz
- 26. Parameter Settings for User Entity Instance: vga_driver:vga_driver_inst
- 27. Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p2_coldet"
- 28. Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p1_coldet"
- 29. Port Connectivity Checks: "game_logic:game_logic_inst|hitbox:hitbox_p2"
- 30. Port Connectivity Checks: "game_logic:game_logic_inst|hurtbox:hurtbox_p2"
- 31. Port Connectivity Checks: "game_logic:game_logic_inst|hitbox:hitbox_p1"
- 32. Port Connectivity Checks: "game_logic:game_logic_inst|hurtbox:hurtbox_p1"
- 33. Port Connectivity Checks: "game_logic:game_logic_inst|character:p2_character"
- 34. Port Connectivity Checks: "game_logic:game_logic_inst|character:p1_character"
- 35. Port Connectivity Checks: "game_logic:game_logic_inst"
- 36. Port Connectivity Checks: "prescaler:clock_60_hz"
- 37. Port Connectivity Checks: "P7seg:hex5_seg_inst"
- 38. Port Connectivity Checks: "P7seg:hex4_seg_inst"
- 39. Port Connectivity Checks: "P7seg:hex3_seg_inst"
- 40. Port Connectivity Checks: "P7seg:hex2_seg_inst"
- 41. Port Connectivity Checks: "P7seg:hex1_seg_inst"
- 42. Port Connectivity Checks: "P7seg:hex0_seg_inst"
- 43. Port Connectivity Checks: "p:p2_rom_inst"
- 44. Port Connectivity Checks: "p:p1_rom_inst"
- 45. Post-Synthesis Netlist Statistics for Top Partition
- 46. Elapsed Time Per Partition
- 47. Analysis & Synthesis Messages
- 48. Analysis & Synthesis Suppressed Messages
+ 21. Parameter Settings for User Entity Instance: vga_driver:vga_driver_inst
+ 22. Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p2_coldet"
+ 23. Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p1_coldet"
+ 24. Port Connectivity Checks: "game_logic:game_logic_inst"
+ 25. Port Connectivity Checks: "P7seg:hex5_seg_inst"
+ 26. Port Connectivity Checks: "P7seg:hex4_seg_inst"
+ 27. Port Connectivity Checks: "P7seg:hex1_seg_inst"
+ 28. Port Connectivity Checks: "P7seg:hex0_seg_inst"
+ 29. Port Connectivity Checks: "p:p2_rom_inst"
+ 30. Port Connectivity Checks: "p:p1_rom_inst"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -80,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 17 16:03:33 2026          ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun 18 00:21:15 2026          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; Top_Module                                     ;
 ; Top-level Entity Name           ; Top_Module                                     ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 123                                            ;
+; Total registers                 ; 258                                            ;
 ; Total pins                      ; 135                                            ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
@@ -192,87 +178,109 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processors 8-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
-; vga_driver.v                     ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/vga_driver.v         ;         ;
-; Top_Module.v                     ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v         ;         ;
-; start.v                          ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/start.v              ;         ;
-; prescaler.v                      ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/prescaler.v          ;         ;
-; P7seg.v                          ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v              ;         ;
-; p.v                              ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/p.v                  ;         ;
-; menu.v                           ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/menu.v               ;         ;
-; hurtbox.v                        ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v            ;         ;
-; hitbox.v                         ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hitbox.v             ;         ;
-; game_logic.v                     ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v         ;         ;
-; digit_3.v                        ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/digit_3.v            ;         ;
-; digit_2.v                        ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/digit_2.v            ;         ;
-; digit_1.v                        ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/digit_1.v            ;         ;
-; collision_detector.v             ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/collision_detector.v ;         ;
-; character.v                      ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/character.v          ;         ;
-; attack_input.v                   ; yes             ; User Verilog HDL File        ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/attack_input.v       ;         ;
-; states.vh                        ; yes             ; Auto-Found Unspecified File  ; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/states.vh            ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                       ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+---------+
+; vga_driver.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/vga_driver.v         ;         ;
+; Top_Module.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v         ;         ;
+; start.v                          ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/start.v              ;         ;
+; prescaler.v                      ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/prescaler.v          ;         ;
+; P7seg.v                          ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v              ;         ;
+; p.v                              ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/p.v                  ;         ;
+; menu.v                           ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/menu.v               ;         ;
+; hurtbox.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v            ;         ;
+; hitbox.v                         ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hitbox.v             ;         ;
+; game_logic.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v         ;         ;
+; digit_3.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/digit_3.v            ;         ;
+; digit_2.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/digit_2.v            ;         ;
+; digit_1.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/digit_1.v            ;         ;
+; collision_detector.v             ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/collision_detector.v ;         ;
+; char_positioning.v               ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/char_positioning.v   ;         ;
+; character.v                      ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v          ;         ;
+; attack_input.v                   ; yes             ; User Verilog HDL File        ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/attack_input.v       ;         ;
+; states.vh                        ; yes             ; Auto-Found Unspecified File  ; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/states.vh            ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 197            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 328            ;
-;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 63             ;
-;     -- 5 input functions                    ; 52             ;
-;     -- 4 input functions                    ; 43             ;
-;     -- <=3 input functions                  ; 169            ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 123            ;
-;                                             ;                ;
-; I/O pins                                    ; 135            ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 66             ;
-; Total fan-out                               ; 1791           ;
-; Average fan-out                             ; 2.37           ;
-+---------------------------------------------+----------------+
++-------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                     ;
++---------------------------------------------+---------------------------------------------------+
+; Resource                                    ; Usage                                             ;
++---------------------------------------------+---------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 770                                               ;
+;                                             ;                                                   ;
+; Combinational ALUT usage for logic          ; 1213                                              ;
+;     -- 7 input functions                    ; 8                                                 ;
+;     -- 6 input functions                    ; 315                                               ;
+;     -- 5 input functions                    ; 191                                               ;
+;     -- 4 input functions                    ; 167                                               ;
+;     -- <=3 input functions                  ; 532                                               ;
+;                                             ;                                                   ;
+; Dedicated logic registers                   ; 258                                               ;
+;                                             ;                                                   ;
+; I/O pins                                    ; 135                                               ;
+;                                             ;                                                   ;
+; Total DSP Blocks                            ; 0                                                 ;
+;                                             ;                                                   ;
+; Maximum fan-out node                        ; vga_driver:vga_driver_inst|h_state.H_ACTIVE_STATE ;
+; Maximum fan-out                             ; 114                                               ;
+; Total fan-out                               ; 5882                                              ;
+; Average fan-out                             ; 3.31                                              ;
++---------------------------------------------+---------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name ; Library Name ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-------------+--------------+
-; |Top_Module                     ; 328 (100)           ; 123 (18)                  ; 0                 ; 0          ; 135  ; 0            ; |Top_Module                            ; Top_Module  ; work         ;
-;    |digit_1:d1_inst|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_1:d1_inst            ; digit_1     ; work         ;
-;    |digit_2:d2_inst|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_2:d2_inst            ; digit_2     ; work         ;
-;    |digit_3:d3_inst|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_3:d3_inst            ; digit_3     ; work         ;
-;    |menu:menu_rom_inst|         ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|menu:menu_rom_inst         ; menu        ; work         ;
-;    |p:p1_rom_inst|              ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|p:p1_rom_inst              ; p           ; work         ;
-;    |p:p2_rom_inst|              ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|p:p2_rom_inst              ; p           ; work         ;
-;    |prescaler:clock_1hz|        ; 44 (44)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_1hz        ; prescaler   ; work         ;
-;    |prescaler:vga_clock|        ; 39 (39)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:vga_clock        ; prescaler   ; work         ;
-;    |start:start_inst|           ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|start:start_inst           ; start       ; work         ;
-;    |vga_driver:vga_driver_inst| ; 76 (76)             ; 39 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|vga_driver:vga_driver_inst ; vga_driver  ; work         ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Entity Name        ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
+; |Top_Module                          ; 1213 (456)          ; 258 (21)                  ; 0                 ; 0          ; 135  ; 0            ; |Top_Module                                                         ; Top_Module         ; work         ;
+;    |P7seg:hex2_seg_inst|             ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|P7seg:hex2_seg_inst                                     ; P7seg              ; work         ;
+;    |P7seg:hex3_seg_inst|             ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|P7seg:hex3_seg_inst                                     ; P7seg              ; work         ;
+;    |digit_1:d1_inst|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_1:d1_inst                                         ; digit_1            ; work         ;
+;    |digit_2:d2_inst|                 ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_2:d2_inst                                         ; digit_2            ; work         ;
+;    |digit_3:d3_inst|                 ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_3:d3_inst                                         ; digit_3            ; work         ;
+;    |game_logic:game_logic_inst|      ; 471 (46)            ; 99 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst                              ; game_logic         ; work         ;
+;       |attack_input:attack_char_p1|  ; 23 (23)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p1  ; attack_input       ; work         ;
+;       |attack_input:attack_char_p2|  ; 23 (23)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p2  ; attack_input       ; work         ;
+;       |char_positioning:p1_p2_pos|   ; 144 (144)           ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos   ; char_positioning   ; work         ;
+;       |character:p1_character|       ; 47 (47)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p1_character       ; character          ; work         ;
+;       |character:p2_character|       ; 48 (48)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p2_character       ; character          ; work         ;
+;       |collision_detector:p1_coldet| ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p1_coldet ; collision_detector ; work         ;
+;       |collision_detector:p2_coldet| ; 46 (46)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p2_coldet ; collision_detector ; work         ;
+;       |hitbox:hitbox_p1|             ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1             ; hitbox             ; work         ;
+;       |hitbox:hitbox_p2|             ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p2             ; hitbox             ; work         ;
+;       |hurtbox:hurtbox_p1|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hurtbox:hurtbox_p1           ; hurtbox            ; work         ;
+;       |hurtbox:hurtbox_p2|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hurtbox:hurtbox_p2           ; hurtbox            ; work         ;
+;    |menu:menu_rom_inst|              ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|menu:menu_rom_inst                                      ; menu               ; work         ;
+;    |p:p1_rom_inst|                   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|p:p1_rom_inst                                           ; p                  ; work         ;
+;    |p:p2_rom_inst|                   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|p:p2_rom_inst                                           ; p                  ; work         ;
+;    |prescaler:clock_1hz|             ; 44 (44)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_1hz                                     ; prescaler          ; work         ;
+;    |prescaler:clock_60_hz|           ; 46 (46)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_60_hz                                   ; prescaler          ; work         ;
+;    |prescaler:vga_clock|             ; 39 (39)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:vga_clock                                     ; prescaler          ; work         ;
+;    |start:start_inst|                ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|start:start_inst                                        ; start              ; work         ;
+;    |vga_driver:vga_driver_inst|      ; 76 (76)             ; 39 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|vga_driver:vga_driver_inst                              ; vga_driver         ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -349,142 +357,66 @@ Encoding Type:  One-Hot
 +------------------------+---------------------+-------------------+-----------------+------------------------+------------------------+-----------------------+----------------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                            ;
-+-------------------------------------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                                                   ; Reason for Removal                          ;
-+-------------------------------------------------------------------------------------------------+---------------------------------------------+
-; vga_driver:vga_driver_inst|red_reg[0]                                                           ; Stuck at GND due to stuck port data_in      ;
-; vga_driver:vga_driver_inst|green_reg[0..4]                                                      ; Stuck at GND due to stuck port data_in      ;
-; vga_driver:vga_driver_inst|blue_reg[0..5]                                                       ; Stuck at GND due to stuck port data_in      ;
-; vga_driver:vga_driver_inst|red_reg[1..4]                                                        ; Stuck at GND due to stuck port data_in      ;
-; game_logic:game_logic_inst|character:p2_character|remaining_blockings[0,1]                      ; Stuck at VCC due to stuck port clock_enable ;
-; game_logic:game_logic_inst|character:p2_character|prescaler:clock_60hz|out                      ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|prescaler:clock_60hz|prescale_ct[0..31]       ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|remaining_blockings[0,1]                      ; Stuck at VCC due to stuck port clock_enable ;
-; game_logic:game_logic_inst|character:p1_character|prescaler:clock_60hz|out                      ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|prescaler:clock_60hz|prescale_ct[0..31]       ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p2|prescaler:clock_100hz|out                ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p2|prescaler:clock_100hz|prescale_ct[0..31] ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|prescaler:clock_100hz|out                ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|prescaler:clock_100hz|prescale_ct[0..31] ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|prescaler:clock_60hz|out                                             ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|prescaler:clock_60hz|prescale_ct[0..31]                              ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|p2_ko_num[0]                                                         ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|internal_rst                                                         ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|p1_ko_num[0,1]                                                       ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|p2_ko_num[1]                                                         ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|frame_counter[0..6]                           ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|hit_by_special                                ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|frame_counter[0..6]                           ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|hit_by_special                                ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p2|default_attack                           ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p2|attack_prev                              ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[0..7]                       ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p2|special_attack                           ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|default_attack                           ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|attack_prev                              ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[0..7]                       ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|special_attack                           ; Stuck at GND due to stuck port clock        ;
-; color_in_reg[4]                                                                                 ; Merged with color_in_reg[3]                 ;
-; color_in_reg[7]                                                                                 ; Merged with color_in_reg[6]                 ;
-; game_fsm_state~4                                                                                ; Lost fanout                                 ;
-; game_fsm_state~5                                                                                ; Lost fanout                                 ;
-; game_fsm_state~6                                                                                ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~5                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~6                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~7                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~8                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~9                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~10                                                           ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~11                                                           ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|v_state~12                                                           ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~5                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~6                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~7                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~8                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~9                                                            ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~10                                                           ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~11                                                           ; Lost fanout                                 ;
-; vga_driver:vga_driver_inst|h_state~12                                                           ; Lost fanout                                 ;
-; game_logic:game_logic_inst|character:p2_character|state~4                                       ; Lost fanout                                 ;
-; game_logic:game_logic_inst|character:p2_character|state~5                                       ; Lost fanout                                 ;
-; game_logic:game_logic_inst|character:p2_character|state~6                                       ; Lost fanout                                 ;
-; game_logic:game_logic_inst|character:p2_character|state.s_idle                                  ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|state.s_move_forward                          ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|state.s_move_backward                         ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|state.s_default_attack                        ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|state.s_special_attack                        ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|state.s_hitstun                               ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|state.s_blockstun                             ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p2_character|state.s_guard_break                           ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state~4                                       ; Lost fanout                                 ;
-; game_logic:game_logic_inst|character:p1_character|state~5                                       ; Lost fanout                                 ;
-; game_logic:game_logic_inst|character:p1_character|state~6                                       ; Lost fanout                                 ;
-; game_logic:game_logic_inst|character:p1_character|state.s_idle                                  ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state.s_move_forward                          ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state.s_move_backward                         ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state.s_default_attack                        ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state.s_special_attack                        ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state.s_hitstun                               ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state.s_blockstun                             ; Stuck at GND due to stuck port clock        ;
-; game_logic:game_logic_inst|character:p1_character|state.s_guard_break                           ; Stuck at GND due to stuck port clock        ;
-; game_fsm_state.END                                                                              ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 272                                                         ;                                             ;
-+-------------------------------------------------------------------------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++-----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------+------------------------+
+; P7seg:hex2_seg_inst|hexn[0]                         ; P7seg:hex2_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex2_seg_inst|hexn[1]                         ; P7seg:hex2_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex2_seg_inst|hexn[2]                         ; P7seg:hex2_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex2_seg_inst|hexn[3]                         ; P7seg:hex2_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex2_seg_inst|hexn[4]                         ; P7seg:hex2_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex2_seg_inst|hexn[5]                         ; P7seg:hex2_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex2_seg_inst|hexn[6]                         ; P7seg:hex2_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex3_seg_inst|hexn[0]                         ; P7seg:hex3_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex3_seg_inst|hexn[1]                         ; P7seg:hex3_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex3_seg_inst|hexn[2]                         ; P7seg:hex3_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex3_seg_inst|hexn[3]                         ; P7seg:hex3_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex3_seg_inst|hexn[4]                         ; P7seg:hex3_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex3_seg_inst|hexn[5]                         ; P7seg:hex3_seg_inst|Mux8 ; yes                    ;
+; P7seg:hex3_seg_inst|hexn[6]                         ; P7seg:hex3_seg_inst|Mux8 ; yes                    ;
+; Number of user-specified and inferred latches = 14  ;                          ;                        ;
++-----------------------------------------------------+--------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                    ;
-+----------------------------------------------------------------------------------+-------------------------+-----------------------------------------------------------------------------------+
-; Register name                                                                    ; Reason for Removal      ; Registers Removed due to This Register                                            ;
-+----------------------------------------------------------------------------------+-------------------------+-----------------------------------------------------------------------------------+
-; game_logic:game_logic_inst|attack_input:attack_char_p2|prescaler:clock_100hz|out ; Stuck at GND            ; game_logic:game_logic_inst|attack_input:attack_char_p2|default_attack,            ;
-;                                                                                  ; due to stuck port clock ; game_logic:game_logic_inst|attack_input:attack_char_p2|attack_prev,               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[7],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[6],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[5],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[4],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[3],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[2],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[1],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[0],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p2|special_attack             ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|prescaler:clock_100hz|out ; Stuck at GND            ; game_logic:game_logic_inst|attack_input:attack_char_p1|default_attack,            ;
-;                                                                                  ; due to stuck port clock ; game_logic:game_logic_inst|attack_input:attack_char_p1|attack_prev,               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[7],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[6],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[5],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[4],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[3],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[2],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[1],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[0],           ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|attack_input:attack_char_p1|special_attack             ;
-; game_logic:game_logic_inst|character:p2_character|prescaler:clock_60hz|out       ; Stuck at GND            ; game_logic:game_logic_inst|character:p2_character|frame_counter[6],               ;
-;                                                                                  ; due to stuck port clock ; game_logic:game_logic_inst|character:p2_character|frame_counter[5],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p2_character|frame_counter[4],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p2_character|frame_counter[3],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p2_character|frame_counter[2],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p2_character|frame_counter[1],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p2_character|frame_counter[0],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p2_character|hit_by_special                  ;
-; game_logic:game_logic_inst|character:p1_character|prescaler:clock_60hz|out       ; Stuck at GND            ; game_logic:game_logic_inst|character:p1_character|frame_counter[6],               ;
-;                                                                                  ; due to stuck port clock ; game_logic:game_logic_inst|character:p1_character|frame_counter[5],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p1_character|frame_counter[4],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p1_character|frame_counter[3],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p1_character|frame_counter[2],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p1_character|frame_counter[1],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p1_character|frame_counter[0],               ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|character:p1_character|hit_by_special                  ;
-; game_logic:game_logic_inst|prescaler:clock_60hz|out                              ; Stuck at GND            ; game_logic:game_logic_inst|p2_ko_num[0], game_logic:game_logic_inst|internal_rst, ;
-;                                                                                  ; due to stuck port clock ; game_logic:game_logic_inst|p1_ko_num[1], game_logic:game_logic_inst|p1_ko_num[0], ;
-;                                                                                  ;                         ; game_logic:game_logic_inst|p2_ko_num[1]                                           ;
-; game_logic:game_logic_inst|character:p2_character|state.s_idle                   ; Stuck at GND            ; game_logic:game_logic_inst|character:p2_character|state.s_move_forward,           ;
-;                                                                                  ; due to stuck port clock ; game_logic:game_logic_inst|character:p2_character|state.s_move_backward           ;
-; game_logic:game_logic_inst|character:p1_character|state.s_idle                   ; Stuck at GND            ; game_logic:game_logic_inst|character:p1_character|state.s_move_forward,           ;
-;                                                                                  ; due to stuck port clock ; game_logic:game_logic_inst|character:p1_character|state.s_move_backward           ;
-+----------------------------------------------------------------------------------+-------------------------+-----------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++-----------------------------------------------------------+----------------------------------------+
+; Register name                                             ; Reason for Removal                     ;
++-----------------------------------------------------------+----------------------------------------+
+; vga_driver:vga_driver_inst|red_reg[0]                     ; Stuck at GND due to stuck port data_in ;
+; vga_driver:vga_driver_inst|green_reg[0..4]                ; Stuck at GND due to stuck port data_in ;
+; vga_driver:vga_driver_inst|blue_reg[0..5]                 ; Stuck at GND due to stuck port data_in ;
+; vga_driver:vga_driver_inst|red_reg[1..4]                  ; Stuck at GND due to stuck port data_in ;
+; game_fsm_state~4                                          ; Lost fanout                            ;
+; game_fsm_state~5                                          ; Lost fanout                            ;
+; game_fsm_state~6                                          ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~5                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~6                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~7                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~8                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~9                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~10                     ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~11                     ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|v_state~12                     ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~5                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~6                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~7                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~8                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~9                      ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~10                     ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~11                     ; Lost fanout                            ;
+; vga_driver:vga_driver_inst|h_state~12                     ; Lost fanout                            ;
+; game_logic:game_logic_inst|character:p2_character|state~4 ; Lost fanout                            ;
+; game_logic:game_logic_inst|character:p2_character|state~5 ; Lost fanout                            ;
+; game_logic:game_logic_inst|character:p2_character|state~6 ; Lost fanout                            ;
+; game_logic:game_logic_inst|character:p1_character|state~4 ; Lost fanout                            ;
+; game_logic:game_logic_inst|character:p1_character|state~5 ; Lost fanout                            ;
+; game_logic:game_logic_inst|character:p1_character|state~6 ; Lost fanout                            ;
+; Total Number of Removed Registers = 41                    ;                                        ;
++-----------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -492,43 +424,68 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 123   ;
-; Number of registers using Synchronous Clear  ; 91    ;
+; Total registers                              ; 258   ;
+; Number of registers using Synchronous Clear  ; 162   ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 18    ;
+; Number of registers using Asynchronous Clear ; 116   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Clock Enable       ; 56    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; green_left_side                        ; 9       ;
-; green_btn_reg[1]                       ; 1       ;
-; green_btn_reg[0]                       ; 2       ;
-; blue_btn_reg[1]                        ; 1       ;
-; blue_btn_reg[0]                        ; 2       ;
-; Total number of inverted registers = 5 ;         ;
-+----------------------------------------+---------+
++------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                       ;
++--------------------------------------------------------------------------+---------+
+; Inverted Register                                                        ; Fan out ;
++--------------------------------------------------------------------------+---------+
+; green_left_side                                                          ; 48      ;
+; green_btn_reg[1]                                                         ; 1       ;
+; green_btn_reg[0]                                                         ; 2       ;
+; blue_btn_reg[1]                                                          ; 1       ;
+; blue_btn_reg[0]                                                          ; 2       ;
+; game_logic:game_logic_inst|character:p1_character|remaining_blockings[1] ; 3       ;
+; game_logic:game_logic_inst|character:p1_character|remaining_blockings[0] ; 4       ;
+; game_logic:game_logic_inst|character:p2_character|remaining_blockings[1] ; 3       ;
+; game_logic:game_logic_inst|character:p2_character|remaining_blockings[0] ; 4       ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[2] ; 20      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[6] ; 31      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[5] ; 26      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[3]  ; 19      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[2]  ; 22      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[4]  ; 21      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[6]  ; 31      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[8]  ; 24      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[7]  ; 28      ;
+; Total number of inverted registers = 18                                  ;         ;
++--------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Top_Module|vga_driver:vga_driver_inst|blue_reg[6]  ;
-; 10:1               ; 10 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |Top_Module|vga_driver:vga_driver_inst|v_counter[0] ;
-; 10:1               ; 10 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |Top_Module|vga_driver:vga_driver_inst|h_counter[8] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_Module|vga_driver:vga_driver_inst|red_reg      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_Module|color_in1[0]                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Top_Module|color_in1[1]                            ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Top_Module|Selector8                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Top_Module|vga_driver:vga_driver_inst|blue_reg[7]                                    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Top_Module|game_logic:game_logic_inst|character:p2_character|frame_counter[0]        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Top_Module|game_logic:game_logic_inst|character:p1_character|frame_counter[0]        ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[3]    ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[6]    ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |Top_Module|vga_driver:vga_driver_inst|v_counter[0]                                   ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |Top_Module|vga_driver:vga_driver_inst|h_counter[7]                                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |Top_Module|color_in_reg[6]                                                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p2|player_hitbox_x[6]            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1|player_hitbox_x[3]            ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_right ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p2|player_hitbox_x[8]            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1|player_hitbox_x[8]            ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_right ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_left  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Top_Module|Selector8                                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Top_Module|Selector10                                                                ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_Module|color_in1[3]                                                              ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_left  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------+
@@ -561,56 +518,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: game_logic:game_logic_inst|prescaler:clock_60hz ;
-+----------------+--------+--------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                               ;
-+----------------+--------+--------------------------------------------------------------------+
-; div_param      ; 833333 ; Signed Integer                                                     ;
-+----------------+--------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: game_logic:game_logic_inst|attack_input:attack_char_p1|prescaler:clock_100hz ;
-+----------------+--------+-------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                                                            ;
-+----------------+--------+-------------------------------------------------------------------------------------------------+
-; div_param      ; 500000 ; Signed Integer                                                                                  ;
-+----------------+--------+-------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: game_logic:game_logic_inst|attack_input:attack_char_p2|prescaler:clock_100hz ;
-+----------------+--------+-------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                                                            ;
-+----------------+--------+-------------------------------------------------------------------------------------------------+
-; div_param      ; 500000 ; Signed Integer                                                                                  ;
-+----------------+--------+-------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: game_logic:game_logic_inst|character:p1_character|prescaler:clock_60hz ;
-+----------------+--------+-------------------------------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                                                      ;
-+----------------+--------+-------------------------------------------------------------------------------------------+
-; div_param      ; 833333 ; Signed Integer                                                                            ;
-+----------------+--------+-------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: game_logic:game_logic_inst|character:p2_character|prescaler:clock_60hz ;
-+----------------+--------+-------------------------------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                                                      ;
-+----------------+--------+-------------------------------------------------------------------------------------------+
-; div_param      ; 833333 ; Signed Integer                                                                            ;
-+----------------+--------+-------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: vga_driver:vga_driver_inst ;
 +----------------+------------+-------------------------------------------+
@@ -638,158 +545,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p2_coldet"                                                                                                                    ;
-+---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                ; Type   ; Severity ; Details                                                                                                                                                      ;
-+---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; atk_hit_x           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_x[9..1]" will be connected to GND.           ;
-; atk_hit_y           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_y[9..1]" will be connected to GND.           ;
-; atk_hit_w           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_w[9..1]" will be connected to GND.           ;
-; atk_hit_h           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_h[9..1]" will be connected to GND.           ;
-; def_hurt_x          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_x[9..1]" will be connected to GND.          ;
-; def_hurt_y          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_y[9..1]" will be connected to GND.          ;
-; def_hurt_w          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_w[9..1]" will be connected to GND.          ;
-; def_hurt_h          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_h[9..1]" will be connected to GND.          ;
-; def_recovery_hurt_x ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_x[9..1]" will be connected to GND. ;
-; def_recovery_hurt_y ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_y[9..1]" will be connected to GND. ;
-; def_recovery_hurt_w ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_w[9..1]" will be connected to GND. ;
-; def_recovery_hurt_h ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_h[9..1]" will be connected to GND. ;
-; hurt_recovery       ; Input  ; Info     ; Stuck at GND                                                                                                                                                 ;
-; hit                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                          ;
-; atk_active          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                 ;
-+---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p1_coldet"                                                                                                                    ;
-+---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                ; Type   ; Severity ; Details                                                                                                                                                      ;
-+---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; atk_hit_x           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_x[9..1]" will be connected to GND.           ;
-; atk_hit_y           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_y[9..1]" will be connected to GND.           ;
-; atk_hit_w           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_w[9..1]" will be connected to GND.           ;
-; atk_hit_h           ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "atk_hit_h[9..1]" will be connected to GND.           ;
-; def_hurt_x          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_x[9..1]" will be connected to GND.          ;
-; def_hurt_y          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_y[9..1]" will be connected to GND.          ;
-; def_hurt_w          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_w[9..1]" will be connected to GND.          ;
-; def_hurt_h          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_hurt_h[9..1]" will be connected to GND.          ;
-; def_recovery_hurt_x ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_x[9..1]" will be connected to GND. ;
-; def_recovery_hurt_y ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_y[9..1]" will be connected to GND. ;
-; def_recovery_hurt_w ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_w[9..1]" will be connected to GND. ;
-; def_recovery_hurt_h ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "def_recovery_hurt_h[9..1]" will be connected to GND. ;
-; hurt_recovery       ; Input  ; Info     ; Stuck at GND                                                                                                                                                 ;
-; hit                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                          ;
-; atk_active          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                 ;
-+---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|hitbox:hitbox_p2"                                                                                                                    ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                                                                                              ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; player_state    ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "player_state[2..1]" will be connected to GND. ;
-; player_x        ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "player_x[9..1]" will be connected to GND.    ;
-; player_hitbox_x ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_x[9..1]" have no fanouts                  ;
-; player_hitbox_y ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_y[9..1]" have no fanouts                  ;
-; player_hitbox_w ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_w[9..1]" have no fanouts                  ;
-; player_hitbox_h ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_h[9..1]" have no fanouts                  ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|hurtbox:hurtbox_p2"                                                                                                                   ;
-+------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                                                                                              ;
-+------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; player_state     ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "player_state[2..1]" will be connected to GND. ;
-; player_x         ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "player_x[9..1]" will be connected to GND.    ;
-; player_hurtbox_x ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_x[9..1]" have no fanouts                 ;
-; player_hurtbox_y ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_y[9..1]" have no fanouts                 ;
-; player_hurtbox_w ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_w[9..1]" have no fanouts                 ;
-; player_hurtbox_h ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_h[9..1]" have no fanouts                 ;
-; attack_hurtbox_x ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_x[9..1]" have no fanouts                 ;
-; attack_hurtbox_y ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_y[9..1]" have no fanouts                 ;
-; attack_hurtbox_w ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_w[9..1]" have no fanouts                 ;
-; attack_hurtbox_h ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_h[9..1]" have no fanouts                 ;
-+------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|hitbox:hitbox_p1"                                                                                                                    ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                                                                                              ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; player_state    ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "player_state[2..1]" will be connected to GND. ;
-; player_x        ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "player_x[9..1]" will be connected to GND.    ;
-; player_hitbox_x ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_x[9..1]" have no fanouts                  ;
-; player_hitbox_y ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_y[9..1]" have no fanouts                  ;
-; player_hitbox_w ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_w[9..1]" have no fanouts                  ;
-; player_hitbox_h ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hitbox_h[9..1]" have no fanouts                  ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|hurtbox:hurtbox_p1"                                                                                                                   ;
-+------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                                                                                              ;
-+------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; player_state     ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "player_state[2..1]" will be connected to GND. ;
-; player_x         ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "player_x[9..1]" will be connected to GND.    ;
-; player_hurtbox_x ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_x[9..1]" have no fanouts                 ;
-; player_hurtbox_y ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_y[9..1]" have no fanouts                 ;
-; player_hurtbox_w ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_w[9..1]" have no fanouts                 ;
-; player_hurtbox_h ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "player_hurtbox_h[9..1]" have no fanouts                 ;
-; attack_hurtbox_x ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_x[9..1]" have no fanouts                 ;
-; attack_hurtbox_y ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_y[9..1]" have no fanouts                 ;
-; attack_hurtbox_w ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_w[9..1]" have no fanouts                 ;
-; attack_hurtbox_h ; Output ; Warning  ; Output or bidir port (10 bits) is wider than the port expression (1 bits) it drives; bit(s) "attack_hurtbox_h[9..1]" have no fanouts                 ;
-+------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|character:p2_character"                                                                                        ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                                                                          ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
-; current_state ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "current_state[2..1]" have no fanouts ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst|character:p1_character"                                                                                        ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                                                                          ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
-; current_state ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "current_state[2..1]" have no fanouts ;
-+---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p2_coldet"                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                      ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; atk_active ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "game_logic:game_logic_inst"                                                                                                                       ;
-+----------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
-; Port                       ; Type   ; Severity ; Details                                                                                                                     ;
-+----------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
-; p1_state                   ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "p1_state[2..1]" have no fanouts ;
-; p1_state                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
-; p2_state                   ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "p2_state[2..1]" have no fanouts ;
-; p2_state                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
-; p1_frame                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
-; p2_frame                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
-; p1_block                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
-; p2_block                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
-; internal_rst_char_position ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                         ;
-+----------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game_logic:game_logic_inst|collision_detector:p1_coldet"                                                                                          ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                      ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; atk_active ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "prescaler:clock_60_hz"                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game_logic:game_logic_inst"                                                                               ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                       ; Type   ; Severity ; Details                                                                             ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; p1_frame                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p2_frame                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p1_block                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p2_block                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p1_def_rec_hurt_x          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p1_def_rec_hurt_y          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p1_def_rec_hurt_w          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p1_def_rec_hurt_h          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p1_charge_value[1..0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p2_charge_value[1..0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p2_def_rec_hurt_x          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p2_def_rec_hurt_y          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p2_def_rec_hurt_w          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; p2_def_rec_hurt_h          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; internal_rst_char_position ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------+
@@ -808,26 +602,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+---------------------+
 ; hex[2] ; Input ; Info     ; Stuck at GND        ;
 +--------+-------+----------+---------------------+
-
-
-+-------------------------------------------------+
-; Port Connectivity Checks: "P7seg:hex3_seg_inst" ;
-+-----------+-------+----------+------------------+
-; Port      ; Type  ; Severity ; Details          ;
-+-----------+-------+----------+------------------+
-; hex[1..0] ; Input ; Info     ; Stuck at GND     ;
-; hex[2]    ; Input ; Info     ; Stuck at VCC     ;
-+-----------+-------+----------+------------------+
-
-
-+-------------------------------------------------+
-; Port Connectivity Checks: "P7seg:hex2_seg_inst" ;
-+-----------+-------+----------+------------------+
-; Port      ; Type  ; Severity ; Details          ;
-+-----------+-------+----------+------------------+
-; hex[1..0] ; Input ; Info     ; Stuck at VCC     ;
-; hex[2]    ; Input ; Info     ; Stuck at GND     ;
-+-----------+-------+----------+------------------+
 
 
 +-------------------------------------------------+
@@ -871,32 +645,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 123                         ;
-;     CLR               ; 18                          ;
-;     ENA               ; 10                          ;
-;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 81                          ;
-;     plain             ; 4                           ;
+; arriav_ff             ; 258                         ;
+;     CLR               ; 65                          ;
+;     CLR SCLR          ; 15                          ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 20                          ;
+;     ENA CLR SCLR      ; 16                          ;
+;     ENA SCLR          ; 18                          ;
+;     SCLR              ; 113                         ;
+;     plain             ; 9                           ;
 ; arriav_io_obuf        ; 36                          ;
-; arriav_lcell_comb     ; 332                         ;
-;     arith             ; 103                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 84                          ;
-;         2 data inputs ; 18                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 228                         ;
+; arriav_lcell_comb     ; 1216                        ;
+;     arith             ; 361                         ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 258                         ;
+;         2 data inputs ; 63                          ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 4                           ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 847                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 38                          ;
-;         4 data inputs ; 43                          ;
-;         5 data inputs ; 52                          ;
-;         6 data inputs ; 63                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 79                          ;
+;         3 data inputs ; 102                         ;
+;         4 data inputs ; 157                         ;
+;         5 data inputs ; 187                         ;
+;         6 data inputs ; 315                         ;
 ; boundary_port         ; 135                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.60                        ;
-; Average LUT depth     ; 3.35                        ;
+; Max LUT depth         ; 9.20                        ;
+; Average LUT depth     ; 5.38                        ;
 +-----------------------+-----------------------------+
 
 
@@ -905,7 +685,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -915,231 +695,240 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Jun 17 16:03:23 2026
+    Info: Processing started: Thu Jun 18 00:21:06 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Top_Module -c Top_Module
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga_driver.v
-    Info (12023): Found entity 1: vga_driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/vga_driver.v Line: 1
+    Info (12023): Found entity 1: vga_driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/vga_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file top_module.v
-    Info (12023): Found entity 1: Top_Module File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 5
+    Info (12023): Found entity 1: Top_Module File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file start.v
-    Info (12023): Found entity 1: start File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/start.v Line: 1
+    Info (12023): Found entity 1: start File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/start.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file seq_counter.v
-    Info (12023): Found entity 1: seq_counter File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/seq_counter.v Line: 2
+    Info (12023): Found entity 1: seq_counter File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/seq_counter.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file prescaler.v
-    Info (12023): Found entity 1: prescaler File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/prescaler.v Line: 2
+    Info (12023): Found entity 1: prescaler File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/prescaler.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file p7seg.v
-    Info (12023): Found entity 1: P7seg File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 1
+    Info (12023): Found entity 1: P7seg File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file p.v
-    Info (12023): Found entity 1: p File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/p.v Line: 1
+    Info (12023): Found entity 1: p File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/p.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file menu.v
-    Info (12023): Found entity 1: menu File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/menu.v Line: 1
+    Info (12023): Found entity 1: menu File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/menu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hurtbox.v
-    Info (12023): Found entity 1: hurtbox File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 2
+    Info (12023): Found entity 1: hurtbox File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file hitbox.v
-    Info (12023): Found entity 1: hitbox File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hitbox.v Line: 2
+    Info (12023): Found entity 1: hitbox File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hitbox.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file game_logic.v
-    Info (12023): Found entity 1: game_logic File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 2
+    Info (12023): Found entity 1: game_logic File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file digit_3.v
-    Info (12023): Found entity 1: digit_3 File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/digit_3.v Line: 1
+    Info (12023): Found entity 1: digit_3 File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/digit_3.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file digit_2.v
-    Info (12023): Found entity 1: digit_2 File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/digit_2.v Line: 1
+    Info (12023): Found entity 1: digit_2 File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/digit_2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file digit_1.v
-    Info (12023): Found entity 1: digit_1 File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/digit_1.v Line: 1
+    Info (12023): Found entity 1: digit_1 File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/digit_1.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file collision_detector.v
-    Info (12023): Found entity 1: collision_detector File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/collision_detector.v Line: 1
+    Info (12023): Found entity 1: collision_detector File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/collision_detector.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file char_positioning.v
-    Info (12023): Found entity 1: char_positioning File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/char_positioning.v Line: 1
+    Info (12023): Found entity 1: char_positioning File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/char_positioning.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file character.v
-    Info (12023): Found entity 1: character File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 1
+    Info (12023): Found entity 1: character File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file attack_input.v
-    Info (12023): Found entity 1: attack_input File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/attack_input.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(129): created implicit net for "d3_on" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 129
-Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(130): created implicit net for "d2_on" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 130
-Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(131): created implicit net for "d1_on" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 131
-Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(132): created implicit net for "start_on" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 132
-Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(248): created implicit net for "clk" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 248
-Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(56): created implicit net for "p1_attack_success" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 56
-Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(78): created implicit net for "p2_attack_success" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 78
+    Info (12023): Found entity 1: attack_input File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/attack_input.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(192): created implicit net for "d3_on" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 192
+Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(193): created implicit net for "d2_on" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 193
+Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(194): created implicit net for "d1_on" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 194
+Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(195): created implicit net for "start_on" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 195
+Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(61): created implicit net for "p1_attack_success" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 61
+Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(83): created implicit net for "p2_attack_success" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 83
 Info (12127): Elaborating entity "Top_Module" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(69): truncated value with size 10 to match size of target (3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 69
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(70): truncated value with size 10 to match size of target (4) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 70
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(77): truncated value with size 10 to match size of target (6) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 77
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(78): truncated value with size 10 to match size of target (4) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 78
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(99): truncated value with size 10 to match size of target (6) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 99
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(100): truncated value with size 10 to match size of target (4) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 100
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(108): truncated value with size 10 to match size of target (5) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 108
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(109): truncated value with size 10 to match size of target (4) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 109
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(116): truncated value with size 10 to match size of target (5) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 116
-Warning (10230): Verilog HDL assignment warning at Top_Module.v(117): truncated value with size 10 to match size of target (4) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 117
-Warning (10034): Output port "LEDR" at Top_Module.v(25) has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-Info (12128): Elaborating entity "menu" for hierarchy "menu:menu_rom_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 125
-Info (12128): Elaborating entity "p" for hierarchy "p:p1_rom_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 126
-Info (12128): Elaborating entity "digit_3" for hierarchy "digit_3:d3_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 129
-Info (12128): Elaborating entity "digit_2" for hierarchy "digit_2:d2_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 130
-Info (12128): Elaborating entity "digit_1" for hierarchy "digit_1:d1_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 131
-Info (12128): Elaborating entity "start" for hierarchy "start:start_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 132
-Info (12128): Elaborating entity "P7seg" for hierarchy "P7seg:hex0_seg_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 135
-Warning (10270): Verilog HDL Case Statement warning at P7seg.v(4): incomplete case statement has no default case item File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 4
-Warning (10240): Verilog HDL Always Construct warning at P7seg.v(3): inferring latch(es) for variable "hexn", which holds its previous value in one or more paths through the always construct File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (10041): Inferred latch for "hexn[0]" at P7seg.v(3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (10041): Inferred latch for "hexn[1]" at P7seg.v(3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (10041): Inferred latch for "hexn[2]" at P7seg.v(3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (10041): Inferred latch for "hexn[3]" at P7seg.v(3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (10041): Inferred latch for "hexn[4]" at P7seg.v(3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (10041): Inferred latch for "hexn[5]" at P7seg.v(3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (10041): Inferred latch for "hexn[6]" at P7seg.v(3) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:clock_1hz" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 233
-Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:vga_clock" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 237
-Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:clock_60_hz" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 241
-Info (12128): Elaborating entity "game_logic" for hierarchy "game_logic:game_logic_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 265
-Warning (10230): Verilog HDL assignment warning at game_logic.v(218): truncated value with size 32 to match size of target (2) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 218
-Warning (10230): Verilog HDL assignment warning at game_logic.v(222): truncated value with size 32 to match size of target (2) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 222
-Info (12128): Elaborating entity "attack_input" for hierarchy "game_logic:game_logic_inst|attack_input:attack_char_p1" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 29
-Warning (10230): Verilog HDL assignment warning at attack_input.v(48): truncated value with size 32 to match size of target (8) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/attack_input.v Line: 48
-Info (12128): Elaborating entity "prescaler" for hierarchy "game_logic:game_logic_inst|attack_input:attack_char_p1|prescaler:clock_100hz" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/attack_input.v Line: 16
-Info (12128): Elaborating entity "character" for hierarchy "game_logic:game_logic_inst|character:p1_character" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 61
-Warning (10230): Verilog HDL assignment warning at character.v(234): truncated value with size 32 to match size of target (2) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 234
-Warning (10230): Verilog HDL assignment warning at character.v(252): truncated value with size 32 to match size of target (7) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 252
-Info (12128): Elaborating entity "hurtbox" for hierarchy "game_logic:game_logic_inst|hurtbox:hurtbox_p1" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 117
-Warning (10230): Verilog HDL assignment warning at hurtbox.v(49): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 49
-Warning (10230): Verilog HDL assignment warning at hurtbox.v(51): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 51
-Warning (10230): Verilog HDL assignment warning at hurtbox.v(53): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 53
-Warning (10230): Verilog HDL assignment warning at hurtbox.v(55): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 55
-Warning (10230): Verilog HDL assignment warning at hurtbox.v(57): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 57
-Warning (10230): Verilog HDL assignment warning at hurtbox.v(59): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 59
-Warning (10230): Verilog HDL assignment warning at hurtbox.v(61): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 61
-Info (12128): Elaborating entity "hitbox" for hierarchy "game_logic:game_logic_inst|hitbox:hitbox_p1" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 125
-Warning (10230): Verilog HDL assignment warning at hitbox.v(46): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hitbox.v Line: 46
-Warning (10230): Verilog HDL assignment warning at hitbox.v(49): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hitbox.v Line: 49
-Warning (10230): Verilog HDL assignment warning at hitbox.v(51): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hitbox.v Line: 51
-Warning (10230): Verilog HDL assignment warning at hitbox.v(59): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hitbox.v Line: 59
-Warning (10230): Verilog HDL assignment warning at hitbox.v(61): truncated value with size 32 to match size of target (10) File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/hitbox.v Line: 61
-Info (12128): Elaborating entity "collision_detector" for hierarchy "game_logic:game_logic_inst|collision_detector:p1_coldet" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 163
-Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:vga_driver_inst" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 359
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "game_logic:game_logic_inst|p1_x" is missing source, defaulting to GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 84
-    Warning (12110): Net "game_logic:game_logic_inst|p2_x" is missing source, defaulting to GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 92
-Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[0]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[2]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[3]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[4]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[6]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[0]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[2]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[3]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[4]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[6]" is permanently enabled File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
-Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10036): Verilog HDL or VHDL warning at Top_Module.v(82): object "color_in3" assigned a value but never read File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 82
+Warning (10036): Verilog HDL or VHDL warning at Top_Module.v(157): object "in_bwd_indicator" assigned a value but never read File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 157
+Warning (10036): Verilog HDL or VHDL warning at Top_Module.v(158): object "in_bwd_rect" assigned a value but never read File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 158
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(101): truncated value with size 10 to match size of target (3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 101
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(102): truncated value with size 10 to match size of target (4) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 102
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(109): truncated value with size 10 to match size of target (6) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 109
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(110): truncated value with size 10 to match size of target (4) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 110
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(131): truncated value with size 10 to match size of target (6) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 131
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(132): truncated value with size 10 to match size of target (4) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 132
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(140): truncated value with size 10 to match size of target (5) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 140
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(141): truncated value with size 10 to match size of target (4) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 141
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(151): truncated value with size 10 to match size of target (5) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 151
+Warning (10230): Verilog HDL assignment warning at Top_Module.v(152): truncated value with size 10 to match size of target (4) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 152
+Warning (10034): Output port "LEDR" at Top_Module.v(25) has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+Info (12128): Elaborating entity "menu" for hierarchy "menu:menu_rom_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 189
+Info (12128): Elaborating entity "p" for hierarchy "p:p1_rom_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 190
+Info (12128): Elaborating entity "digit_3" for hierarchy "digit_3:d3_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 192
+Info (12128): Elaborating entity "digit_2" for hierarchy "digit_2:d2_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 193
+Info (12128): Elaborating entity "digit_1" for hierarchy "digit_1:d1_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 194
+Info (12128): Elaborating entity "start" for hierarchy "start:start_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 195
+Info (12128): Elaborating entity "P7seg" for hierarchy "P7seg:hex0_seg_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 198
+Warning (10270): Verilog HDL Case Statement warning at P7seg.v(4): incomplete case statement has no default case item File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at P7seg.v(3): inferring latch(es) for variable "hexn", which holds its previous value in one or more paths through the always construct File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (10041): Inferred latch for "hexn[0]" at P7seg.v(3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (10041): Inferred latch for "hexn[1]" at P7seg.v(3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (10041): Inferred latch for "hexn[2]" at P7seg.v(3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (10041): Inferred latch for "hexn[3]" at P7seg.v(3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (10041): Inferred latch for "hexn[4]" at P7seg.v(3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (10041): Inferred latch for "hexn[5]" at P7seg.v(3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (10041): Inferred latch for "hexn[6]" at P7seg.v(3) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:clock_1hz" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 331
+Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:vga_clock" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 335
+Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:clock_60_hz" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 339
+Info (12128): Elaborating entity "game_logic" for hierarchy "game_logic:game_logic_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 392
+Warning (10230): Verilog HDL assignment warning at game_logic.v(232): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 232
+Warning (10230): Verilog HDL assignment warning at game_logic.v(236): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 236
+Info (12128): Elaborating entity "attack_input" for hierarchy "game_logic:game_logic_inst|attack_input:attack_char_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 33
+Warning (10230): Verilog HDL assignment warning at attack_input.v(40): truncated value with size 32 to match size of target (8) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/attack_input.v Line: 40
+Info (12128): Elaborating entity "character" for hierarchy "game_logic:game_logic_inst|character:p1_character" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 66
+Warning (10230): Verilog HDL assignment warning at character.v(224): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 224
+Warning (10230): Verilog HDL assignment warning at character.v(242): truncated value with size 32 to match size of target (7) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 242
+Info (12128): Elaborating entity "hurtbox" for hierarchy "game_logic:game_logic_inst|hurtbox:hurtbox_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 112
+Warning (10230): Verilog HDL assignment warning at hurtbox.v(49): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 49
+Warning (10230): Verilog HDL assignment warning at hurtbox.v(51): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 51
+Warning (10230): Verilog HDL assignment warning at hurtbox.v(53): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 53
+Warning (10230): Verilog HDL assignment warning at hurtbox.v(55): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 55
+Warning (10230): Verilog HDL assignment warning at hurtbox.v(57): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 57
+Warning (10230): Verilog HDL assignment warning at hurtbox.v(59): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 59
+Warning (10230): Verilog HDL assignment warning at hurtbox.v(61): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 61
+Info (12128): Elaborating entity "hitbox" for hierarchy "game_logic:game_logic_inst|hitbox:hitbox_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 121
+Info (12128): Elaborating entity "collision_detector" for hierarchy "game_logic:game_logic_inst|collision_detector:p1_coldet" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 160
+Info (12128): Elaborating entity "char_positioning" for hierarchy "game_logic:game_logic_inst|char_positioning:p1_p2_pos" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 186
+Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:vga_driver_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 487
+Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[0]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[2]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[3]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[4]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex4_seg_inst|hexn[6]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[0]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[2]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[3]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[4]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (14026): LATCH primitive "P7seg:hex0_seg_inst|hexn[6]" is permanently enabled File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
-    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
+Warning (13012): Latch P7seg:hex2_seg_inst|hexn[0] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex2_seg_inst|hexn[2] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex2_seg_inst|hexn[3] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex2_seg_inst|hexn[5] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex2_seg_inst|hexn[6] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex3_seg_inst|hexn[0] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex3_seg_inst|hexn[2] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex3_seg_inst|hexn[3] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex3_seg_inst|hexn[5] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex3_seg_inst|hexn[6] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 14
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 15
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 15
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 16
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 16
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 17
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 17
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 18
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 19
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 19
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
-    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
-    Warning (13410): Pin "VGA_B[4]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
-    Warning (13410): Pin "VGA_B[5]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
-    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
-    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
-    Warning (13410): Pin "VGA_G[4]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
-    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
-    Warning (13410): Pin "VGA_R[4]" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 37
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 14
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 15
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 15
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 18
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 19
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 19
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 32
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 34
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 36
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 37
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 25 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 8
-    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 9
-    Warning (15610): No output dependent on input pin "CLOCK4_50" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 10
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 22
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-Info (21057): Implemented 470 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 8
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 9
+    Warning (15610): No output dependent on input pin "CLOCK4_50" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 10
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
+Info (21057): Implemented 1397 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 81 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 335 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 140 warnings
-    Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Wed Jun 17 16:03:34 2026
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (21061): Implemented 1262 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 149 warnings
+    Info: Peak virtual memory: 4883 megabytes
+    Info: Processing ended: Thu Jun 18 00:21:15 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.map.smsg.
+The suppressed messages can be found in C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.map.smsg.
 
 

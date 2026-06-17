@@ -23,7 +23,7 @@ module hurtbox (
     output wire [9:0]  player_hurtbox_y, 
     output wire [9:0]  player_hurtbox_w,
     output wire [9:0]  player_hurtbox_h,
-	 output wire [9:0]  attack_hurtbox_x,
+	output wire [9:0]  attack_hurtbox_x,
     output wire [9:0]  attack_hurtbox_y, 
     output wire [9:0]  attack_hurtbox_w,
     output wire [9:0]  attack_hurtbox_h

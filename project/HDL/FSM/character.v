@@ -1,8 +1,8 @@
 module character(
-    input clk,                                          // input clk of the module
-    input rst,                                          // reset of the module
-    input default_attack_trigger,                       // default attack flag coming from "attack_input" module
-	input special_attack_trigger,                       // special attack flag coming from "attack_input" module (CHARGED ATTACK NOT THE DOUBLE) (DOUBLE IS IN THIS FILE)
+    input clk_60hz,                                       // shared 60Hz clock from top module
+    input rst,                                            // reset of the module
+    input default_attack_trigger,                         // default attack flag coming from "attack_input" module
+	input special_attack_trigger,                         // special attack flag coming from "attack_input" module (CHARGED ATTACK NOT THE DOUBLE) (DOUBLE IS IN THIS FILE)
     input move_forward,                                 // user move forward input
     input move_backward,                                // user move backwatd input
     input hit_flag,                                     // normal attack flag
@@ -28,16 +28,6 @@ module character(
     localparam special_attack_recovery_frame_number = 31;
     localparam blockstun_special_attack_frame_number = 19;              // -12
     localparam guard_break_special_attack_frame_number = 34;            // +3
-
-
-    //  to obtain 60Hz clock from 50MHz FPGA clock
-    localparam SIXTY_HZ_DIV = 833333;
-    //  60Hz character state transition clock
-    wire game_clk;
-    prescaler #(.div_param(SIXTY_HZ_DIV)) clock_60hz(
-        .clk(clk),
-        .out(game_clk)
-    );
 
     //  FSM states
     // implemented according to section 2.2 of project outline 
@@ -220,7 +210,7 @@ module character(
         endcase
     end
 
-    always @(posedge game_clk or posedge rst) begin:SEQ
+    always @(posedge clk_60hz or posedge rst) begin:SEQ
         if(rst) begin 
             state <= s_idle;
             frame_counter <= 0;

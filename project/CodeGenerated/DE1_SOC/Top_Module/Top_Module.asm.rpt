@@ -1,5 +1,5 @@
 Assembler report for Top_Module
-Wed Jun 17 16:04:47 2026
+Thu Jun 18 00:23:42 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.sof
+  5. Assembler Device Options: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jun 17 16:04:47 2026 ;
+; Assembler Status      ; Successful - Thu Jun 18 00:23:42 2026 ;
 ; Revision Name         ; Top_Module                            ;
 ; Top-level Entity Name ; Top_Module                            ;
 ; Family                ; Cyclone V                             ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+--------------------------------------------------------------------------+
-; Assembler Generated Files                                                ;
-+--------------------------------------------------------------------------+
-; File Name                                                                ;
-+--------------------------------------------------------------------------+
-; C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.sof ;
-+--------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                    ;
++----------------------------------------------------------------------------------------------+
+; File Name                                                                                    ;
++----------------------------------------------------------------------------------------------+
+; C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.sof ;
++----------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.sof ;
-+----------------+-----------------------------------------------------------------------------------+
-; Option         ; Setting                                                                           ;
-+----------------+-----------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00B68454                                                                        ;
-; Checksum       ; 0x00B68454                                                                        ;
-+----------------+-----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.sof ;
++----------------+-------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                               ;
++----------------+-------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00C8FF86                                                                                            ;
+; Checksum       ; 0x00C8FF86                                                                                            ;
++----------------+-------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Jun 17 16:04:29 2026
+    Info: Processing started: Thu Jun 18 00:23:37 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Top_Module -c Top_Module
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 5233 megabytes
-    Info: Processing ended: Wed Jun 17 16:04:47 2026
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Processing ended: Thu Jun 18 00:23:42 2026
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

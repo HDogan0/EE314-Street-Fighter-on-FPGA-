@@ -44,9 +44,39 @@ module Top_Module(
    - `next_x`/`next_y` come from `vga_driver` and are used to generate pixels
    - `color_in` format: RRRGGGBB
 */
-wire vga_clk, clk_1hz, clk_60hz;
+wire vga_clk;
+wire clk_1hz;
+wire clk_60hz; // shared 60Hz clock for game logic and other slow logic
 wire [9:0] next_x;
 wire [9:0] next_y;
+wire [9:0] p1_current_x;
+wire [9:0] p2_current_x;
+wire [9:0] p1_def_hurt_x;
+wire [9:0] p1_def_hurt_y;
+wire [9:0] p1_def_hurt_w;
+wire [9:0] p1_def_hurt_h;
+wire [9:0] p1_def_rec_hurt_x;
+wire [9:0] p1_def_rec_hurt_y;
+wire [9:0] p1_def_rec_hurt_w;
+wire [9:0] p1_def_rec_hurt_h;
+wire [9:0] p1_atk_hit_x;
+wire [9:0] p1_atk_hit_y;
+wire [9:0] p1_atk_hit_w;
+wire [9:0] p1_atk_hit_h;
+wire [9:0] p2_def_hurt_x;
+wire [9:0] p2_def_hurt_y;
+wire [9:0] p2_def_hurt_w;
+wire [9:0] p2_def_hurt_h;
+wire [9:0] p2_def_rec_hurt_x;
+wire [9:0] p2_def_rec_hurt_y;
+wire [9:0] p2_def_rec_hurt_w;
+wire [9:0] p2_def_rec_hurt_h;
+wire [9:0] p2_atk_hit_x;
+wire [9:0] p2_atk_hit_y;
+wire [9:0] p2_atk_hit_w;
+wire [9:0] p2_atk_hit_h;
+wire [7:0] p1_charge_value;
+wire [7:0] p2_charge_value;
 reg  [7:0] comb_color;       // selected color before registering
 reg  [7:0] color_in_reg;     // registered color sampled by VGA driver
 reg  [7:0] color_in1, color_in2, color_in3, color_in4;
@@ -57,8 +87,10 @@ wire [2:0] hex0_val, hex1_val, hex2_val, hex3_val, hex4_val, hex5_val;
 wire [6:0] hex0_seg, hex1_seg, hex2_seg, hex3_seg, hex4_seg, hex5_seg;
 
 wire menu_hex_active = (game_fsm_state == MENU) && (green_left_side != blue_left_side);
-wire hex_p_labels_active = (game_fsm_state == START) || (game_fsm_state == GAME) || menu_hex_active;
-wire hex_vs_active = (game_fsm_state == START) || (game_fsm_state == GAME);
+// Debug override: set SW[8]=1 to force HEX labels on for debugging
+wire debug_force_hex = SW[8];
+wire hex_p_labels_active = debug_force_hex || (game_fsm_state == START) || (game_fsm_state == GAME) || menu_hex_active;
+wire hex_vs_active = debug_force_hex || (game_fsm_state == START) || (game_fsm_state == GAME);
 wire left_side_is_p2 = green_left_side;
 wire right_side_is_p2 = ~green_left_side;
 
@@ -101,31 +133,62 @@ wire [3:0] menu_rom_y = (next_y - menu_start_y) >> 3;
 wire menu_on;
 
 // P1 / P2 character areas (scaled 4x)
-wire [9:0] p1_start_x = 10'd100;
-wire [9:0] p1_start_y = 10'd240;
+wire [9:0] p1_start_x = (game_fsm_state == GAME) ? p1_current_x : 10'd100;
+wire [9:0] p1_start_y = (game_fsm_state == GAME) ? 10'd240 : 10'd100;
 wire in_p1_bounds = (next_x >= p1_start_x) && (next_x < p1_start_x + 10'd72) &&
-					(next_y >= p1_start_y) && (next_y < p1_start_y + 10'd48);
+				(next_y >= p1_start_y) && (next_y < p1_start_y + 10'd48);
 wire [4:0] p1_rom_x = (next_x - p1_start_x) >> 2;
 wire [3:0] p1_rom_y = (next_y - p1_start_y) >> 2;
 wire p1_on;
 
-wire [9:0] p2_start_x = 10'd470;
-wire [9:0] p2_start_y = 10'd240;
+wire [9:0] p2_start_x = (game_fsm_state == GAME) ? p2_current_x : 10'd470;
+wire [9:0] p2_start_y = (game_fsm_state == GAME) ? 10'd240 : 10'd100;
 wire in_p2_bounds = (next_x >= p2_start_x) && (next_x < p2_start_x + 10'd72) &&
 					(next_y >= p2_start_y) && (next_y < p2_start_y + 10'd48);
+
+
+//	p2 char rom
 wire [4:0] p2_rom_x = (next_x - p2_start_x) >> 2;
 wire [3:0] p2_rom_y = (next_y - p2_start_y) >> 2;
+
 wire p2_on;
 
-// Movable rectangles
+// Backward input indicator (on-screen debug)
+wire in_bwd_indicator = p1_bwd | p2_bwd;
+wire in_bwd_rect = (next_x >= 10'd10) && (next_x < 10'd30) && (next_y >= 10'd10) && (next_y < 10'd30);
+
+//	MENU screen boxes
 wire in_green_rect = (next_x >= green_x) && (next_x < green_x + 10'd50) && (next_y >= 10'd320) && (next_y < 10'd340);
 wire in_blue_rect  = (next_x >= blue_x)  && (next_x < blue_x + 10'd50)  && (next_y >= 10'd360) && (next_y < 10'd380);
+// Hitbox ve Hurtbox rectangles
+wire in_p1_def_hurt = (next_x >= p1_def_hurt_x) && (next_x < p1_def_hurt_x + p1_def_hurt_w) && (next_y >= p1_def_hurt_y) && (next_y < p1_def_hurt_y + p1_def_hurt_h);
+wire in_p1_atk_hit  = (next_x >= p1_atk_hit_x)  && (next_x < p1_atk_hit_x  + p1_atk_hit_w)  && (next_y >= p1_atk_hit_y)  && (next_y < p1_atk_hit_y  + p1_atk_hit_h);
+
+wire in_p2_def_hurt = (next_x >= p2_def_hurt_x) && (next_x < p2_def_hurt_x + p2_def_hurt_w) && (next_y >= p2_def_hurt_y) && (next_y < p2_def_hurt_y + p2_def_hurt_h);
+wire in_p2_atk_hit  = (next_x >= p2_atk_hit_x)  && (next_x < p2_atk_hit_x  + p2_atk_hit_w)  && (next_y >= p2_atk_hit_y)  && (next_y < p2_atk_hit_y  + p2_atk_hit_h);
+
+wire [9:0] charge_bar_width = 10'd30;
+wire [9:0] charge_bar_height = 10'd8;
+
+wire [9:0] p1_charge_bar_x = p1_start_x + 10'd21;
+wire [9:0] p1_charge_bar_y = p1_start_y - 10'd12;
+
+wire [9:0] p2_charge_bar_x = p2_start_x + 10'd21;
+wire [9:0] p2_charge_bar_y = p2_start_y - 10'd12;
+wire [9:0] p1_charge_fill_width = (p1_charge_value) / 10'd4; // Scale 0-120 to 0-30 for the bar
+wire [9:0] p2_charge_fill_width = (p2_charge_value) / 10'd4; // Scale 0-120 to 0-30 for the bar	
+wire in_p1_charge_bar_bg = (game_fsm_state == GAME) && (next_x >= p1_charge_bar_x) && (next_x < p1_charge_bar_x + charge_bar_width) &&
+                            (next_y >= p1_charge_bar_y) && (next_y < p1_charge_bar_y + charge_bar_height);
+wire in_p1_charge_bar_fill = in_p1_charge_bar_bg && (next_x < p1_charge_bar_x + p1_charge_fill_width);
+wire in_p2_charge_bar_bg = (game_fsm_state == GAME) && (next_x >= p2_charge_bar_x) && (next_x < p2_charge_bar_x + charge_bar_width) &&
+                            (next_y >= p2_charge_bar_y) && (next_y < p2_charge_bar_y + charge_bar_height);
+wire in_p2_charge_bar_fill = in_p2_charge_bar_bg && (next_x < p2_charge_bar_x + p2_charge_fill_width);
 
 // Instantiate menu and p ROMs
+// MENU P1 P2 and START ROMs
 menu menu_rom_inst (.x(menu_rom_x), .y(menu_rom_y), .menu_on(menu_on));
 p p1_rom_inst (.x(p1_rom_x), .y(p1_rom_y), .select_p2(1'b0), .pixel_on(p1_on));
 p p2_rom_inst (.x(p2_rom_x), .y(p2_rom_y), .select_p2(1'b1), .pixel_on(p2_on));
-// Instantiate digit and start ROMs for START sequence
 digit_3 d3_inst(.x(digit_small_x), .y(digit_small_y), .pixel_on(d3_on));
 digit_2 d2_inst(.x(digit_small_x), .y(digit_small_y), .pixel_on(d2_on));
 digit_1 d1_inst(.x(digit_small_x), .y(digit_small_y), .pixel_on(d1_on));
@@ -148,17 +211,19 @@ assign HEX3 = hex_vs_active ? hex3_seg : 7'b1111111;
 
 // Button synchronization and toggle logic (use vga_clk as 25MHz)
 always @(posedge vga_clk or posedge reset_vga) begin
-	if (reset_vga) begin
-		green_btn_reg <= 2'b11;
-		blue_btn_reg  <= 2'b11;
-		green_left_side <= 1'b1;
-		blue_left_side  <= 1'b0;
-	end else begin
-		green_btn_reg <= {green_btn_reg[0], KEY[1]};
-		blue_btn_reg  <= {blue_btn_reg[0],  KEY[2]};
-		if (green_btn_reg == 2'b10) green_left_side <= ~green_left_side;
-		if (blue_btn_reg  == 2'b10) blue_left_side  <= ~blue_left_side;
-	end
+    if (reset_vga) begin
+        green_btn_reg <= 2'b11;
+        blue_btn_reg  <= 2'b11;
+        green_left_side <= 1'b1;
+        blue_left_side  <= 1'b0;
+    end else begin
+        green_btn_reg <= {green_btn_reg[0], KEY[1]};
+        blue_btn_reg  <= {blue_btn_reg[0],  KEY[2]};
+        
+        // Allow em use KEY 0&1 in only MENU state to change character side selection
+        if (green_btn_reg == 2'b10 && game_fsm_state == MENU) green_left_side <= ~green_left_side;
+        if (blue_btn_reg  == 2'b10 && game_fsm_state == MENU) blue_left_side  <= ~blue_left_side;
+    end
 end
 
 
@@ -166,47 +231,79 @@ assign hex5_val = 3'd0; // 'P'
 assign hex4_val = left_side_is_p2 ? 3'd2 : 3'd1; // left side shows P2 if green is left, otherwise P1
 assign hex1_val = 3'd0; // 'P'
 assign hex0_val = right_side_is_p2 ? 3'd2 : 3'd1; // right side shows P2 if green is right, otherwise P1
-assign hex2_val = 3'd3; // 'V'
-assign hex3_val = 3'd4; // 'S'
-
+assign hex2_val = p1_state; // 'V'
+assign hex3_val = p2_state; // 'S'
 
 always @(*) begin
-	// Default START pattern: show countdown / START word depending on start_step
-	// start_step: 0 -> show '3', 1 -> '2', 2 -> '1', 3 -> 'START'
-	if (game_fsm_state == START) begin
-		// digits scaled 4x at digit_x_start/digit_y_start
-		if (in_digit_bounds) begin
-			case (start_step)
-				3'd0: color_in2 = d3_on ? 8'b111_000_00 : 8'b000_000_00;
-				3'd1: color_in2 = d2_on ? 8'b111_000_00 : 8'b000_000_00;
-				3'd2: color_in2 = d1_on ? 8'b111_000_00 : 8'b000_000_00;
-				default: color_in2 = 8'b000_000_00;
-			endcase
-		end else if (start_step == 3 && in_start_bounds) begin
-			color_in2 = start_on ? 8'b111_000_00 : 8'b000_000_00;
-		end else begin
-			color_in2 = 8'b000_000_00;
-		end
-	end else begin
-		color_in2 = (next_y >= 10'd200 && next_y < 10'd280) ? 8'b000_111_00 : 8'b000_000_00;
-	end
-	color_in3 = ((next_x >= 10'd100 && next_x < 10'd300 && next_y >= 10'd100 && next_y < 10'd200) ? 8'b111_000_00 : 8'b000_000_00);
-	color_in4 = 8'b111_111_11;
+    // START State Logic
+    if (game_fsm_state == START) begin
+        if (in_digit_bounds) begin
+            case (start_step)
+                3'd0: color_in2 = d3_on ? 8'b111_000_00 : 8'b000_000_00;
+                3'd1: color_in2 = d2_on ? 8'b111_000_00 : 8'b000_000_00;
+                3'd2: color_in2 = d1_on ? 8'b111_000_00 : 8'b000_000_00;
+                default: color_in2 = 8'b000_000_00;
+            endcase
+        end else if (start_step == 3 && in_start_bounds) begin
+            color_in2 = start_on ? 8'b111_000_00 : 8'b000_000_00;
+        end else begin
+            color_in2 = 8'b000_000_00;
+        end
+    end else begin
+        // Clear start screen background area when not in START state
+        color_in2 = (next_y >= 10'd200 && next_y < 10'd280) ? 8'b000_111_00 : 8'b000_000_00;
+    end
+    
+    // Default colors for other states
+    color_in3 = ((next_x >= 10'd100 && next_x < 10'd300 && next_y >= 10'd100 && next_y < 10'd200) ? 8'b111_000_00 : 8'b000_000_00);
+    color_in4 = 8'b111_111_11;
 
-	// MENU priority chain
-	if (in_menu_bounds && menu_on) begin
-		color_in1 = 8'b111_000_00; // menu text red
-	end else if (in_p1_bounds && p1_on) begin
-		color_in1 = 8'b111_000_00; // p1 red
-	end else if (in_p2_bounds && p2_on) begin
-		color_in1 = 8'b111_000_00; // p2 red
-	end else if (in_green_rect) begin
-		color_in1 = 8'b000_111_00; // green
-	end else if (in_blue_rect) begin
-		color_in1 = 8'b000_000_11; // blue
-	end else begin
-		color_in1 = 8'b001_001_01; // dark gray background
-	end
+    // MENU, GAME, and END State Logic
+    if (game_fsm_state == MENU) begin
+        if (in_menu_bounds && menu_on) begin
+            color_in1 = 8'b111_000_00; // Menu text (Red)
+        end else if (in_p1_bounds && p1_on) begin
+            color_in1 = 8'b111_000_00; // P1 sprite on menu (Red)
+        end else if (in_p2_bounds && p2_on) begin
+            color_in1 = 8'b000_000_11; // P2 sprite on menu (Blue)
+        end else if (in_green_rect) begin
+            color_in1 = 8'b000_111_00; // Green selection indicator
+        end else if (in_blue_rect) begin
+            color_in1 = 8'b000_000_11; // Blue selection indicator
+        end else begin
+            color_in1 = 8'b001_001_01; // Dark gray background for menu
+        end
+        
+    end else if (game_fsm_state == GAME) begin
+        if (in_p1_charge_bar_fill) begin
+            color_in1 = 8'b000_111_00; // P1 charge fill (green)
+        end else if (in_p1_charge_bar_bg) begin
+            color_in1 = 8'b011_011_01; // P1 charge bar background (gray)
+        end else if (in_p2_charge_bar_fill) begin
+            color_in1 = 8'b000_111_00; // P2 charge fill (green)
+        end else if (in_p2_charge_bar_bg) begin
+            color_in1 = 8'b011_011_01; // P2 charge bar background (gray)
+        end else if (in_p1_bounds) begin
+            color_in1 = 8'b111_000_00; // P1 main body (Solid Red)
+        end else if (in_p2_bounds) begin
+            color_in1 = 8'b000_000_11; // P2 main body (Solid Blue)
+        end else if (in_p1_atk_hit) begin
+            color_in1 = 8'b111_111_00; // P1 attack hitbox (Solid Yellow)
+        end else if (in_p1_def_hurt) begin
+            color_in1 = 8'b111_001_00; // P1 defensive hurtbox (Solid Orange)
+        end else if (in_p2_atk_hit) begin
+            color_in1 = 8'b000_111_11; // P2 attack hitbox (Solid Cyan)
+        end else if (in_p2_def_hurt) begin
+            color_in1 = 8'b001_111_11; // P2 defensive hurtbox (Solid Light Cyan)
+        end else if (next_y >= 10'd320) begin
+            color_in1 = 8'b000_111_00; // Ground (Green)
+        end else begin
+            color_in1 = 8'b001_001_01; // Game background (Dark Gray)
+        end
+        
+    end else begin
+        color_in1 = 8'b001_001_01; // Neutral background for END or undefined states
+    end
 end
 
 // Select which per-state color to display
@@ -214,7 +311,7 @@ always @(*) begin
 	case (game_fsm_state)
 		MENU:  comb_color = color_in1;
 		START: comb_color = color_in2;
-		GAME:  comb_color = color_in3;
+		GAME:  comb_color = color_in1;
 		END:   comb_color = color_in4;
 		default: comb_color = 8'd0;
 	endcase
@@ -227,6 +324,7 @@ always @(posedge vga_clk or posedge reset_vga) begin
 	else
 		color_in_reg <= comb_color;
 end
+// Instantiate prescalers for 1Hz, 60Hz, and VGA clock
 prescaler #(.div_param(50000000)) clock_1hz(
 		.clk(CLOCK_50),
 		.out(clk_1hz)
@@ -240,18 +338,19 @@ prescaler #(.div_param(833333)) clock_60_hz(
         .out(clk_60hz)
     );	
 wire internal_rst_char_position;
-wire p1_state, p2_state;
+wire [2:0] p1_state, p2_state;
 wire [6:0] p1_frame, p2_frame;
 wire [1:0] p1_block, p2_block;
 
 game_logic game_logic_inst(
-	.clk(vga_clk),
-	.rst(reset_vga),
+	.clk_60hz(clk_60hz),
+	.clk_50(CLOCK_50),
+	.rst(reset_vga | (game_fsm_state != GAME)),
 	.p1_forward(p1_fwd),
-	.p1_backward(p1_bwd),
-	.p1_attack(p1_atk),
 	.p2_forward(p2_fwd),
+	.p1_backward(p1_bwd),
 	.p2_backward(p2_bwd),
+	.p1_attack(p1_atk),
 	.p2_attack(p2_atk),
 	.p1_state(p1_state),
 	.p2_state(p2_state),
@@ -261,6 +360,34 @@ game_logic game_logic_inst(
 	.p2_block(p2_block),
 	.p1_ko_num(p1_ko_num),
 	.p2_ko_num(p2_ko_num),
+	.p1_current_x(p1_current_x),
+	.p2_current_x(p2_current_x),
+	.p1_def_hurt_x(p1_def_hurt_x),
+	.p1_def_hurt_y(p1_def_hurt_y),
+	.p1_def_hurt_w(p1_def_hurt_w),
+	.p1_def_hurt_h(p1_def_hurt_h),
+	.p1_def_rec_hurt_x(p1_def_rec_hurt_x),
+	.p1_def_rec_hurt_y(p1_def_rec_hurt_y),
+	.p1_def_rec_hurt_w(p1_def_rec_hurt_w),
+	.p1_def_rec_hurt_h(p1_def_rec_hurt_h),
+	.p1_atk_hit_x(p1_atk_hit_x),
+	.p1_atk_hit_y(p1_atk_hit_y),
+	.p1_atk_hit_w(p1_atk_hit_w),
+	.p1_atk_hit_h(p1_atk_hit_h),
+	.p1_charge_value(p1_charge_value),
+	.p2_charge_value(p2_charge_value),
+	.p2_def_hurt_x(p2_def_hurt_x),
+	.p2_def_hurt_y(p2_def_hurt_y),
+	.p2_def_hurt_w(p2_def_hurt_w),
+	.p2_def_hurt_h(p2_def_hurt_h),
+	.p2_def_rec_hurt_x(p2_def_rec_hurt_x),
+	.p2_def_rec_hurt_y(p2_def_rec_hurt_y),
+	.p2_def_rec_hurt_w(p2_def_rec_hurt_w),
+	.p2_def_rec_hurt_h(p2_def_rec_hurt_h),
+	.p2_atk_hit_x(p2_atk_hit_x),
+	.p2_atk_hit_y(p2_atk_hit_y),
+	.p2_atk_hit_w(p2_atk_hit_w),
+	.p2_atk_hit_h(p2_atk_hit_h),
 	.internal_rst_char_position(internal_rst_char_position)
 );
 
@@ -292,7 +419,7 @@ always @(*) begin
 			//burası GPIO ile değişecek işte ikisi de fwd ve atk inputları olacak
 			//henüz debuglayabilmek için bıraktım
 			if (green_left_side != blue_left_side) begin
-				if ((green_left_side && SW[0]) || (!green_left_side && SW[1])) begin
+				if ((green_left_side && SW[0]) || (!green_left_side && SW[0])) begin
 					game_fsm_next_state = START;
 				end
 			end
@@ -302,8 +429,11 @@ always @(*) begin
 			if (start_step >= 3'd4) game_fsm_next_state = GAME;
 		end
 		GAME: begin
-			if (p1_ko_num==3 || p2_ko_num==3) game_fsm_next_state = END;
-			else if (p1_ko_num!=3 && p2_ko_num!=3) game_fsm_next_state = START;
+			if (p1_ko_num == 3 || p2_ko_num == 3) begin
+				game_fsm_next_state = END;
+			end else begin
+				game_fsm_next_state = GAME; // K.O. yoksa oyunda kalmaya devam et!
+			end
 		end
 		END: begin
 			//if(any P1 input) game_fsm_next_state = MENU;
@@ -318,19 +448,19 @@ always @(*) begin//p1 p2 input değiş tokuş için GPIOların yarısı değişe
 
 	// Map physical GPIO pins to logical player inputs according to orientation
 	if (green_left_side) begin
-		p1_fwd  = GPIO[0];
-		p1_bwd = GPIO[1];
-		p1_atk   = GPIO[2];
-		p2_fwd  = GPIO[3];
-		p2_bwd = GPIO[4];
-		p2_atk   = GPIO[5];
+		p1_fwd  = ~KEY[0];
+		p1_bwd = ~KEY[1];
+		p1_atk   = ~KEY[2];
+		p2_fwd  = 1'b0;
+		p2_bwd = 1'b0;
+		p2_atk   = 1'b0;
 	end else begin
-		p1_fwd  = GPIO[3];
-		p1_bwd = GPIO[4];
-		p1_atk   = GPIO[5];
-		p2_fwd  = GPIO[0];
-		p2_bwd = GPIO[1];
-		p2_atk   = GPIO[2];
+		p2_fwd  = ~KEY[0];
+		p2_bwd = ~KEY[1];
+		p2_atk   = ~KEY[2];
+		p1_fwd  = 1'b0;
+		p1_bwd = 1'b0;
+		p1_atk   = 1'b0;
 	end
 end
 // Clock the FSM state on vga_clk

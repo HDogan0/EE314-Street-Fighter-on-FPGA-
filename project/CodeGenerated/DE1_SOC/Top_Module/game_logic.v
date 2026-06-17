@@ -1,6 +1,6 @@
 `include "states.vh"
 module game_logic(
-input clk, rst,
+input clk_60hz, clk_50, rst, // clk_60hz: shared 60Hz, clk_50: system 50MHz
 input p1_forward, p2_forward,
 input p1_backward, p2_backward,
 input p1_attack, p2_attack,
@@ -8,45 +8,50 @@ output reg [2:0] p1_state, p2_state,//al ver değişkeni top modülde takip içi
 output reg [6:0] p1_frame, p2_frame,//başka çözüm yolu bulamadım daha kısa ve kolay
 output reg [1:0] p1_block, p2_block,
 output reg [1:0] p1_ko_num, p2_ko_num,
+output wire [7:0] p1_charge_value, p2_charge_value,
+output wire [9:0] p1_current_x, p2_current_x,
+output wire [9:0] p1_def_hurt_x, p1_def_hurt_y, p1_def_hurt_w, p1_def_hurt_h,
+output wire [9:0] p1_def_rec_hurt_x, p1_def_rec_hurt_y, p1_def_rec_hurt_w, p1_def_rec_hurt_h,
+output wire [9:0] p1_atk_hit_x, p1_atk_hit_y, p1_atk_hit_w, p1_atk_hit_h,
+output wire [9:0] p2_def_hurt_x, p2_def_hurt_y, p2_def_hurt_w, p2_def_hurt_h,
+output wire [9:0] p2_def_rec_hurt_x, p2_def_rec_hurt_y, p2_def_rec_hurt_w, p2_def_rec_hurt_h,
+output wire [9:0] p2_atk_hit_x, p2_atk_hit_y, p2_atk_hit_w, p2_atk_hit_h,
 output reg internal_rst_char_position
 );
 
 reg internal_rst;
-wire int_clk;//alttaki logic çok hızlı döndürmesin diye ama yeterli hızlı olmayabilir kontrol edilsin
-localparam SIXTY_HZ_DIV = 833333;
-prescaler #(.div_param(SIXTY_HZ_DIV)) clock_60hz(
-        .clk(clk),
-        .out(int_clk)
-    );
+
 //  attack logic for p1
 wire p1_special_attack, p1_default_attack;
 attack_input attack_char_p1(
-    .clk(clk),
+    .clk_60hz(clk_60hz),
     .attack(p1_attack),
     .rst(rst),
     .special_attack(p1_special_attack),
-    .default_attack(p1_default_attack)
+    .default_attack(p1_default_attack),
+    .charge_value(p1_charge_value)
 );
 
 //  attack logic for p2
 wire p2_special_attack, p2_default_attack;
 attack_input attack_char_p2(
-    .clk(clk),
+    .clk_60hz(clk_60hz),
     .attack(p2_attack),
     .rst(rst),
     .special_attack(p2_special_attack),
-    .default_attack(p2_default_attack)
+    .default_attack(p2_default_attack),
+    .charge_value(p2_charge_value)
 );
 
 //  char. instantiation for p1
 reg p1_hit_flag, p1_special_hit_flag;
 wire p1_KO;
-wire p1_CS;
+wire [2:0] p1_CS;
 wire [6:0] p1_frame_tick;
 wire [1:0] p1_remaining_blockings;
 character p1_character(
-    .clk(clk),
-    .rst(rst |internal_rst),
+    .clk_60hz(clk_60hz),
+    .rst(rst | internal_rst),
     .default_attack_trigger(p1_default_attack),
     .special_attack_trigger(p1_special_attack),
     .move_forward(p1_forward),
@@ -63,12 +68,12 @@ character p1_character(
 //  char. instantiation for p2
 reg p2_hit_flag, p2_special_hit_flag;
 wire p2_KO;
-wire p2_CS;
+wire [2:0] p2_CS;
 wire [6:0] p2_frame_tick;
 wire [1:0] p2_remaining_blockings;
 character p2_character( 
-    .clk(clk),
-    .rst(rst |internal_rst),
+    .clk_60hz(clk_60hz),
+    .rst(rst | internal_rst),
     .default_attack_trigger(p2_default_attack),
     .special_attack_trigger(p2_special_attack),
     .move_forward(p2_forward),
@@ -81,20 +86,10 @@ character p2_character(
     .frame_tick(p2_frame_tick),
     .remaining_blockings(p2_remaining_blockings)
 );
-wire p1_x;
-wire p1_atk_hit_x, p1_atk_hit_y, 
-p1_atk_hit_h, p1_atk_hit_w, p1_def_hurt_x,
-p1_def_hurt_y, p1_def_hurt_h, p1_def_hurt_w,
-p1_def_rec_hurt_x, p1_def_rec_hurt_y, 
-p1_def_rec_hurt_h, p1_def_rec_hurt_w;
+wire [9:0] p1_x;
 wire hit_success_p1;
 
-wire p2_x;
-wire p2_atk_hit_x, p2_atk_hit_y, 
-p2_atk_hit_h, p2_atk_hit_w, p2_def_hurt_x,
-p2_def_hurt_y, p2_def_hurt_h, p2_def_hurt_w,
-p2_def_rec_hurt_x, p2_def_rec_hurt_y, 
-p2_def_rec_hurt_h, p2_def_rec_hurt_w;
+wire [9:0] p2_x;
 wire hit_success_p2;
 wire p2_default_additional_hurt_box= (p2_CS == `s_default_attack && p2_frame_tick >=5);//atak aktiflik ve sonrası
 wire p2_special_additional_hurt_box= (p2_CS == `s_special_attack && p2_frame_tick >= 14);
@@ -118,6 +113,7 @@ hurtbox hurtbox_p1(
 hitbox hitbox_p1(
     .player_state(p1_CS),
     .player_x(p1_x),
+    .is_facing_left(p1_x > p2_x), // P1 is facing left if its x position is greater than P2's x position
     .player_hitbox_x(p1_atk_hit_x),
     .player_hitbox_y(p1_atk_hit_y),
     .player_hitbox_w(p1_atk_hit_w),
@@ -139,6 +135,7 @@ hurtbox hurtbox_p2(
 hitbox hitbox_p2(
     .player_state(p2_CS),
     .player_x(p2_x),
+    .is_facing_left(p2_x > p1_x), // P2 is facing left if its x position is greater than P1's x position
     .player_hitbox_x(p2_atk_hit_x),
     .player_hitbox_y(p2_atk_hit_y),
     .player_hitbox_w(p2_atk_hit_w),
@@ -179,32 +176,49 @@ collision_detector p2_coldet(
     .hit(hit_success_p2)
 );
 
-always @(*) begin 
-    if(p1_CS == `s_default_attack && p1_frame_tick >= 5 && p1_frame_tick < 7) begin 
-        if (hit_success_p1)begin p1_hit_flag<=1'b1;end
-       // if(p2_default_additional_hurt_box) begin 
-        //    if (hit_success_p1&&hit_success_p2) begin p1_hit_flag=<1; p2_hit_flag=<1; end 
-            // sadece 2nin hitlemesine bakmaya gerek yok zaten öbür loopda bakılıcak
-        //end
-        //else if(p2_special_additional_hurt_box) begin 
-         //   if (hit_success_p1&&hit_success_p2) begin p1_hit_flag=<1; p2_special_hit_flag=<1; end
-        //end // bunlara ihtiyaç olmadığını düşünüyorum. sadece ikisinin de special caseine ayrı baksak yeter orda
-        //sıfırlamaka lazım roundu onun dışında ayrı ayrı hitleyip hitlememeye baksak yeterli
-    end
-    else if(p1_CS == `s_special_attack && p1_frame_tick >= 14 && p1_frame_tick < 16) begin 
-        if (hit_success_p1)begin p1_special_hit_flag<=1'b1;end
-    end
-    
-    if(p2_CS == `s_default_attack && p2_frame_tick >= 5 && p2_frame_tick < 7) begin 
-        if (hit_success_p2)begin p2_hit_flag<=1'b1;end
-    end
-    
-    else if(p2_CS == `s_special_attack && p2_frame_tick >= 14 && p2_frame_tick < 16) begin 
-        if (hit_success_p2)begin p2_special_hit_flag<=1'b1;end
+char_positioning p1_p2_pos(
+    .game_clk(clk_60hz),
+    .rst(rst | internal_rst),
+    .p_facing_left_state(p2_CS),
+    .p_facing_right_state(p1_CS),
+    .px_facing_left(p2_x),
+    .px_facing_right(p1_x)
+);
+
+assign p1_current_x = p1_x;
+assign p2_current_x = p2_x;
+
+// Vuruş (Hit) Bayraklarını Latch'ten Kurtarıp Flip-Flop'a Çevirdik
+always @(posedge clk_60hz or posedge rst) begin 
+    if (rst) begin
+        p1_hit_flag <= 1'b0;
+        p1_special_hit_flag <= 1'b0;
+        p2_hit_flag <= 1'b0;
+        p2_special_hit_flag <= 1'b0;
+    end else begin
+        // Her karede varsayılan olarak sıfırla (Sadece 1 clock cycle aktif kalmasını sağlar)
+        p1_hit_flag <= 1'b0;
+        p1_special_hit_flag <= 1'b0;
+        p2_hit_flag <= 1'b0;
+        p2_special_hit_flag <= 1'b0;
+
+        if(p1_CS == `s_default_attack && p1_frame_tick >= 5 && p1_frame_tick < 7) begin 
+            if (hit_success_p1) p1_hit_flag <= 1'b1;
+        end
+        else if(p1_CS == `s_special_attack && p1_frame_tick >= 14 && p1_frame_tick < 16) begin 
+            if (hit_success_p1) p1_special_hit_flag <= 1'b1;
+        end
+        
+        if(p2_CS == `s_default_attack && p2_frame_tick >= 5 && p2_frame_tick < 7) begin 
+            if (hit_success_p2) p2_hit_flag <= 1'b1;
+        end
+        else if(p2_CS == `s_special_attack && p2_frame_tick >= 14 && p2_frame_tick < 16) begin 
+            if (hit_success_p2) p2_special_hit_flag <= 1'b1;
+        end
     end
 end
 
-always @(posedge int_clk or posedge rst) begin //karşılıklı special hit
+always @(posedge clk_60hz or posedge rst) begin //karşılıklı special hit
     if (rst) begin
         internal_rst <= 0;
     end
