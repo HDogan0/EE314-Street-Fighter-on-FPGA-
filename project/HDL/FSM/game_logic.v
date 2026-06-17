@@ -22,7 +22,7 @@ prescaler #(.div_param(SIXTY_HZ_DIV)) clock_60hz(
 wire p1_special_attack, p1_default_attack;
 attack_input attack_char_p1(
     .clk(clk),
-    .btn_in(p1_attack),
+    .attack(p1_attack),
     .rst(rst),
     .special_attack(p1_special_attack),
     .default_attack(p1_default_attack)
@@ -32,14 +32,14 @@ attack_input attack_char_p1(
 wire p2_special_attack, p2_default_attack;
 attack_input attack_char_p2(
     .clk(clk),
-    .btn_in(p2_attack),
+    .attack(p2_attack),
     .rst(rst),
     .special_attack(p2_special_attack),
     .default_attack(p2_default_attack)
 );
 
 //  char. instantiation for p1
-wire p1_hit_flag, p1_special_hit_flag;
+reg p1_hit_flag, p1_special_hit_flag;
 wire p1_KO;
 wire p1_CS;
 wire [6:0] p1_frame_tick;
@@ -61,7 +61,7 @@ character p1_character(
 );
 
 //  char. instantiation for p2
-wire p2_hit_flag, p2_special_hit_flag;
+reg p2_hit_flag, p2_special_hit_flag;
 wire p2_KO;
 wire p2_CS;
 wire [6:0] p2_frame_tick;
@@ -96,11 +96,11 @@ p2_def_hurt_y, p2_def_hurt_h, p2_def_hurt_w,
 p2_def_rec_hurt_x, p2_def_rec_hurt_y, 
 p2_def_rec_hurt_h, p2_def_rec_hurt_w;
 wire hit_success_p2;
-wire p2_default_additional_hurt_box= (p2_CS == 's_default_attack && p2_frame_tick >=5);//atak aktiflik ve sonrası
-wire p2_special_additional_hurt_box= (P2_CS == 's_special_attack && p2_frame_tick >= 14);
+wire p2_default_additional_hurt_box= (p2_CS == `s_default_attack && p2_frame_tick >=5);//atak aktiflik ve sonrası
+wire p2_special_additional_hurt_box= (p2_CS == `s_special_attack && p2_frame_tick >= 14);
 
-wire p1_default_additional_hurt_box= (p1_CS == 's_default_attack && p1_frame_tick >=5);//atak aktiflik ve sonrası
-wire p1_special_additional_hurt_box= (P1_CS == 's_special_attack && p1_frame_tick >= 14);
+wire p1_default_additional_hurt_box= (p1_CS == `s_default_attack && p1_frame_tick >=5);//atak aktiflik ve sonrası
+wire p1_special_additional_hurt_box= (p1_CS == `s_special_attack && p1_frame_tick >= 14);
 
 // hitbox ve hurtbox instantiatelenecek
 hurtbox hurtbox_p1(
@@ -179,9 +179,18 @@ collision_detector p2_coldet(
     .hit(hit_success_p2)
 );
 
+char_positioning p1_p2_pos(
+    .clk(clk),
+    .rst(rst | internal_rst),
+    .p_facing_left_state(p1_CS),
+    .p_facing_right_state(p2_CS),
+    .px_facing_left(p1_x),
+    .px_facing_right(p2_x)
+);
+
 always @(*) begin 
-    if(p1_CS == 's_default_attack && p1_frame_tick >= 5 && p1_frame_tick < 7) begin 
-        if (hit_success_p1): p1_hit_flag=<1;
+    if(p1_CS == `s_default_attack && p1_frame_tick >= 5 && p1_frame_tick < 7) begin 
+        if (hit_success_p1)begin p1_hit_flag<=1'b1;end
        // if(p2_default_additional_hurt_box) begin 
         //    if (hit_success_p1&&hit_success_p2) begin p1_hit_flag=<1; p2_hit_flag=<1; end 
             // sadece 2nin hitlemesine bakmaya gerek yok zaten öbür loopda bakılıcak
@@ -191,16 +200,16 @@ always @(*) begin
         //end // bunlara ihtiyaç olmadığını düşünüyorum. sadece ikisinin de special caseine ayrı baksak yeter orda
         //sıfırlamaka lazım roundu onun dışında ayrı ayrı hitleyip hitlememeye baksak yeterli
     end
-    else if(p1_CS == 's_special_attack && p1_frame_tick >= 14 && p1_frame_tick < 16) begin 
-        if (hit_success_p1): p1_special_hit_flag=<1;
+    else if(p1_CS == `s_special_attack && p1_frame_tick >= 14 && p1_frame_tick < 16) begin 
+        if (hit_success_p1)begin p1_special_hit_flag<=1'b1;end
     end
     
-    if(p2_CS == 's_default_attack && p2_frame_tick >= 5 && p2_frame_tick < 7) begin 
-        if (hit_success_p2): p2_hit_flag=<1;
+    if(p2_CS == `s_default_attack && p2_frame_tick >= 5 && p2_frame_tick < 7) begin 
+        if (hit_success_p2)begin p2_hit_flag<=1'b1;end
     end
     
-    else if(p2_CS == 's_special_attack && p2_frame_tick >= 14 && p2_frame_tick < 16) begin 
-        if (hit_success_p2): p2_special_hit_flag=<1;
+    else if(p2_CS == `s_special_attack && p2_frame_tick >= 14 && p2_frame_tick < 16) begin 
+        if (hit_success_p2)begin p2_special_hit_flag<=1'b1;end
     end
 end
 
@@ -208,11 +217,11 @@ always @(posedge int_clk or posedge rst) begin //karşılıklı special hit
     if (rst) begin
         internal_rst <= 0;
     end
-    else if(p1_CS == 's_special_attack && p1_frame_tick >= 14 && p1_frame_tick < 16) begin 
-        if (hit_success_p1&&hit_success_p2) internal_rst<=1;
+    else if(p1_CS == `s_special_attack && p1_frame_tick >= 14 && p1_frame_tick < 16) begin 
+        if (hit_success_p1&&hit_success_p2)begin internal_rst<=1;end
     end
-    else if(p2_CS == 's_special_attack && p2_frame_tick >= 14 && p2_frame_tick < 16) begin 
-        if (hit_success_p1&&hit_success_p2) internal_rst<=1;
+    else if(p2_CS == `s_special_attack && p2_frame_tick >= 14 && p2_frame_tick < 16) begin 
+        if (hit_success_p1&&hit_success_p2)begin internal_rst<=1;end
     end
     else if(p1_KO) begin//biri KO olunca rounda sayısı artsın ama başa dönsün diye
         p1_ko_num<=p1_ko_num+1;
