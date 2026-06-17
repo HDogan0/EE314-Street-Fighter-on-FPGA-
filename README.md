@@ -9,3 +9,4 @@ NOT:menu, start, p, digit_1, digit_2, digit_3 modülleri ekrana yazdırmak için
 >>>>>>> 8edf4b4a0012f2c1fc7d1f75bfa69c627b84256b
 
 NOT: Debug statei yazmayı unuttum. en son ekleriz hele bi çalışsın da.
+yeni kodlar code generated da
