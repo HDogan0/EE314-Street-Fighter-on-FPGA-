@@ -177,10 +177,10 @@ collision_detector p2_coldet(
 char_positioning p1_p2_pos(
     .clk(clk),
     .rst(rst | internal_rst),
-    .p_facing_left_state(p1_CS),
-    .p_facing_right_state(p2_CS),
-    .px_facing_left(p1_x),
-    .px_facing_right(p2_x)
+    .p_facing_left_state(p2_CS),
+    .p_facing_right_state(p1_CS),
+    .px_facing_left(p2_x),
+    .px_facing_right(p1_x)
 );
 
 always @(*) begin 
