@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at Top_Module.v(33): object "VGA_CLK" differs only in case from object "vga_clk" in the same scope File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 33
+Warning (10268): Verilog HDL information at char_positioning.v(20): always construct contains both blocking and non-blocking assignments File: C:/Users/kljke/Downloads/CodeGenerated/DE1_SOC/Top_Module/char_positioning.v Line: 20

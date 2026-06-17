@@ -1,0 +1,43 @@
+
+State Machine - |Top_Module|game_fsm_state
+Name game_fsm_state.END game_fsm_state.GAME game_fsm_state.START game_fsm_state.MENU 
+game_fsm_state.MENU 0 0 0 0 
+game_fsm_state.START 0 0 1 1 
+game_fsm_state.GAME 0 1 0 1 
+game_fsm_state.END 1 0 0 1 
+
+State Machine - |Top_Module|vga_driver:vga_driver_inst|v_state
+Name v_state.V_BACK_STATE v_state.V_PULSE_STATE v_state.V_FRONT_STATE v_state.V_ACTIVE_STATE 
+v_state.V_ACTIVE_STATE 0 0 0 0 
+v_state.V_FRONT_STATE 0 0 1 1 
+v_state.V_PULSE_STATE 0 1 0 1 
+v_state.V_BACK_STATE 1 0 0 1 
+
+State Machine - |Top_Module|vga_driver:vga_driver_inst|h_state
+Name h_state.H_BACK_STATE h_state.H_PULSE_STATE h_state.H_FRONT_STATE h_state.H_ACTIVE_STATE 
+h_state.H_ACTIVE_STATE 0 0 0 0 
+h_state.H_FRONT_STATE 0 0 1 1 
+h_state.H_PULSE_STATE 0 1 0 1 
+h_state.H_BACK_STATE 1 0 0 1 
+
+State Machine - |Top_Module|game_logic:game_logic_inst|character:p2_character|state
+Name state.s_guard_break state.s_blockstun state.s_hitstun state.s_special_attack state.s_default_attack state.s_move_backward state.s_move_forward state.s_idle 
+state.s_idle 0 0 0 0 0 0 0 0 
+state.s_move_forward 0 0 0 0 0 0 1 1 
+state.s_move_backward 0 0 0 0 0 1 0 1 
+state.s_default_attack 0 0 0 0 1 0 0 1 
+state.s_special_attack 0 0 0 1 0 0 0 1 
+state.s_hitstun 0 0 1 0 0 0 0 1 
+state.s_blockstun 0 1 0 0 0 0 0 1 
+state.s_guard_break 1 0 0 0 0 0 0 1 
+
+State Machine - |Top_Module|game_logic:game_logic_inst|character:p1_character|state
+Name state.s_guard_break state.s_blockstun state.s_hitstun state.s_special_attack state.s_default_attack state.s_move_backward state.s_move_forward state.s_idle 
+state.s_idle 0 0 0 0 0 0 0 0 
+state.s_move_forward 0 0 0 0 0 0 1 1 
+state.s_move_backward 0 0 0 0 0 1 0 1 
+state.s_default_attack 0 0 0 0 1 0 0 1 
+state.s_special_attack 0 0 0 1 0 0 0 1 
+state.s_hitstun 0 0 1 0 0 0 0 1 
+state.s_blockstun 0 1 0 0 0 0 0 1 
+state.s_guard_break 1 0 0 0 0 0 0 1 
