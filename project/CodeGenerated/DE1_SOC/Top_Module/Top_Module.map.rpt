@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Top_Module
-Thu Jun 18 23:29:50 2026
+Fri Jun 19 00:34:45 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 18 23:29:50 2026          ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 19 00:34:44 2026          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; Top_Module                                     ;
 ; Top-level Entity Name           ; Top_Module                                     ;
@@ -193,7 +193,8 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
-;     Processors 8-16        ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -224,31 +225,31 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                     ;
-+---------------------------------------------+---------------------------------------------------+
-; Resource                                    ; Usage                                             ;
-+---------------------------------------------+---------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 785                                               ;
-;                                             ;                                                   ;
-; Combinational ALUT usage for logic          ; 1224                                              ;
-;     -- 7 input functions                    ; 6                                                 ;
-;     -- 6 input functions                    ; 337                                               ;
-;     -- 5 input functions                    ; 199                                               ;
-;     -- 4 input functions                    ; 153                                               ;
-;     -- <=3 input functions                  ; 529                                               ;
-;                                             ;                                                   ;
-; Dedicated logic registers                   ; 258                                               ;
-;                                             ;                                                   ;
-; I/O pins                                    ; 135                                               ;
-;                                             ;                                                   ;
-; Total DSP Blocks                            ; 0                                                 ;
-;                                             ;                                                   ;
-; Maximum fan-out node                        ; vga_driver:vga_driver_inst|h_state.H_ACTIVE_STATE ;
-; Maximum fan-out                             ; 116                                               ;
-; Total fan-out                               ; 5977                                              ;
-; Average fan-out                             ; 3.34                                              ;
-+---------------------------------------------+---------------------------------------------------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimate of Logic utilization (ALMs needed) ; 751                 ;
+;                                             ;                     ;
+; Combinational ALUT usage for logic          ; 1177                ;
+;     -- 7 input functions                    ; 8                   ;
+;     -- 6 input functions                    ; 314                 ;
+;     -- 5 input functions                    ; 193                 ;
+;     -- 4 input functions                    ; 143                 ;
+;     -- <=3 input functions                  ; 519                 ;
+;                                             ;                     ;
+; Dedicated logic registers                   ; 258                 ;
+;                                             ;                     ;
+; I/O pins                                    ; 135                 ;
+;                                             ;                     ;
+; Total DSP Blocks                            ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; game_fsm_state.GAME ;
+; Maximum fan-out                             ; 106                 ;
+; Total fan-out                               ; 5758                ;
+; Average fan-out                             ; 3.31                ;
++---------------------------------------------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -256,26 +257,25 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Entity Name        ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
-; |Top_Module                          ; 1224 (466)          ; 258 (21)                  ; 0                 ; 0          ; 135  ; 0            ; |Top_Module                                                         ; Top_Module         ; work         ;
+; |Top_Module                          ; 1177 (407)          ; 258 (21)                  ; 0                 ; 0          ; 135  ; 0            ; |Top_Module                                                         ; Top_Module         ; work         ;
 ;    |digit_1:d1_inst|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_1:d1_inst                                         ; digit_1            ; work         ;
 ;    |digit_2:d2_inst|                 ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_2:d2_inst                                         ; digit_2            ; work         ;
 ;    |digit_3:d3_inst|                 ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_3:d3_inst                                         ; digit_3            ; work         ;
-;    |game_logic:game_logic_inst|      ; 493 (45)            ; 99 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst                              ; game_logic         ; work         ;
+;    |game_logic:game_logic_inst|      ; 504 (47)            ; 99 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst                              ; game_logic         ; work         ;
 ;       |attack_input:attack_char_p1|  ; 23 (23)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p1  ; attack_input       ; work         ;
 ;       |attack_input:attack_char_p2|  ; 23 (23)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p2  ; attack_input       ; work         ;
-;       |char_positioning:p1_p2_pos|   ; 145 (145)           ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos   ; char_positioning   ; work         ;
-;       |character:p1_character|       ; 50 (50)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p1_character       ; character          ; work         ;
-;       |character:p2_character|       ; 50 (50)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p2_character       ; character          ; work         ;
-;       |collision_detector:p1_coldet| ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p1_coldet ; collision_detector ; work         ;
-;       |collision_detector:p2_coldet| ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p2_coldet ; collision_detector ; work         ;
-;       |hitbox:hitbox_p1|             ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1             ; hitbox             ; work         ;
+;       |char_positioning:p1_p2_pos|   ; 139 (139)           ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos   ; char_positioning   ; work         ;
+;       |character:p1_character|       ; 61 (61)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p1_character       ; character          ; work         ;
+;       |character:p2_character|       ; 54 (54)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p2_character       ; character          ; work         ;
+;       |collision_detector:p1_coldet| ; 51 (51)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p1_coldet ; collision_detector ; work         ;
+;       |collision_detector:p2_coldet| ; 55 (55)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p2_coldet ; collision_detector ; work         ;
+;       |hitbox:hitbox_p1|             ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1             ; hitbox             ; work         ;
 ;       |hitbox:hitbox_p2|             ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p2             ; hitbox             ; work         ;
 ;       |hurtbox:hurtbox_p1|           ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hurtbox:hurtbox_p1           ; hurtbox            ; work         ;
 ;       |hurtbox:hurtbox_p2|           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hurtbox:hurtbox_p2           ; hurtbox            ; work         ;
-;    |hexto7seg:hex3_seg_inst|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|hexto7seg:hex3_seg_inst                                 ; hexto7seg          ; work         ;
 ;    |menu:menu_rom_inst|              ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|menu:menu_rom_inst                                      ; menu               ; work         ;
 ;    |p:p1_rom_inst|                   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|p:p1_rom_inst                                           ; p                  ; work         ;
-;    |p:p2_rom_inst|                   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|p:p2_rom_inst                                           ; p                  ; work         ;
+;    |p:p2_rom_inst|                   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|p:p2_rom_inst                                           ; p                  ; work         ;
 ;    |prescaler:clock_1hz|             ; 44 (44)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_1hz                                     ; prescaler          ; work         ;
 ;    |prescaler:clock_60_hz|           ; 46 (46)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_60_hz                                   ; prescaler          ; work         ;
 ;    |prescaler:vga_clock|             ; 39 (39)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|prescaler:vga_clock                                     ; prescaler          ; work         ;
@@ -416,7 +416,7 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------+---------+
 ; Inverted Register                                                        ; Fan out ;
 +--------------------------------------------------------------------------+---------+
-; green_left_side                                                          ; 46      ;
+; green_left_side                                                          ; 48      ;
 ; green_btn_reg[1]                                                         ; 1       ;
 ; green_btn_reg[0]                                                         ; 2       ;
 ; blue_btn_reg[1]                                                          ; 1       ;
@@ -425,15 +425,15 @@ Encoding Type:  One-Hot
 ; game_logic:game_logic_inst|character:p1_character|remaining_blockings[0] ; 4       ;
 ; game_logic:game_logic_inst|character:p2_character|remaining_blockings[1] ; 3       ;
 ; game_logic:game_logic_inst|character:p2_character|remaining_blockings[0] ; 4       ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[7]  ; 31      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[8]  ; 26      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[6]  ; 37      ;
 ; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[4]  ; 21      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[3]  ; 19      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[2]  ; 22      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[2] ; 20      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[6]  ; 33      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[7]  ; 28      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[8]  ; 23      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[6] ; 33      ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[5] ; 28      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[3]  ; 21      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_left[2]  ; 18      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[2] ; 21      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[5] ; 27      ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[6] ; 32      ;
 ; Total number of inverted registers = 18                                  ;         ;
 +--------------------------------------------------------------------------+---------+
 
@@ -455,9 +455,9 @@ Encoding Type:  One-Hot
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1|player_hitbox_x[4]            ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_right ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p2|player_hitbox_x[9]            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1|player_hitbox_x[7]            ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_right ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1|player_hitbox_x[9]            ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_left  ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_right ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Top_Module|Selector8                                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Top_Module|Selector10                                                                ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_Module|color_in1[4]                                                              ;
@@ -650,7 +650,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 113                         ;
 ;     plain             ; 9                           ;
 ; arriav_io_obuf        ; 36                          ;
-; arriav_lcell_comb     ; 1227                        ;
+; arriav_lcell_comb     ; 1180                        ;
 ;     arith             ; 361                         ;
 ;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 258                         ;
@@ -658,20 +658,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 22                          ;
 ;         4 data inputs ; 10                          ;
 ;         5 data inputs ; 4                           ;
-;     extend            ; 6                           ;
-;         7 data inputs ; 6                           ;
-;     normal            ; 860                         ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 811                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 5                           ;
-;         2 data inputs ; 77                          ;
-;         3 data inputs ; 101                         ;
-;         4 data inputs ; 143                         ;
-;         5 data inputs ; 195                         ;
-;         6 data inputs ; 337                         ;
+;         2 data inputs ; 72                          ;
+;         3 data inputs ; 96                          ;
+;         4 data inputs ; 133                         ;
+;         5 data inputs ; 189                         ;
+;         6 data inputs ; 314                         ;
 ; boundary_port         ; 135                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.20                        ;
-; Average LUT depth     ; 5.46                        ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 5.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -690,7 +690,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Jun 18 23:29:42 2026
+    Info: Processing started: Fri Jun 19 00:34:36 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Top_Module -c Top_Module
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -736,8 +736,8 @@ Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(192): created 
 Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(193): created implicit net for "d2_on" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 193
 Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(194): created implicit net for "d1_on" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 194
 Warning (10236): Verilog HDL Implicit Net warning at Top_Module.v(195): created implicit net for "start_on" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 195
-Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(61): created implicit net for "p1_attack_success" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 61
-Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(83): created implicit net for "p2_attack_success" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 83
+Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(62): created implicit net for "p1_attack_success" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 62
+Warning (10236): Verilog HDL Implicit Net warning at game_logic.v(86): created implicit net for "p2_attack_success" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 86
 Info (12127): Elaborating entity "Top_Module" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at Top_Module.v(82): object "color_in3" assigned a value but never read File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 82
 Warning (10036): Verilog HDL or VHDL warning at Top_Module.v(157): object "in_bwd_indicator" assigned a value but never read File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 157
@@ -776,14 +776,14 @@ Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:clock_1hz"
 Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:vga_clock" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 335
 Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:clock_60_hz" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 339
 Info (12128): Elaborating entity "game_logic" for hierarchy "game_logic:game_logic_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 394
-Warning (10230): Verilog HDL assignment warning at game_logic.v(232): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 232
 Warning (10230): Verilog HDL assignment warning at game_logic.v(236): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 236
+Warning (10230): Verilog HDL assignment warning at game_logic.v(240): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 240
 Info (12128): Elaborating entity "attack_input" for hierarchy "game_logic:game_logic_inst|attack_input:attack_char_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 33
 Warning (10230): Verilog HDL assignment warning at attack_input.v(40): truncated value with size 32 to match size of target (8) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/attack_input.v Line: 40
-Info (12128): Elaborating entity "character" for hierarchy "game_logic:game_logic_inst|character:p1_character" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 66
-Warning (10230): Verilog HDL assignment warning at character.v(224): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 224
-Warning (10230): Verilog HDL assignment warning at character.v(242): truncated value with size 32 to match size of target (7) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 242
-Info (12128): Elaborating entity "hurtbox" for hierarchy "game_logic:game_logic_inst|hurtbox:hurtbox_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 112
+Info (12128): Elaborating entity "character" for hierarchy "game_logic:game_logic_inst|character:p1_character" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 68
+Warning (10230): Verilog HDL assignment warning at character.v(225): truncated value with size 32 to match size of target (2) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 225
+Warning (10230): Verilog HDL assignment warning at character.v(243): truncated value with size 32 to match size of target (7) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 243
+Info (12128): Elaborating entity "hurtbox" for hierarchy "game_logic:game_logic_inst|hurtbox:hurtbox_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 116
 Warning (10230): Verilog HDL assignment warning at hurtbox.v(49): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 49
 Warning (10230): Verilog HDL assignment warning at hurtbox.v(51): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 51
 Warning (10230): Verilog HDL assignment warning at hurtbox.v(53): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 53
@@ -791,9 +791,9 @@ Warning (10230): Verilog HDL assignment warning at hurtbox.v(55): truncated valu
 Warning (10230): Verilog HDL assignment warning at hurtbox.v(57): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 57
 Warning (10230): Verilog HDL assignment warning at hurtbox.v(59): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 59
 Warning (10230): Verilog HDL assignment warning at hurtbox.v(61): truncated value with size 32 to match size of target (10) File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/hurtbox.v Line: 61
-Info (12128): Elaborating entity "hitbox" for hierarchy "game_logic:game_logic_inst|hitbox:hitbox_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 121
-Info (12128): Elaborating entity "collision_detector" for hierarchy "game_logic:game_logic_inst|collision_detector:p1_coldet" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 160
-Info (12128): Elaborating entity "char_positioning" for hierarchy "game_logic:game_logic_inst|char_positioning:p1_p2_pos" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 186
+Info (12128): Elaborating entity "hitbox" for hierarchy "game_logic:game_logic_inst|hitbox:hitbox_p1" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 125
+Info (12128): Elaborating entity "collision_detector" for hierarchy "game_logic:game_logic_inst|collision_detector:p1_coldet" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 164
+Info (12128): Elaborating entity "char_positioning" for hierarchy "game_logic:game_logic_inst|char_positioning:p1_p2_pos" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/game_logic.v Line: 190
 Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:vga_driver_inst" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 489
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer game_clk File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 340
@@ -896,16 +896,16 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-Info (21057): Implemented 1403 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1366 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 81 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 1268 logic cells
+    Info (21061): Implemented 1231 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 133 warnings
     Info: Peak virtual memory: 4891 megabytes
-    Info: Processing ended: Thu Jun 18 23:29:50 2026
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Processing ended: Fri Jun 19 00:34:45 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +------------------------------------------+

@@ -11,7 +11,8 @@ module character(
     output reg KO_flag,                                 // knocked-out output flag
     output reg [2:0] current_state,                     // state indicator according to localparam below
     output reg [6:0] frame_tick,								  // frame tick counter output
-    output reg [1:0] remaining_blockings                // remaining block chances
+    output reg [1:0] remaining_blockings,                // remaining block chances
+	 output wire [2:0] next_state_out
 );
 
     localparam default_attack_frame_number = 24;                        // 24 frames default
@@ -259,5 +260,5 @@ module character(
 		current_state = state;
 		frame_tick = frame_counter;
 	end
-	 
+	assign next_state_out=next_state;
 endmodule

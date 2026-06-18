@@ -47,6 +47,7 @@ attack_input attack_char_p2(
 reg p1_hit_flag, p1_special_hit_flag;
 wire p1_KO;
 wire [2:0] p1_CS;
+wire [2:0] p1_NS;
 wire [6:0] p1_frame_tick;
 wire [1:0] p1_remaining_blockings;
 character p1_character(
@@ -61,6 +62,7 @@ character p1_character(
     .attack_success(p1_attack_success),
     .KO_flag(p1_KO),
     .current_state(p1_CS),
+	 .next_state_out(p1_NS),
     .frame_tick(p1_frame_tick),
     .remaining_blockings(p1_remaining_blockings)
 );
@@ -69,6 +71,7 @@ character p1_character(
 reg p2_hit_flag, p2_special_hit_flag;
 wire p2_KO;
 wire [2:0] p2_CS;
+wire [2:0] p2_NS;
 wire [6:0] p2_frame_tick;
 wire [1:0] p2_remaining_blockings;
 character p2_character( 
@@ -83,6 +86,7 @@ character p2_character(
     .attack_success(p2_attack_success),
     .KO_flag(p2_KO),
     .current_state(p2_CS),
+	 .next_state_out(p2_NS),
     .frame_tick(p2_frame_tick),
     .remaining_blockings(p2_remaining_blockings)
 );
@@ -179,8 +183,8 @@ collision_detector p2_coldet(
 char_positioning p1_p2_pos(
     .game_clk(clk_60hz),
     .rst(rst | internal_rst),
-    .p_facing_left_state(p2_CS),
-    .p_facing_right_state(p1_CS),
+    .p_facing_left_state(p2_NS),
+    .p_facing_right_state(p1_NS),
     .px_facing_left(p2_x),
     .px_facing_right(p1_x)
 );

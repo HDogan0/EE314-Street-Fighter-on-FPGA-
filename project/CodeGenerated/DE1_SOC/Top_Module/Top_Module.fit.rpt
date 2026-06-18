@@ -1,5 +1,5 @@
 Fitter report for Top_Module
-Thu Jun 18 23:32:20 2026
+Fri Jun 19 00:37:08 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -64,15 +64,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +---------------------------------+------------------------------------------------+
-; Fitter Status                   ; Successful - Thu Jun 18 23:32:20 2026          ;
+; Fitter Status                   ; Successful - Fri Jun 19 00:37:08 2026          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; Top_Module                                     ;
 ; Top-level Entity Name           ; Top_Module                                     ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 773 / 32,070 ( 2 % )                           ;
-; Total registers                 ; 281                                            ;
+; Logic utilization (in ALMs)     ; 737 / 32,070 ( 2 % )                           ;
+; Total registers                 ; 286                                            ;
 ; Total pins                      ; 135 / 457 ( 30 % )                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
@@ -183,29 +183,34 @@ https://fpgasoftware.intel.com/eula.
 ; Node                                                                     ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                                                   ; Destination Port ; Destination Port Name ;
 +--------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------------+------------------+-----------------------+
 ; CLOCK_50~inputCLKENA0                                                    ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                                    ;                  ;                       ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[4] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|char_positioning:p1_p2_pos|px_facing_right[4]~DUPLICATE ;                  ;                       ;
-; game_logic:game_logic_inst|character:p1_character|state.s_blockstun      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|character:p1_character|state.s_blockstun~DUPLICATE      ;                  ;                       ;
-; game_logic:game_logic_inst|character:p2_character|state.s_default_attack ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|character:p2_character|state.s_default_attack~DUPLICATE ;                  ;                       ;
-; game_logic:game_logic_inst|character:p2_character|state.s_special_attack ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|character:p2_character|state.s_special_attack~DUPLICATE ;                  ;                       ;
-; game_logic:game_logic_inst|p1_hit_flag                                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|p1_hit_flag~DUPLICATE                                   ;                  ;                       ;
+; game_logic:game_logic_inst|character:p1_character|state.s_special_attack ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|character:p1_character|state.s_special_attack~DUPLICATE ;                  ;                       ;
+; game_logic:game_logic_inst|character:p2_character|hit_by_special         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|character:p2_character|hit_by_special~DUPLICATE         ;                  ;                       ;
 ; game_logic:game_logic_inst|p2_special_hit_flag                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; game_logic:game_logic_inst|p2_special_hit_flag~DUPLICATE                           ;                  ;                       ;
-; green_left_side                                                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; green_left_side~DUPLICATE                                                          ;                  ;                       ;
-; prescaler:clock_1hz|prescale_ct[13]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[13]~DUPLICATE                                      ;                  ;                       ;
-; prescaler:clock_1hz|prescale_ct[18]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[18]~DUPLICATE                                      ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[1]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[1]~DUPLICATE                                       ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[3]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[3]~DUPLICATE                                       ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[4]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[4]~DUPLICATE                                       ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[7]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[7]~DUPLICATE                                       ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[11]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[11]~DUPLICATE                                      ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[12]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[12]~DUPLICATE                                      ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[14]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[14]~DUPLICATE                                      ;                  ;                       ;
+; prescaler:clock_1hz|prescale_ct[17]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_1hz|prescale_ct[17]~DUPLICATE                                      ;                  ;                       ;
+; prescaler:clock_60_hz|prescale_ct[1]                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[1]~DUPLICATE                                     ;                  ;                       ;
 ; prescaler:clock_60_hz|prescale_ct[3]                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[3]~DUPLICATE                                     ;                  ;                       ;
+; prescaler:clock_60_hz|prescale_ct[4]                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[4]~DUPLICATE                                     ;                  ;                       ;
 ; prescaler:clock_60_hz|prescale_ct[7]                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[7]~DUPLICATE                                     ;                  ;                       ;
+; prescaler:clock_60_hz|prescale_ct[9]                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[9]~DUPLICATE                                     ;                  ;                       ;
 ; prescaler:clock_60_hz|prescale_ct[10]                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[10]~DUPLICATE                                    ;                  ;                       ;
+; prescaler:clock_60_hz|prescale_ct[11]                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[11]~DUPLICATE                                    ;                  ;                       ;
 ; prescaler:clock_60_hz|prescale_ct[12]                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[12]~DUPLICATE                                    ;                  ;                       ;
+; prescaler:clock_60_hz|prescale_ct[17]                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:clock_60_hz|prescale_ct[17]~DUPLICATE                                    ;                  ;                       ;
 ; prescaler:vga_clock|prescale_ct[0]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[0]~DUPLICATE                                       ;                  ;                       ;
-; prescaler:vga_clock|prescale_ct[6]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[6]~DUPLICATE                                       ;                  ;                       ;
-; prescaler:vga_clock|prescale_ct[9]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[9]~DUPLICATE                                       ;                  ;                       ;
-; prescaler:vga_clock|prescale_ct[10]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[10]~DUPLICATE                                      ;                  ;                       ;
+; prescaler:vga_clock|prescale_ct[2]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[2]~DUPLICATE                                       ;                  ;                       ;
+; prescaler:vga_clock|prescale_ct[7]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[7]~DUPLICATE                                       ;                  ;                       ;
 ; prescaler:vga_clock|prescale_ct[11]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[11]~DUPLICATE                                      ;                  ;                       ;
-; prescaler:vga_clock|prescale_ct[12]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[12]~DUPLICATE                                      ;                  ;                       ;
-; prescaler:vga_clock|prescale_ct[15]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[15]~DUPLICATE                                      ;                  ;                       ;
-; prescaler:vga_clock|prescale_ct[16]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[16]~DUPLICATE                                      ;                  ;                       ;
 ; prescaler:vga_clock|prescale_ct[17]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[17]~DUPLICATE                                      ;                  ;                       ;
+; prescaler:vga_clock|prescale_ct[24]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[24]~DUPLICATE                                      ;                  ;                       ;
 ; prescaler:vga_clock|prescale_ct[27]                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; prescaler:vga_clock|prescale_ct[27]~DUPLICATE                                      ;                  ;                       ;
+; start_step[2]                                                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; start_step[2]~DUPLICATE                                                            ;                  ;                       ;
 +--------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------------------------------------+------------------+-----------------------+
 
 
@@ -215,8 +220,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1790 ) ; 0.00 % ( 0 / 1790 )        ; 0.00 % ( 0 / 1790 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1790 ) ; 0.00 % ( 0 / 1790 )        ; 0.00 % ( 0 / 1790 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1743 ) ; 0.00 % ( 0 / 1743 )        ; 0.00 % ( 0 / 1743 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1743 ) ; 0.00 % ( 0 / 1743 )        ; 0.00 % ( 0 / 1743 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -239,7 +244,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1790 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1743 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -250,107 +255,107 @@ https://fpgasoftware.intel.com/eula.
 The pin-out file can be found in C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.pin.
 
 
-+--------------------------------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                                              ;
-+-------------------------------------------------------------+----------------------+-------+
-; Resource                                                    ; Usage                ; %     ;
-+-------------------------------------------------------------+----------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 773 / 32,070         ; 2 %   ;
-; ALMs needed [=A-B+C]                                        ; 773                  ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 788 / 32,070         ; 2 %   ;
-;         [a] ALMs used for LUT logic and registers           ; 98                   ;       ;
-;         [b] ALMs used for LUT logic                         ; 658                  ;       ;
-;         [c] ALMs used for registers                         ; 32                   ;       ;
-;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 15 / 32,070          ; < 1 % ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32,070           ; 0 %   ;
-;         [a] Due to location constrained logic               ; 0                    ;       ;
-;         [b] Due to LAB-wide signal conflicts                ; 0                    ;       ;
-;         [c] Due to LAB input limits                         ; 0                    ;       ;
-;         [d] Due to virtual I/Os                             ; 0                    ;       ;
-;                                                             ;                      ;       ;
-; Difficulty packing design                                   ; Low                  ;       ;
-;                                                             ;                      ;       ;
-; Total LABs:  partially or completely used                   ; 95 / 3,207           ; 3 %   ;
-;     -- Logic LABs                                           ; 95                   ;       ;
-;     -- Memory LABs (up to half of total LABs)               ; 0                    ;       ;
-;                                                             ;                      ;       ;
-; Combinational ALUT usage for logic                          ; 1,225                ;       ;
-;     -- 7 input functions                                    ; 6                    ;       ;
-;     -- 6 input functions                                    ; 337                  ;       ;
-;     -- 5 input functions                                    ; 199                  ;       ;
-;     -- 4 input functions                                    ; 153                  ;       ;
-;     -- <=3 input functions                                  ; 530                  ;       ;
-; Combinational ALUT usage for route-throughs                 ; 5                    ;       ;
-;                                                             ;                      ;       ;
-; Dedicated logic registers                                   ; 281                  ;       ;
-;     -- By type:                                             ;                      ;       ;
-;         -- Primary logic registers                          ; 258 / 64,140         ; < 1 % ;
-;         -- Secondary logic registers                        ; 23 / 64,140          ; < 1 % ;
-;     -- By function:                                         ;                      ;       ;
-;         -- Design implementation registers                  ; 258                  ;       ;
-;         -- Routing optimization registers                   ; 23                   ;       ;
-;                                                             ;                      ;       ;
-; Virtual pins                                                ; 0                    ;       ;
-; I/O pins                                                    ; 135 / 457            ; 30 %  ;
-;     -- Clock pins                                           ; 8 / 8                ; 100 % ;
-;     -- Dedicated input pins                                 ; 0 / 21               ; 0 %   ;
-;                                                             ;                      ;       ;
-; Hard processor system peripheral utilization                ;                      ;       ;
-;     -- Boot from FPGA                                       ; 0 / 1 ( 0 % )        ;       ;
-;     -- Clock resets                                         ; 0 / 1 ( 0 % )        ;       ;
-;     -- Cross trigger                                        ; 0 / 1 ( 0 % )        ;       ;
-;     -- S2F AXI                                              ; 0 / 1 ( 0 % )        ;       ;
-;     -- F2S AXI                                              ; 0 / 1 ( 0 % )        ;       ;
-;     -- AXI Lightweight                                      ; 0 / 1 ( 0 % )        ;       ;
-;     -- SDRAM                                                ; 0 / 1 ( 0 % )        ;       ;
-;     -- Interrupts                                           ; 0 / 1 ( 0 % )        ;       ;
-;     -- JTAG                                                 ; 0 / 1 ( 0 % )        ;       ;
-;     -- Loan I/O                                             ; 0 / 1 ( 0 % )        ;       ;
-;     -- MPU event standby                                    ; 0 / 1 ( 0 % )        ;       ;
-;     -- MPU general purpose                                  ; 0 / 1 ( 0 % )        ;       ;
-;     -- STM event                                            ; 0 / 1 ( 0 % )        ;       ;
-;     -- TPIU trace                                           ; 0 / 1 ( 0 % )        ;       ;
-;     -- DMA                                                  ; 0 / 1 ( 0 % )        ;       ;
-;     -- CAN                                                  ; 0 / 2 ( 0 % )        ;       ;
-;     -- EMAC                                                 ; 0 / 2 ( 0 % )        ;       ;
-;     -- I2C                                                  ; 0 / 4 ( 0 % )        ;       ;
-;     -- NAND Flash                                           ; 0 / 1 ( 0 % )        ;       ;
-;     -- QSPI                                                 ; 0 / 1 ( 0 % )        ;       ;
-;     -- SDMMC                                                ; 0 / 1 ( 0 % )        ;       ;
-;     -- SPI Master                                           ; 0 / 2 ( 0 % )        ;       ;
-;     -- SPI Slave                                            ; 0 / 2 ( 0 % )        ;       ;
-;     -- UART                                                 ; 0 / 2 ( 0 % )        ;       ;
-;     -- USB                                                  ; 0 / 2 ( 0 % )        ;       ;
-;                                                             ;                      ;       ;
-; M10K blocks                                                 ; 0 / 397              ; 0 %   ;
-; Total MLAB memory bits                                      ; 0                    ;       ;
-; Total block memory bits                                     ; 0 / 4,065,280        ; 0 %   ;
-; Total block memory implementation bits                      ; 0 / 4,065,280        ; 0 %   ;
-;                                                             ;                      ;       ;
-; Total DSP Blocks                                            ; 0 / 87               ; 0 %   ;
-;                                                             ;                      ;       ;
-; Fractional PLLs                                             ; 0 / 6                ; 0 %   ;
-; Global signals                                              ; 1                    ;       ;
-;     -- Global clocks                                        ; 1 / 16               ; 6 %   ;
-;     -- Quadrant clocks                                      ; 0 / 66               ; 0 %   ;
-;     -- Horizontal periphery clocks                          ; 0 / 18               ; 0 %   ;
-; SERDES Transmitters                                         ; 0 / 100              ; 0 %   ;
-; SERDES Receivers                                            ; 0 / 100              ; 0 %   ;
-; JTAGs                                                       ; 0 / 1                ; 0 %   ;
-; ASMI blocks                                                 ; 0 / 1                ; 0 %   ;
-; CRC blocks                                                  ; 0 / 1                ; 0 %   ;
-; Remote update blocks                                        ; 0 / 1                ; 0 %   ;
-; Oscillator blocks                                           ; 0 / 1                ; 0 %   ;
-; Impedance control blocks                                    ; 0 / 4                ; 0 %   ;
-; Hard Memory Controllers                                     ; 0 / 2                ; 0 %   ;
-; Average interconnect usage (total/H/V)                      ; 0.5% / 0.5% / 0.5%   ;       ;
-; Peak interconnect usage (total/H/V)                         ; 11.3% / 12.1% / 8.8% ;       ;
-; Maximum fan-out                                             ; 116                  ;       ;
-; Highest non-global fan-out                                  ; 116                  ;       ;
-; Total fan-out                                               ; 6053                 ;       ;
-; Average fan-out                                             ; 3.33                 ;       ;
-+-------------------------------------------------------------+----------------------+-------+
++------------------------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                                            ;
++-------------------------------------------------------------+--------------------+-------+
+; Resource                                                    ; Usage              ; %     ;
++-------------------------------------------------------------+--------------------+-------+
+; Logic utilization (ALMs needed / total ALMs on device)      ; 737 / 32,070       ; 2 %   ;
+; ALMs needed [=A-B+C]                                        ; 737                ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 753 / 32,070       ; 2 %   ;
+;         [a] ALMs used for LUT logic and registers           ; 99                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 623                ;       ;
+;         [c] ALMs used for registers                         ; 31                 ;       ;
+;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 17 / 32,070        ; < 1 % ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 1 / 32,070         ; < 1 % ;
+;         [a] Due to location constrained logic               ; 0                  ;       ;
+;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
+;         [c] Due to LAB input limits                         ; 1                  ;       ;
+;         [d] Due to virtual I/Os                             ; 0                  ;       ;
+;                                                             ;                    ;       ;
+; Difficulty packing design                                   ; Low                ;       ;
+;                                                             ;                    ;       ;
+; Total LABs:  partially or completely used                   ; 92 / 3,207         ; 3 %   ;
+;     -- Logic LABs                                           ; 92                 ;       ;
+;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
+;                                                             ;                    ;       ;
+; Combinational ALUT usage for logic                          ; 1,178              ;       ;
+;     -- 7 input functions                                    ; 8                  ;       ;
+;     -- 6 input functions                                    ; 314                ;       ;
+;     -- 5 input functions                                    ; 193                ;       ;
+;     -- 4 input functions                                    ; 143                ;       ;
+;     -- <=3 input functions                                  ; 520                ;       ;
+; Combinational ALUT usage for route-throughs                 ; 2                  ;       ;
+;                                                             ;                    ;       ;
+; Dedicated logic registers                                   ; 286                ;       ;
+;     -- By type:                                             ;                    ;       ;
+;         -- Primary logic registers                          ; 258 / 64,140       ; < 1 % ;
+;         -- Secondary logic registers                        ; 28 / 64,140        ; < 1 % ;
+;     -- By function:                                         ;                    ;       ;
+;         -- Design implementation registers                  ; 258                ;       ;
+;         -- Routing optimization registers                   ; 28                 ;       ;
+;                                                             ;                    ;       ;
+; Virtual pins                                                ; 0                  ;       ;
+; I/O pins                                                    ; 135 / 457          ; 30 %  ;
+;     -- Clock pins                                           ; 8 / 8              ; 100 % ;
+;     -- Dedicated input pins                                 ; 0 / 21             ; 0 %   ;
+;                                                             ;                    ;       ;
+; Hard processor system peripheral utilization                ;                    ;       ;
+;     -- Boot from FPGA                                       ; 0 / 1 ( 0 % )      ;       ;
+;     -- Clock resets                                         ; 0 / 1 ( 0 % )      ;       ;
+;     -- Cross trigger                                        ; 0 / 1 ( 0 % )      ;       ;
+;     -- S2F AXI                                              ; 0 / 1 ( 0 % )      ;       ;
+;     -- F2S AXI                                              ; 0 / 1 ( 0 % )      ;       ;
+;     -- AXI Lightweight                                      ; 0 / 1 ( 0 % )      ;       ;
+;     -- SDRAM                                                ; 0 / 1 ( 0 % )      ;       ;
+;     -- Interrupts                                           ; 0 / 1 ( 0 % )      ;       ;
+;     -- JTAG                                                 ; 0 / 1 ( 0 % )      ;       ;
+;     -- Loan I/O                                             ; 0 / 1 ( 0 % )      ;       ;
+;     -- MPU event standby                                    ; 0 / 1 ( 0 % )      ;       ;
+;     -- MPU general purpose                                  ; 0 / 1 ( 0 % )      ;       ;
+;     -- STM event                                            ; 0 / 1 ( 0 % )      ;       ;
+;     -- TPIU trace                                           ; 0 / 1 ( 0 % )      ;       ;
+;     -- DMA                                                  ; 0 / 1 ( 0 % )      ;       ;
+;     -- CAN                                                  ; 0 / 2 ( 0 % )      ;       ;
+;     -- EMAC                                                 ; 0 / 2 ( 0 % )      ;       ;
+;     -- I2C                                                  ; 0 / 4 ( 0 % )      ;       ;
+;     -- NAND Flash                                           ; 0 / 1 ( 0 % )      ;       ;
+;     -- QSPI                                                 ; 0 / 1 ( 0 % )      ;       ;
+;     -- SDMMC                                                ; 0 / 1 ( 0 % )      ;       ;
+;     -- SPI Master                                           ; 0 / 2 ( 0 % )      ;       ;
+;     -- SPI Slave                                            ; 0 / 2 ( 0 % )      ;       ;
+;     -- UART                                                 ; 0 / 2 ( 0 % )      ;       ;
+;     -- USB                                                  ; 0 / 2 ( 0 % )      ;       ;
+;                                                             ;                    ;       ;
+; M10K blocks                                                 ; 0 / 397            ; 0 %   ;
+; Total MLAB memory bits                                      ; 0                  ;       ;
+; Total block memory bits                                     ; 0 / 4,065,280      ; 0 %   ;
+; Total block memory implementation bits                      ; 0 / 4,065,280      ; 0 %   ;
+;                                                             ;                    ;       ;
+; Total DSP Blocks                                            ; 0 / 87             ; 0 %   ;
+;                                                             ;                    ;       ;
+; Fractional PLLs                                             ; 0 / 6              ; 0 %   ;
+; Global signals                                              ; 1                  ;       ;
+;     -- Global clocks                                        ; 1 / 16             ; 6 %   ;
+;     -- Quadrant clocks                                      ; 0 / 66             ; 0 %   ;
+;     -- Horizontal periphery clocks                          ; 0 / 18             ; 0 %   ;
+; SERDES Transmitters                                         ; 0 / 100            ; 0 %   ;
+; SERDES Receivers                                            ; 0 / 100            ; 0 %   ;
+; JTAGs                                                       ; 0 / 1              ; 0 %   ;
+; ASMI blocks                                                 ; 0 / 1              ; 0 %   ;
+; CRC blocks                                                  ; 0 / 1              ; 0 %   ;
+; Remote update blocks                                        ; 0 / 1              ; 0 %   ;
+; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
+; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
+; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
+; Average interconnect usage (total/H/V)                      ; 0.5% / 0.5% / 0.5% ;       ;
+; Peak interconnect usage (total/H/V)                         ; 9.0% / 9.5% / 7.6% ;       ;
+; Maximum fan-out                                             ; 121                ;       ;
+; Highest non-global fan-out                                  ; 106                ;       ;
+; Total fan-out                                               ; 5845               ;       ;
+; Average fan-out                                             ; 3.30               ;       ;
++-------------------------------------------------------------+--------------------+-------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -358,33 +363,33 @@ The pin-out file can be found in C:/Users/Hasan/Desktop/EE314/project/project/Co
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Statistic                                                   ; Top                   ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+-----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 773 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 773                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 788 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 98                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 658                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 32                    ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 737 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 737                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 753 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 99                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 623                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 31                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 15 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32070 ( 0 % )     ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 17 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 1 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
-;         [c] Due to LAB input limits                         ; 0                     ; 0                              ;
+;         [c] Due to LAB input limits                         ; 1                     ; 0                              ;
 ;         [d] Due to virtual I/Os                             ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Difficulty packing design                                   ; Low                   ; Low                            ;
 ;                                                             ;                       ;                                ;
-; Total LABs:  partially or completely used                   ; 95 / 3207 ( 3 % )     ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 95                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 92 / 3207 ( 3 % )     ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 92                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
-; Combinational ALUT usage for logic                          ; 1225                  ; 0                              ;
-;     -- 7 input functions                                    ; 6                     ; 0                              ;
-;     -- 6 input functions                                    ; 337                   ; 0                              ;
-;     -- 5 input functions                                    ; 199                   ; 0                              ;
-;     -- 4 input functions                                    ; 153                   ; 0                              ;
-;     -- <=3 input functions                                  ; 530                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 5                     ; 0                              ;
+; Combinational ALUT usage for logic                          ; 1178                  ; 0                              ;
+;     -- 7 input functions                                    ; 8                     ; 0                              ;
+;     -- 6 input functions                                    ; 314                   ; 0                              ;
+;     -- 5 input functions                                    ; 193                   ; 0                              ;
+;     -- 4 input functions                                    ; 143                   ; 0                              ;
+;     -- <=3 input functions                                  ; 520                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 2                     ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
@@ -392,10 +397,10 @@ The pin-out file can be found in C:/Users/Hasan/Desktop/EE314/project/project/Co
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
 ;         -- Primary logic registers                          ; 258 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 23 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 28 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
 ;         -- Design implementation registers                  ; 258                   ; 0                              ;
-;         -- Routing optimization registers                   ; 23                    ; 0                              ;
+;         -- Routing optimization registers                   ; 28                    ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -412,8 +417,8 @@ The pin-out file can be found in C:/Users/Hasan/Desktop/EE314/project/project/Co
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 6053                  ; 0                              ;
-;     -- Registered Connections                               ; 1990                  ; 0                              ;
+;     -- Total Connections                                    ; 5845                  ; 0                              ;
+;     -- Registered Connections                               ; 1873                  ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 72                    ; 0                              ;
@@ -448,10 +453,10 @@ The pin-out file can be found in C:/Users/Hasan/Desktop/EE314/project/project/Co
 ; CLOCK2_50 ; AA16  ; 4A       ; 56           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; CLOCK3_50 ; Y26   ; 5B       ; 89           ; 25           ; 3            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; CLOCK4_50 ; K14   ; 8A       ; 32           ; 81           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; CLOCK_50  ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 115                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; KEY[0]    ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 7                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; KEY[1]    ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 8                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; KEY[2]    ; W15   ; 3B       ; 40           ; 0            ; 0            ; 25                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; CLOCK_50  ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 123                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; KEY[0]    ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 10                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; KEY[1]    ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 11                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; KEY[2]    ; W15   ; 3B       ; 40           ; 0            ; 0            ; 21                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[3]    ; Y16   ; 3B       ; 40           ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; SW[0]     ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 3                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; SW[1]     ; AC12  ; 3A       ; 16           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
@@ -589,13 +594,13 @@ The pin-out file can be found in C:/Users/Hasan/Desktop/EE314/project/project/Co
 ; GPIO[33] ; AG20  ; 4A       ; 62           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[34] ; AG18  ; 4A       ; 58           ; 0            ; 74           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[35] ; AJ21  ; 4A       ; 62           ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
-; GPIO[3]  ; Y18   ; 4A       ; 72           ; 0            ; 0            ; 50                    ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
+; GPIO[3]  ; Y18   ; 4A       ; 72           ; 0            ; 0            ; 46                    ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[4]  ; AK16  ; 4A       ; 54           ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
-; GPIO[5]  ; AK18  ; 4A       ; 58           ; 0            ; 57           ; 2                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
+; GPIO[5]  ; AK18  ; 4A       ; 58           ; 0            ; 57           ; 5                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[6]  ; AK19  ; 4A       ; 60           ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
-; GPIO[7]  ; AJ19  ; 4A       ; 60           ; 0            ; 34           ; 24                    ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
+; GPIO[7]  ; AJ19  ; 4A       ; 60           ; 0            ; 34           ; 20                    ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 ; GPIO[8]  ; AJ17  ; 4A       ; 58           ; 0            ; 40           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
-; GPIO[9]  ; AJ16  ; 4A       ; 54           ; 0            ; 34           ; 12                    ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
+; GPIO[9]  ; AJ16  ; 4A       ; 54           ; 0            ; 34           ; 15                    ; 0                  ; no     ; no             ; no              ; no                     ; 1         ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off               ; Off                ; --                        ; no                         ; 0                   ; Off                         ; User                 ; 0 pF                 ; -                   ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-------------------+--------------------+---------------------------+----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -1656,31 +1661,30 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node           ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Entity Name        ; Library Name ;
 +--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
-; |Top_Module                          ; 772.5 (301.4)        ; 786.5 (306.6)                    ; 14.0 (5.2)                                        ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1225 (467)          ; 281 (22)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 135  ; 0            ; |Top_Module                                                         ; Top_Module         ; work         ;
+; |Top_Module                          ; 737.0 (262.4)        ; 752.0 (271.0)                    ; 16.0 (9.6)                                        ; 1.0 (0.9)                        ; 0.0 (0.0)            ; 1178 (408)          ; 286 (22)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 135  ; 0            ; |Top_Module                                                         ; Top_Module         ; work         ;
 ;    |digit_1:d1_inst|                 ; 1.0 (1.0)            ; 1.0 (1.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|digit_1:d1_inst                                         ; digit_1            ; work         ;
 ;    |digit_2:d2_inst|                 ; 2.0 (2.0)            ; 2.0 (2.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|digit_2:d2_inst                                         ; digit_2            ; work         ;
-;    |digit_3:d3_inst|                 ; 2.5 (2.5)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (3)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|digit_3:d3_inst                                         ; digit_3            ; work         ;
-;    |game_logic:game_logic_inst|      ; 308.8 (25.3)         ; 314.3 (26.2)                     ; 5.5 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 493 (45)            ; 105 (11)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst                              ; game_logic         ; work         ;
-;       |attack_input:attack_char_p1|  ; 13.8 (13.8)          ; 14.5 (14.5)                      ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 23 (23)             ; 17 (17)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p1  ; attack_input       ; work         ;
-;       |attack_input:attack_char_p2|  ; 12.7 (12.7)          ; 12.7 (12.7)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 23 (23)             ; 17 (17)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p2  ; attack_input       ; work         ;
-;       |char_positioning:p1_p2_pos|   ; 90.0 (90.0)          ; 91.0 (91.0)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 145 (145)           ; 21 (21)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos   ; char_positioning   ; work         ;
-;       |character:p1_character|       ; 33.9 (33.9)          ; 34.6 (34.6)                      ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 50 (50)             ; 19 (19)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p1_character       ; character          ; work         ;
-;       |character:p2_character|       ; 34.4 (34.4)          ; 35.9 (35.9)                      ; 1.5 (1.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 50 (50)             ; 20 (20)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p2_character       ; character          ; work         ;
-;       |collision_detector:p1_coldet| ; 32.0 (32.0)          ; 32.5 (32.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p1_coldet ; collision_detector ; work         ;
-;       |collision_detector:p2_coldet| ; 34.0 (34.0)          ; 34.0 (34.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 52 (52)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p2_coldet ; collision_detector ; work         ;
-;       |hitbox:hitbox_p1|             ; 13.5 (13.5)          ; 14.5 (14.5)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 24 (24)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1             ; hitbox             ; work         ;
-;       |hitbox:hitbox_p2|             ; 14.0 (14.0)          ; 14.0 (14.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 23 (23)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p2             ; hitbox             ; work         ;
+;    |digit_3:d3_inst|                 ; 2.6 (2.6)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 3 (3)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|digit_3:d3_inst                                         ; digit_3            ; work         ;
+;    |game_logic:game_logic_inst|      ; 313.0 (26.0)         ; 318.8 (29.2)                     ; 5.8 (3.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 504 (47)            ; 102 (10)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst                              ; game_logic         ; work         ;
+;       |attack_input:attack_char_p1|  ; 13.2 (13.2)          ; 13.2 (13.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 23 (23)             ; 17 (17)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p1  ; attack_input       ; work         ;
+;       |attack_input:attack_char_p2|  ; 12.8 (12.8)          ; 13.0 (13.0)                      ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 23 (23)             ; 17 (17)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p2  ; attack_input       ; work         ;
+;       |char_positioning:p1_p2_pos|   ; 86.0 (86.0)          ; 87.0 (87.0)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 139 (139)           ; 20 (20)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos   ; char_positioning   ; work         ;
+;       |character:p1_character|       ; 40.6 (40.6)          ; 41.6 (41.6)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 61 (61)             ; 19 (19)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p1_character       ; character          ; work         ;
+;       |character:p2_character|       ; 36.8 (36.8)          ; 37.2 (37.2)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 54 (54)             ; 19 (19)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p2_character       ; character          ; work         ;
+;       |collision_detector:p1_coldet| ; 32.3 (32.3)          ; 32.5 (32.5)                      ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 51 (51)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p1_coldet ; collision_detector ; work         ;
+;       |collision_detector:p2_coldet| ; 36.7 (36.7)          ; 36.7 (36.7)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 55 (55)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p2_coldet ; collision_detector ; work         ;
+;       |hitbox:hitbox_p1|             ; 12.0 (12.0)          ; 12.0 (12.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 19 (19)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p1             ; hitbox             ; work         ;
+;       |hitbox:hitbox_p2|             ; 11.8 (11.8)          ; 12.0 (12.0)                      ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 23 (23)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hitbox:hitbox_p2             ; hitbox             ; work         ;
 ;       |hurtbox:hurtbox_p1|           ; 2.5 (2.5)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hurtbox:hurtbox_p1           ; hurtbox            ; work         ;
 ;       |hurtbox:hurtbox_p2|           ; 2.0 (2.0)            ; 2.0 (2.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|hurtbox:hurtbox_p2           ; hurtbox            ; work         ;
-;    |hexto7seg:hex3_seg_inst|         ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|hexto7seg:hex3_seg_inst                                 ; hexto7seg          ; work         ;
-;    |menu:menu_rom_inst|              ; 10.5 (10.5)          ; 11.5 (11.5)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 16 (16)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|menu:menu_rom_inst                                      ; menu               ; work         ;
-;    |p:p1_rom_inst|                   ; 2.7 (2.7)            ; 2.7 (2.7)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|p:p1_rom_inst                                           ; p                  ; work         ;
-;    |p:p2_rom_inst|                   ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|p:p2_rom_inst                                           ; p                  ; work         ;
-;    |prescaler:clock_1hz|             ; 25.0 (25.0)          ; 26.0 (26.0)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 44 (44)             ; 35 (35)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_1hz                                     ; prescaler          ; work         ;
-;    |prescaler:clock_60_hz|           ; 26.0 (26.0)          ; 26.0 (26.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 46 (46)             ; 37 (37)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_60_hz                                   ; prescaler          ; work         ;
-;    |prescaler:vga_clock|             ; 22.5 (22.5)          ; 22.5 (22.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (39)             ; 43 (43)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|prescaler:vga_clock                                     ; prescaler          ; work         ;
-;    |start:start_inst|                ; 16.2 (16.2)          ; 16.2 (16.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 26 (26)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|start:start_inst                                        ; start              ; work         ;
-;    |vga_driver:vga_driver_inst|      ; 48.7 (48.7)          ; 50.2 (50.2)                      ; 1.6 (1.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 75 (75)             ; 39 (39)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|vga_driver:vga_driver_inst                              ; vga_driver         ; work         ;
+;    |menu:menu_rom_inst|              ; 10.0 (10.0)          ; 10.8 (10.8)                      ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 16 (16)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|menu:menu_rom_inst                                      ; menu               ; work         ;
+;    |p:p1_rom_inst|                   ; 3.0 (3.0)            ; 3.0 (3.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|p:p1_rom_inst                                           ; p                  ; work         ;
+;    |p:p2_rom_inst|                   ; 5.2 (5.2)            ; 5.3 (5.3)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 9 (9)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|p:p2_rom_inst                                           ; p                  ; work         ;
+;    |prescaler:clock_1hz|             ; 24.2 (24.2)          ; 24.2 (24.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 44 (44)             ; 41 (41)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_1hz                                     ; prescaler          ; work         ;
+;    |prescaler:clock_60_hz|           ; 26.0 (26.0)          ; 26.5 (26.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 46 (46)             ; 42 (42)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|prescaler:clock_60_hz                                   ; prescaler          ; work         ;
+;    |prescaler:vga_clock|             ; 22.0 (22.0)          ; 22.0 (22.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (39)             ; 40 (40)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|prescaler:vga_clock                                     ; prescaler          ; work         ;
+;    |start:start_inst|                ; 16.0 (16.0)          ; 16.0 (16.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 26 (26)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|start:start_inst                                        ; start              ; work         ;
+;    |vga_driver:vga_driver_inst|      ; 48.8 (48.8)          ; 48.8 (48.8)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 75 (75)             ; 39 (39)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Top_Module|vga_driver:vga_driver_inst                              ; vga_driver         ; work         ;
 +--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1817,13 +1821,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[3]     ; Bidir    ; -- ; --   ; (0)  ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; GPIO[5]     ; Bidir    ; -- ; (0)  ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; GPIO[7]     ; Bidir    ; -- ; (0)  ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; GPIO[9]     ; Bidir    ; -- ; (0)  ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; GPIO[9]     ; Bidir    ; -- ; --   ; (0)  ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; SW[8]       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[0]       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[1]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[0]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; CLOCK_50    ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[2]      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[1]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; CLOCK_50    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[2]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[3]      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +-------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
@@ -1913,29 +1917,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - color_in_reg[5]                                                          ; 1                 ; 0       ;
 ;      - color_in_reg[6]                                                          ; 1                 ; 0       ;
 ;      - color_in_reg[7]                                                          ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|p1_ko_num[1]~2                                ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|p1_ko_num[0]~3                                ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|p2_ko_num[0]~1                                ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|p2_ko_num[1]~2                                ; 1                 ; 0       ;
+;      - comb~2                                                                   ; 1                 ; 0       ;
 ;      - start_step[1]                                                            ; 1                 ; 0       ;
 ;      - start_step[0]                                                            ; 1                 ; 0       ;
-;      - comb~2                                                                   ; 1                 ; 0       ;
 ;      - vga_driver:vga_driver_inst|v_state~19                                    ; 1                 ; 0       ;
 ;      - vga_driver:vga_driver_inst|h_state~20                                    ; 1                 ; 0       ;
 ;      - game_fsm_state.END                                                       ; 1                 ; 0       ;
 ;      - vga_driver:vga_driver_inst|v_counter[4]~2                                ; 1                 ; 0       ;
 ;      - vga_driver:vga_driver_inst|v_counter[4]~3                                ; 1                 ; 0       ;
 ;      - vga_driver:vga_driver_inst|h_counter[5]~2                                ; 1                 ; 0       ;
-;      - green_left_side~DUPLICATE                                                ; 1                 ; 0       ;
+;      - start_step[2]~DUPLICATE                                                  ; 1                 ; 0       ;
 ; GPIO[5]                                                                         ;                   ;         ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector0~6            ; 0                 ; 0       ;
 ;      - p1_bwd~0                                                                 ; 0                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector5~3            ; 0                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~6            ; 0                 ; 0       ;
 ;      - p2_bwd~0                                                                 ; 0                 ; 0       ;
 ; GPIO[7]                                                                         ;                   ;         ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|special_attack~0  ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|default_attack~2  ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|special_attack~0  ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|default_attack~2  ; 0                 ; 0       ;
 ;      - p1_atk~0                                                                 ; 0                 ; 0       ;
+;      - p2_atk~0                                                                 ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~0    ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[0]~1 ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~2    ; 0                 ; 0       ;
@@ -1945,7 +1945,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~6    ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~7    ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~8    ; 0                 ; 0       ;
-;      - p2_atk~0                                                                 ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~0    ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[7]~1 ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~2    ; 0                 ; 0       ;
@@ -1956,18 +1955,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~7    ; 0                 ; 0       ;
 ;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~8    ; 0                 ; 0       ;
 ; GPIO[9]                                                                         ;                   ;         ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector0~2            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector0~5            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector1~1            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector5~0            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector5~2            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector0~2            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector0~5            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector1~1            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector5~0            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector5~2            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector2~1            ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector2~1            ; 0                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector0~3            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector0~5            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector1~0            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector5~1            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector5~5            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~3            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~5            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector1~0            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector5~1            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector5~4            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector0~8            ; 1                 ; 0       ;
+;      - p1_fwd~0                                                                 ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~8            ; 1                 ; 0       ;
+;      - p2_fwd~0                                                                 ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector2~1            ; 1                 ; 0       ;
 ; SW[8]                                                                           ;                   ;         ;
 ;      - HEX0~0                                                                   ; 1                 ; 0       ;
 ;      - hex_p_labels_active                                                      ; 1                 ; 0       ;
@@ -1991,52 +1993,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Selector9~0                                                              ; 1                 ; 0       ;
 ;      - game_fsm_state.MENU~0                                                    ; 1                 ; 0       ;
 ;      - Selector11~1                                                             ; 1                 ; 0       ;
-; KEY[1]                                                                          ;                   ;         ;
-;      - p1_bwd~0                                                                 ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector0~2            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector0~5            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector1~1            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector5~0            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector5~2            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p2_character|Selector2~1            ; 1                 ; 0       ;
-;      - green_btn_reg[0]~0                                                       ; 1                 ; 0       ;
 ; KEY[0]                                                                          ;                   ;         ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector0~2            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector0~3            ; 1                 ; 0       ;
 ;      - game_logic:game_logic_inst|character:p1_character|Selector0~5            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector1~1            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector5~0            ; 1                 ; 0       ;
-;      - game_logic:game_logic_inst|character:p1_character|Selector5~2            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector1~0            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector5~1            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector5~5            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~6            ; 1                 ; 0       ;
 ;      - p2_bwd~0                                                                 ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector0~8            ; 1                 ; 0       ;
+;      - p1_fwd~0                                                                 ; 1                 ; 0       ;
 ;      - game_logic:game_logic_inst|character:p1_character|Selector2~1            ; 1                 ; 0       ;
+; KEY[1]                                                                          ;                   ;         ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector0~6            ; 1                 ; 0       ;
+;      - p1_bwd~0                                                                 ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p1_character|Selector5~3            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~3            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~5            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector1~0            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector5~1            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector5~4            ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|character:p2_character|Selector0~8            ; 1                 ; 0       ;
+;      - p2_fwd~0                                                                 ; 1                 ; 0       ;
+;      - green_btn_reg[0]~0                                                       ; 1                 ; 0       ;
 ; CLOCK_50                                                                        ;                   ;         ;
 ;      - prescaler:vga_clock|out                                                  ; 0                 ; 0       ;
-;      - prescaler:clock_1hz|out                                                  ; 1                 ; 0       ;
+;      - prescaler:clock_1hz|out                                                  ; 0                 ; 0       ;
 ; KEY[2]                                                                          ;                   ;         ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|special_attack~0  ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|default_attack~2  ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|special_attack~0  ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|default_attack~2  ; 0                 ; 0       ;
-;      - p1_atk~0                                                                 ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~0    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[0]~1 ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~2    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~3    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~4    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~5    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~6    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~7    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~8    ; 0                 ; 0       ;
-;      - p2_atk~0                                                                 ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~0    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[7]~1 ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~2    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~3    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~4    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~5    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~6    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~7    ; 0                 ; 0       ;
-;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~8    ; 0                 ; 0       ;
-;      - blue_btn_reg[0]~0                                                        ; 0                 ; 0       ;
+;      - p1_atk~0                                                                 ; 1                 ; 0       ;
+;      - p2_atk~0                                                                 ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~0    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[0]~1 ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~2    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~3    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~4    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~5    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~6    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~7    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer~8    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~0    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[7]~1 ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~2    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~3    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~4    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~5    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~6    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~7    ; 1                 ; 0       ;
+;      - game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer~8    ; 1                 ; 0       ;
+;      - blue_btn_reg[0]~0                                                        ; 1                 ; 0       ;
 ; KEY[3]                                                                          ;                   ;         ;
 ;      - game_clk                                                                 ; 1                 ; 0       ;
 +---------------------------------------------------------------------------------+-------------------+---------+
@@ -2048,29 +2052,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                         ; Location             ; Fan-Out ; Usage                                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------------------------------------------+----------------------+---------+-----------------------------------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                                                                     ; PIN_AF14             ; 3       ; Clock                                   ; no     ; --                   ; --               ; --                        ;
-; CLOCK_50                                                                     ; PIN_AF14             ; 113     ; Clock                                   ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; GPIO[3]                                                                      ; PIN_Y18              ; 50      ; Async. clear, Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; comb~2                                                                       ; LABCELL_X60_Y13_N33  ; 41      ; Async. clear                            ; no     ; --                   ; --               ; --                        ;
-; game_clk                                                                     ; LABCELL_X56_Y14_N45  ; 105     ; Clock                                   ; no     ; --                   ; --               ; --                        ;
-; game_fsm_state.GAME                                                          ; FF_X50_Y18_N26       ; 109     ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[0]~1     ; LABCELL_X55_Y15_N54  ; 8       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[7]~1     ; LABCELL_X55_Y16_N24  ; 8       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_left~31  ; LABCELL_X53_Y13_N54  ; 10      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_right~36 ; LABCELL_X53_Y13_N57  ; 11      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
-; game_logic:game_logic_inst|character:p1_character|frame_counter[5]~2         ; LABCELL_X56_Y12_N39  ; 7       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; game_logic:game_logic_inst|character:p2_character|frame_counter[3]~2         ; LABCELL_X61_Y14_N45  ; 7       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; game_logic:game_logic_inst|comb~0                                            ; LABCELL_X57_Y14_N24  ; 60      ; Async. clear                            ; no     ; --                   ; --               ; --                        ;
-; p1_atk~0                                                                     ; LABCELL_X55_Y16_N0   ; 9       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; p2_atk~0                                                                     ; LABCELL_X55_Y16_N27  ; 9       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; prescaler:clock_1hz|LessThan0~5                                              ; LABCELL_X35_Y9_N36   ; 34      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; prescaler:clock_1hz|out                                                      ; FF_X35_Y9_N44        ; 3       ; Clock                                   ; no     ; --                   ; --               ; --                        ;
-; prescaler:clock_60_hz|LessThan0~7                                            ; LABCELL_X64_Y13_N54  ; 36      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; prescaler:vga_clock|LessThan1~6                                              ; LABCELL_X48_Y18_N54  ; 43      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; prescaler:vga_clock|out                                                      ; FF_X48_Y18_N47       ; 59      ; Clock                                   ; no     ; --                   ; --               ; --                        ;
-; vga_driver:vga_driver_inst|blue_reg[6]~0                                     ; LABCELL_X45_Y18_N24  ; 8       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; vga_driver:vga_driver_inst|h_counter[5]~2                                    ; LABCELL_X46_Y19_N0   ; 10      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; vga_driver:vga_driver_inst|v_counter[4]~2                                    ; MLABCELL_X47_Y19_N33 ; 10      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
-; vga_driver:vga_driver_inst|v_counter[4]~3                                    ; LABCELL_X50_Y17_N57  ; 10      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                                                     ; PIN_AF14             ; 121     ; Clock                                   ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; GPIO[3]                                                                      ; PIN_Y18              ; 46      ; Async. clear, Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; comb~2                                                                       ; MLABCELL_X52_Y17_N45 ; 42      ; Async. clear                            ; no     ; --                   ; --               ; --                        ;
+; game_clk                                                                     ; LABCELL_X61_Y15_N51  ; 102     ; Clock                                   ; no     ; --                   ; --               ; --                        ;
+; game_fsm_state.GAME                                                          ; FF_X47_Y15_N35       ; 106     ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; game_logic:game_logic_inst|attack_input:attack_char_p1|charge_timer[0]~1     ; LABCELL_X61_Y15_N36  ; 8       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; game_logic:game_logic_inst|attack_input:attack_char_p2|charge_timer[7]~1     ; MLABCELL_X47_Y15_N6  ; 8       ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_left~35  ; MLABCELL_X59_Y15_N24 ; 10      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; game_logic:game_logic_inst|char_positioning:p1_p2_pos|next_x_facing_right~28 ; MLABCELL_X59_Y15_N27 ; 10      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
+; game_logic:game_logic_inst|character:p1_character|frame_counter[5]~2         ; LABCELL_X64_Y15_N42  ; 7       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; game_logic:game_logic_inst|character:p2_character|frame_counter[3]~2         ; LABCELL_X62_Y13_N9   ; 7       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; game_logic:game_logic_inst|comb~0                                            ; MLABCELL_X65_Y15_N21 ; 58      ; Async. clear                            ; no     ; --                   ; --               ; --                        ;
+; p1_atk~0                                                                     ; MLABCELL_X47_Y15_N9  ; 11      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; p2_atk~0                                                                     ; LABCELL_X62_Y12_N51  ; 11      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; prescaler:clock_1hz|LessThan0~5                                              ; LABCELL_X45_Y14_N54  ; 40      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; prescaler:clock_1hz|out                                                      ; FF_X46_Y14_N20       ; 4       ; Clock                                   ; no     ; --                   ; --               ; --                        ;
+; prescaler:clock_60_hz|LessThan0~7                                            ; LABCELL_X61_Y10_N54  ; 41      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; prescaler:vga_clock|LessThan1~6                                              ; MLABCELL_X47_Y17_N48 ; 40      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; prescaler:vga_clock|out                                                      ; FF_X47_Y17_N59       ; 58      ; Clock                                   ; no     ; --                   ; --               ; --                        ;
+; vga_driver:vga_driver_inst|blue_reg[6]~0                                     ; MLABCELL_X52_Y18_N33 ; 8       ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; vga_driver:vga_driver_inst|h_counter[5]~2                                    ; LABCELL_X46_Y16_N30  ; 10      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; vga_driver:vga_driver_inst|v_counter[4]~2                                    ; LABCELL_X48_Y15_N54  ; 10      ; Sync. clear                             ; no     ; --                   ; --               ; --                        ;
+; vga_driver:vga_driver_inst|v_counter[4]~3                                    ; LABCELL_X46_Y16_N24  ; 10      ; Clock enable                            ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------------------------------------------+----------------------+---------+-----------------------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -2079,7 +2083,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_AF14 ; 113     ; Global Clock         ; GCLK4            ; --                        ;
+; CLOCK_50 ; PIN_AF14 ; 121     ; Global Clock         ; GCLK4            ; --                        ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -2088,14 +2092,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+---------------------------+
 ; Routing Resource Type                       ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Block interconnects                         ; 1,985 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 35 / 13,420 ( < 1 % )     ;
-; C2 interconnects                            ; 502 / 119,108 ( < 1 % )   ;
-; C4 interconnects                            ; 398 / 56,300 ( < 1 % )    ;
+; Block interconnects                         ; 1,888 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 43 / 13,420 ( < 1 % )     ;
+; C2 interconnects                            ; 564 / 119,108 ( < 1 % )   ;
+; C4 interconnects                            ; 382 / 56,300 ( < 1 % )    ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )            ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )            ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )            ;
-; Direct links                                ; 168 / 289,320 ( < 1 % )   ;
+; Direct links                                ; 183 / 289,320 ( < 1 % )   ;
 ; Global clocks                               ; 1 / 16 ( 6 % )            ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )             ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )             ;
@@ -2151,13 +2155,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )             ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )            ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )            ;
-; Local interconnects                         ; 616 / 84,580 ( < 1 % )    ;
+; Local interconnects                         ; 583 / 84,580 ( < 1 % )    ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )            ;
-; R14 interconnects                           ; 56 / 12,676 ( < 1 % )     ;
-; R14/C12 interconnect drivers                ; 76 / 20,720 ( < 1 % )     ;
-; R3 interconnects                            ; 692 / 130,992 ( < 1 % )   ;
-; R6 interconnects                            ; 1,232 / 266,960 ( < 1 % ) ;
-; Spine clocks                                ; 3 / 360 ( < 1 % )         ;
+; R14 interconnects                           ; 62 / 12,676 ( < 1 % )     ;
+; R14/C12 interconnect drivers                ; 91 / 20,720 ( < 1 % )     ;
+; R3 interconnects                            ; 679 / 130,992 ( < 1 % )   ;
+; R6 interconnects                            ; 1,183 / 266,960 ( < 1 % ) ;
+; Spine clocks                                ; 1 / 360 ( < 1 % )         ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )        ;
 +---------------------------------------------+---------------------------+
 
@@ -2350,8 +2354,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[9]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; SW[8]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; SW[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; KEY[2]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; KEY[3]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -2406,7 +2410,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; CLOCK_50        ; CLOCK_50             ; 17.1              ;
+; CLOCK_50        ; CLOCK_50             ; 19.1              ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -2417,97 +2421,102 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------------------------+---------------------------------------+-------------------+
 ; Source Register                       ; Destination Register                  ; Delay Added in ns ;
 +---------------------------------------+---------------------------------------+-------------------+
-; prescaler:vga_clock|prescale_ct[26]   ; prescaler:vga_clock|out               ; 1.305             ;
-; prescaler:vga_clock|prescale_ct[25]   ; prescaler:vga_clock|out               ; 1.305             ;
-; prescaler:vga_clock|prescale_ct[17]   ; prescaler:vga_clock|out               ; 1.305             ;
-; prescaler:vga_clock|prescale_ct[16]   ; prescaler:vga_clock|out               ; 1.305             ;
-; prescaler:vga_clock|prescale_ct[15]   ; prescaler:vga_clock|out               ; 1.305             ;
-; prescaler:vga_clock|prescale_ct[0]    ; prescaler:vga_clock|out               ; 1.305             ;
-; prescaler:vga_clock|prescale_ct[24]   ; prescaler:vga_clock|out               ; 1.286             ;
-; prescaler:vga_clock|prescale_ct[21]   ; prescaler:vga_clock|out               ; 1.286             ;
-; prescaler:vga_clock|prescale_ct[18]   ; prescaler:vga_clock|out               ; 1.286             ;
-; prescaler:vga_clock|prescale_ct[14]   ; prescaler:vga_clock|out               ; 1.286             ;
-; prescaler:vga_clock|prescale_ct[2]    ; prescaler:vga_clock|out               ; 1.286             ;
-; prescaler:vga_clock|prescale_ct[1]    ; prescaler:vga_clock|out               ; 1.286             ;
-; prescaler:clock_1hz|prescale_ct[24]   ; prescaler:clock_1hz|out               ; 1.285             ;
-; prescaler:clock_1hz|prescale_ct[23]   ; prescaler:clock_1hz|out               ; 1.253             ;
-; prescaler:clock_1hz|prescale_ct[25]   ; prescaler:clock_1hz|out               ; 1.182             ;
-; prescaler:clock_1hz|prescale_ct[22]   ; prescaler:clock_1hz|out               ; 1.174             ;
-; prescaler:vga_clock|prescale_ct[30]   ; prescaler:vga_clock|out               ; 1.164             ;
-; prescaler:vga_clock|prescale_ct[29]   ; prescaler:vga_clock|out               ; 1.164             ;
-; prescaler:vga_clock|prescale_ct[28]   ; prescaler:vga_clock|out               ; 1.164             ;
-; prescaler:vga_clock|prescale_ct[31]   ; prescaler:vga_clock|out               ; 1.164             ;
-; prescaler:vga_clock|prescale_ct[22]   ; prescaler:vga_clock|out               ; 1.164             ;
-; prescaler:vga_clock|prescale_ct[20]   ; prescaler:vga_clock|out               ; 1.164             ;
-; prescaler:clock_1hz|prescale_ct[21]   ; prescaler:clock_1hz|out               ; 1.130             ;
-; prescaler:clock_1hz|prescale_ct[19]   ; prescaler:clock_1hz|out               ; 1.130             ;
-; prescaler:clock_1hz|prescale_ct[18]   ; prescaler:clock_1hz|out               ; 1.130             ;
-; prescaler:clock_1hz|prescale_ct[20]   ; prescaler:clock_1hz|out               ; 1.130             ;
-; prescaler:clock_1hz|prescale_ct[26]   ; prescaler:clock_1hz|prescale_ct[31]   ; 0.997             ;
-; prescaler:clock_1hz|prescale_ct[31]   ; prescaler:clock_1hz|prescale_ct[31]   ; 0.986             ;
-; prescaler:clock_1hz|prescale_ct[28]   ; prescaler:clock_1hz|prescale_ct[31]   ; 0.972             ;
-; prescaler:vga_clock|prescale_ct[23]   ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[19]   ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[13]   ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[12]   ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[11]   ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[10]   ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[9]    ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[8]    ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[7]    ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[6]    ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[5]    ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[4]    ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[3]    ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:vga_clock|prescale_ct[27]   ; prescaler:vga_clock|out               ; 0.965             ;
-; prescaler:clock_1hz|prescale_ct[30]   ; prescaler:clock_1hz|prescale_ct[31]   ; 0.921             ;
-; prescaler:clock_1hz|prescale_ct[29]   ; prescaler:clock_1hz|prescale_ct[31]   ; 0.841             ;
-; prescaler:clock_1hz|prescale_ct[17]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[16]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[15]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[14]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[13]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[12]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[11]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[10]   ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[9]    ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[8]    ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[7]    ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[6]    ; prescaler:clock_1hz|out               ; 0.708             ;
-; prescaler:clock_1hz|prescale_ct[27]   ; prescaler:clock_1hz|prescale_ct[31]   ; 0.642             ;
-; prescaler:clock_60_hz|prescale_ct[19] ; prescaler:clock_60_hz|out             ; 0.121             ;
-; prescaler:clock_60_hz|prescale_ct[7]  ; prescaler:clock_60_hz|prescale_ct[31] ; 0.080             ;
-; prescaler:clock_60_hz|prescale_ct[27] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.079             ;
-; prescaler:clock_1hz|prescale_ct[1]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.074             ;
-; prescaler:clock_1hz|prescale_ct[5]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.070             ;
-; prescaler:clock_60_hz|prescale_ct[14] ; prescaler:clock_60_hz|out             ; 0.070             ;
-; prescaler:clock_60_hz|prescale_ct[18] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.069             ;
-; prescaler:clock_60_hz|prescale_ct[13] ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[12] ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[11] ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[10] ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[9]  ; prescaler:clock_60_hz|prescale_ct[31] ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[8]  ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[6]  ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[5]  ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[4]  ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[3]  ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[2]  ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[1]  ; prescaler:clock_60_hz|out             ; 0.066             ;
-; prescaler:clock_1hz|prescale_ct[3]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.066             ;
-; prescaler:clock_60_hz|prescale_ct[15] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.065             ;
-; prescaler:clock_60_hz|prescale_ct[29] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.064             ;
-; prescaler:clock_60_hz|prescale_ct[21] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.064             ;
-; prescaler:clock_60_hz|prescale_ct[20] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.060             ;
-; prescaler:clock_60_hz|prescale_ct[28] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.058             ;
-; prescaler:clock_60_hz|prescale_ct[25] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.058             ;
-; prescaler:clock_60_hz|prescale_ct[23] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.054             ;
-; prescaler:clock_60_hz|prescale_ct[16] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.053             ;
-; prescaler:clock_60_hz|prescale_ct[26] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.050             ;
-; prescaler:clock_1hz|prescale_ct[0]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.049             ;
-; prescaler:clock_60_hz|prescale_ct[0]  ; prescaler:clock_60_hz|prescale_ct[31] ; 0.039             ;
+; prescaler:clock_1hz|prescale_ct[23]   ; prescaler:clock_1hz|out               ; 1.483             ;
+; prescaler:clock_1hz|prescale_ct[25]   ; prescaler:clock_1hz|out               ; 1.406             ;
+; prescaler:clock_1hz|prescale_ct[22]   ; prescaler:clock_1hz|out               ; 1.399             ;
+; prescaler:clock_1hz|prescale_ct[24]   ; prescaler:clock_1hz|out               ; 1.293             ;
+; prescaler:vga_clock|prescale_ct[30]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[29]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[28]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[31]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[26]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[25]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[24]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[23]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[22]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[21]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[20]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[19]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[18]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[17]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[16]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[15]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[14]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[13]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[12]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[11]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[10]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[9]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[8]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[7]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[6]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[5]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[4]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[3]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[2]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[1]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[0]    ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:vga_clock|prescale_ct[27]   ; prescaler:vga_clock|out               ; 1.263             ;
+; prescaler:clock_1hz|prescale_ct[26]   ; prescaler:clock_1hz|prescale_ct[31]   ; 1.233             ;
+; prescaler:clock_1hz|prescale_ct[31]   ; prescaler:clock_1hz|prescale_ct[31]   ; 1.224             ;
+; prescaler:clock_1hz|prescale_ct[28]   ; prescaler:clock_1hz|prescale_ct[31]   ; 1.211             ;
+; prescaler:clock_1hz|prescale_ct[30]   ; prescaler:clock_1hz|prescale_ct[31]   ; 1.159             ;
+; prescaler:clock_1hz|prescale_ct[21]   ; prescaler:clock_1hz|out               ; 1.145             ;
+; prescaler:clock_1hz|prescale_ct[29]   ; prescaler:clock_1hz|prescale_ct[31]   ; 1.114             ;
+; prescaler:clock_1hz|prescale_ct[20]   ; prescaler:clock_1hz|out               ; 1.094             ;
+; prescaler:clock_1hz|prescale_ct[19]   ; prescaler:clock_1hz|out               ; 1.062             ;
+; prescaler:clock_1hz|prescale_ct[18]   ; prescaler:clock_1hz|out               ; 1.062             ;
+; prescaler:clock_1hz|prescale_ct[27]   ; prescaler:clock_1hz|prescale_ct[31]   ; 0.914             ;
+; prescaler:clock_1hz|prescale_ct[16]   ; prescaler:clock_1hz|out               ; 0.463             ;
+; prescaler:clock_1hz|prescale_ct[17]   ; prescaler:clock_1hz|out               ; 0.462             ;
+; prescaler:clock_1hz|prescale_ct[15]   ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[14]   ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[13]   ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[12]   ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[11]   ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[10]   ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[9]    ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[8]    ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[7]    ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_1hz|prescale_ct[6]    ; prescaler:clock_1hz|out               ; 0.445             ;
+; prescaler:clock_60_hz|prescale_ct[13] ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[12] ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[11] ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[10] ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[9]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[8]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[7]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[6]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[5]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[4]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[3]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[2]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[1]  ; prescaler:clock_60_hz|out             ; 0.267             ;
+; prescaler:clock_60_hz|prescale_ct[31] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[30] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[29] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[28] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[26] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[27] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[25] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[24] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[23] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[21] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[20] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[22] ; prescaler:clock_60_hz|out             ; 0.198             ;
+; prescaler:clock_60_hz|prescale_ct[14] ; prescaler:clock_60_hz|out             ; 0.162             ;
+; prescaler:clock_60_hz|prescale_ct[19] ; prescaler:clock_60_hz|out             ; 0.127             ;
+; prescaler:clock_60_hz|prescale_ct[18] ; prescaler:clock_60_hz|out             ; 0.079             ;
+; prescaler:clock_60_hz|prescale_ct[17] ; prescaler:clock_60_hz|out             ; 0.079             ;
+; prescaler:clock_1hz|prescale_ct[1]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.066             ;
+; prescaler:clock_60_hz|prescale_ct[15] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.063             ;
+; prescaler:clock_1hz|prescale_ct[5]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.060             ;
+; prescaler:clock_1hz|prescale_ct[3]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.056             ;
+; prescaler:clock_60_hz|prescale_ct[16] ; prescaler:clock_60_hz|prescale_ct[31] ; 0.051             ;
+; prescaler:clock_1hz|prescale_ct[0]    ; prescaler:clock_1hz|prescale_ct[31]   ; 0.038             ;
+; prescaler:clock_60_hz|prescale_ct[0]  ; prescaler:clock_60_hz|prescale_ct[31] ; 0.036             ;
 +---------------------------------------+---------------------------------------+-------------------+
-Note: This table only shows the top 89 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 94 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2576,12 +2585,12 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 10% of the available device resources in the region that extends from location X45_Y11 to location X55_Y22
+    Info (170196): Router estimated peak interconnect usage is 8% of the available device resources in the region that extends from location X56_Y11 to location X66_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.73 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.74 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2626,10 +2635,10 @@ Warning (169064): Following 36 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[9] has a permanently disabled output enable File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 42
 Info (144001): Generated suppressed messages file C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 7970 megabytes
-    Info: Processing ended: Thu Jun 18 23:32:21 2026
-    Info: Elapsed time: 00:02:30
-    Info: Total CPU time (on all processors): 00:15:34
+    Info: Peak virtual memory: 7954 megabytes
+    Info: Processing ended: Fri Jun 19 00:37:08 2026
+    Info: Elapsed time: 00:02:23
+    Info: Total CPU time (on all processors): 00:14:38
 
 
 +----------------------------+
