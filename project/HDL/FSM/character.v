@@ -14,7 +14,7 @@ module character(
     output reg [1:0] remaining_blockings                // remaining block chances
 );
 
-    localparam default_attack_frame_number = 24                        // 24 frames default
+    localparam default_attack_frame_number = 24;                        // 24 frames default
     localparam default_attack_startup_frame_number = 5;
     localparam default_attack_active_frame_number = 2;
     localparam default_attack_recovery_frame_number = 17; 
