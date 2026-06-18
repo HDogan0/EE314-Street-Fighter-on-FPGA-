@@ -115,7 +115,7 @@ reg [1:0] green_btn_reg;
 reg [1:0] blue_btn_reg;
 reg green_left_side;
 reg blue_left_side;
-wire reset_vga = ~KEY[3];
+wire reset_vga = ~GPIO[3];
 
 // Dynamic X Coordinate Constants for the indicators
 wire [9:0] left_side_x  = 10'd110;
@@ -336,14 +336,16 @@ prescaler #(.div_param(2)) vga_clock(
 prescaler #(.div_param(833333)) clock_60_hz(
         .clk(CLOCK_50),
         .out(clk_60hz)
-    );	
+    );
+wire game_clk;
+assign game_clk = (SW[8]) ? clk_60hz : ~KEY[3];
 wire internal_rst_char_position;
 wire [2:0] p1_state, p2_state;
 wire [6:0] p1_frame, p2_frame;
 wire [1:0] p1_block, p2_block;
 
 game_logic game_logic_inst(
-	.clk_60hz(clk_60hz),
+	.clk_60hz(game_clk),
 	.clk_50(CLOCK_50),
 	.rst(reset_vga | (game_fsm_state != GAME)),
 	.p1_forward(p1_fwd),
@@ -451,16 +453,16 @@ always @(*) begin//p1 p2 input değiş tokuş için GPIOların yarısı değişe
 		p1_fwd  = ~KEY[0];
 		p1_bwd = ~KEY[1];
 		p1_atk   = ~KEY[2];
-		p2_fwd  = 1'b0;
-		p2_bwd = 1'b0;
-		p2_atk   = 1'b0;
+		p2_fwd  = ~GPIO[9];
+		p2_bwd = ~GPIO[5];
+		p2_atk   = ~GPIO[7];
 	end else begin
-		p2_fwd  = ~KEY[0];
-		p2_bwd = ~KEY[1];
+		p2_fwd  = ~KEY[1];
+		p2_bwd = ~KEY[0];
 		p2_atk   = ~KEY[2];
-		p1_fwd  = 1'b0;
-		p1_bwd = 1'b0;
-		p1_atk   = 1'b0;
+		p1_fwd  = ~GPIO[9];
+		p1_bwd = ~GPIO[5];
+		p1_atk   = ~GPIO[7];
 	end
 end
 // Clock the FSM state on vga_clk
@@ -472,7 +474,7 @@ always @(posedge vga_clk or posedge reset_vga) begin
 end
 	vga_driver vga_driver_inst(
 	.clock(vga_clk),
-	.reset(~KEY[3]),
+	.reset(reset_vga),
 	.color_in(color_in_reg),
 	.next_x(next_x),
 	.next_y(next_y),
