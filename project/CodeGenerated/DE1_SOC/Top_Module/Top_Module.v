@@ -227,9 +227,9 @@ always @(posedge vga_clk or posedge reset_vga) begin
 end
 
 
-assign hex5_val = 3'd0; // 'P'
+assign hex5_val = 7'b00011000; // 'P'
 assign hex4_val = left_side_is_p2 ? 3'd2 : 3'd1; // left side shows P2 if green is left, otherwise P1
-assign hex1_val = 3'd0; // 'P'
+assign hex1_val = 7'b00011000; // 'P'
 assign hex0_val = right_side_is_p2 ? 3'd2 : 3'd1; // right side shows P2 if green is right, otherwise P1
 assign hex2_val = p1_state; // 'V'
 assign hex3_val = p2_state; // 'S'
@@ -451,12 +451,12 @@ always @(*) begin//p1 p2 input değiş tokuş için GPIOların yarısı değişe
 		p1_fwd  = ~KEY[0];
 		p1_bwd = ~KEY[1];
 		p1_atk   = ~KEY[2];
-		p2_fwd  = 1'b0;
-		p2_bwd = 1'b0;
-		p2_atk   = 1'b0;
+		p2_fwd  = ~GPIO[5];
+		p2_bwd = ~GPIO[7];
+		p2_atk   = ~GPIO[9];
 	end else begin
-		p2_fwd  = ~KEY[0];
-		p2_bwd = ~KEY[1];
+		p2_fwd  = ~KEY[1];
+		p2_bwd = ~KEY[0];
 		p2_atk   = ~KEY[2];
 		p1_fwd  = 1'b0;
 		p1_bwd = 1'b0;
