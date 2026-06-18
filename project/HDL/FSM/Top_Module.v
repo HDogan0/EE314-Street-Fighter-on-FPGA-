@@ -197,8 +197,8 @@ start start_inst(.x(start_small_x), .y(start_small_y), .pixel_on(start_on));
 // HEX segment drivers for P1/P2 labels
 P7seg hex0_seg_inst(.hex(hex0_val), .hexn(hex0_seg));
 P7seg hex1_seg_inst(.hex(hex1_val), .hexn(hex1_seg));
-P7seg hex2_seg_inst(.hex(hex2_val), .hexn(hex2_seg));
-P7seg hex3_seg_inst(.hex(hex3_val), .hexn(hex3_seg));
+hexto7seg hex2_seg_inst(.hex(hex2_val), .hexn(hex2_seg));
+hexto7seg hex3_seg_inst(.hex(hex3_val), .hexn(hex3_seg));
 P7seg hex4_seg_inst(.hex(hex4_val), .hexn(hex4_seg));
 P7seg hex5_seg_inst(.hex(hex5_val), .hexn(hex5_seg));
 
