@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Top_Module
-Thu Jun 18 22:17:11 2026
+Thu Jun 18 23:18:10 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 18 22:17:11 2026          ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun 18 23:18:10 2026          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; Top_Module                                     ;
 ; Top-level Entity Name           ; Top_Module                                     ;
@@ -192,7 +192,8 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
-;     Processors 8-16        ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -229,12 +230,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------------------------------------+
 ; Estimate of Logic utilization (ALMs needed) ; 788                                               ;
 ;                                             ;                                                   ;
-; Combinational ALUT usage for logic          ; 1237                                              ;
+; Combinational ALUT usage for logic          ; 1239                                              ;
 ;     -- 7 input functions                    ; 5                                                 ;
-;     -- 6 input functions                    ; 330                                               ;
+;     -- 6 input functions                    ; 328                                               ;
 ;     -- 5 input functions                    ; 200                                               ;
 ;     -- 4 input functions                    ; 163                                               ;
-;     -- <=3 input functions                  ; 539                                               ;
+;     -- <=3 input functions                  ; 543                                               ;
 ;                                             ;                                                   ;
 ; Dedicated logic registers                   ; 258                                               ;
 ;                                             ;                                                   ;
@@ -254,16 +255,16 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Entity Name        ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+--------------------+--------------+
-; |Top_Module                          ; 1237 (462)          ; 258 (21)                  ; 0                 ; 0          ; 135  ; 0            ; |Top_Module                                                         ; Top_Module         ; work         ;
-;    |P7seg:hex2_seg_inst|             ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|P7seg:hex2_seg_inst                                     ; P7seg              ; work         ;
-;    |P7seg:hex3_seg_inst|             ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|P7seg:hex3_seg_inst                                     ; P7seg              ; work         ;
+; |Top_Module                          ; 1239 (462)          ; 258 (21)                  ; 0                 ; 0          ; 135  ; 0            ; |Top_Module                                                         ; Top_Module         ; work         ;
+;    |P7seg:hex2_seg_inst|             ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|P7seg:hex2_seg_inst                                     ; P7seg              ; work         ;
+;    |P7seg:hex3_seg_inst|             ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|P7seg:hex3_seg_inst                                     ; P7seg              ; work         ;
 ;    |digit_1:d1_inst|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_1:d1_inst                                         ; digit_1            ; work         ;
 ;    |digit_2:d2_inst|                 ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_2:d2_inst                                         ; digit_2            ; work         ;
 ;    |digit_3:d3_inst|                 ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|digit_3:d3_inst                                         ; digit_3            ; work         ;
-;    |game_logic:game_logic_inst|      ; 490 (46)            ; 99 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst                              ; game_logic         ; work         ;
+;    |game_logic:game_logic_inst|      ; 489 (46)            ; 99 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst                              ; game_logic         ; work         ;
 ;       |attack_input:attack_char_p1|  ; 23 (23)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p1  ; attack_input       ; work         ;
 ;       |attack_input:attack_char_p2|  ; 23 (23)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|attack_input:attack_char_p2  ; attack_input       ; work         ;
-;       |char_positioning:p1_p2_pos|   ; 144 (144)           ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos   ; char_positioning   ; work         ;
+;       |char_positioning:p1_p2_pos|   ; 143 (143)           ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|char_positioning:p1_p2_pos   ; char_positioning   ; work         ;
 ;       |character:p1_character|       ; 49 (49)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p1_character       ; character          ; work         ;
 ;       |character:p2_character|       ; 50 (50)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|character:p2_character       ; character          ; work         ;
 ;       |collision_detector:p1_coldet| ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Module|game_logic:game_logic_inst|collision_detector:p1_coldet ; collision_detector ; work         ;
@@ -655,7 +656,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 113                         ;
 ;     plain             ; 9                           ;
 ; arriav_io_obuf        ; 36                          ;
-; arriav_lcell_comb     ; 1240                        ;
+; arriav_lcell_comb     ; 1242                        ;
 ;     arith             ; 361                         ;
 ;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 258                         ;
@@ -665,14 +666,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 4                           ;
 ;     extend            ; 5                           ;
 ;         7 data inputs ; 5                           ;
-;     normal            ; 874                         ;
+;     normal            ; 876                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 79                          ;
-;         3 data inputs ; 109                         ;
+;         3 data inputs ; 113                         ;
 ;         4 data inputs ; 153                         ;
 ;         5 data inputs ; 196                         ;
-;         6 data inputs ; 330                         ;
+;         6 data inputs ; 328                         ;
 ; boundary_port         ; 135                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.20                        ;
@@ -695,7 +696,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Jun 18 22:17:02 2026
+    Info: Processing started: Thu Jun 18 23:18:02 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Top_Module -c Top_Module
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -853,6 +854,8 @@ Warning (13012): Latch P7seg:hex2_seg_inst|hexn[2] has unsafe behavior File: C:/
     Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
 Warning (13012): Latch P7seg:hex2_seg_inst|hexn[3] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
     Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex2_seg_inst|hexn[4] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
 Warning (13012): Latch P7seg:hex2_seg_inst|hexn[5] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
     Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p1_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
 Warning (13012): Latch P7seg:hex2_seg_inst|hexn[6] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
@@ -863,6 +866,8 @@ Warning (13012): Latch P7seg:hex3_seg_inst|hexn[2] has unsafe behavior File: C:/
     Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
 Warning (13012): Latch P7seg:hex3_seg_inst|hexn[3] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
     Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
+Warning (13012): Latch P7seg:hex3_seg_inst|hexn[4] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
 Warning (13012): Latch P7seg:hex3_seg_inst|hexn[5] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
     Warning (13013): Ports D and ENA on the latch are fed by the same signal game_logic:game_logic_inst|character:p2_character|state.s_blockstun File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/character.v Line: 46
 Warning (13012): Latch P7seg:hex3_seg_inst|hexn[6] has unsafe behavior File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/P7seg.v Line: 3
@@ -870,10 +875,10 @@ Warning (13012): Latch P7seg:hex3_seg_inst|hexn[6] has unsafe behavior File: C:/
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 14
     Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 15
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 15
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 15
     Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 18
     Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 19
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 19
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 19
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 25
@@ -918,16 +923,16 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Hasan/Desktop/EE314/project/project/CodeGenerated/DE1_SOC/Top_Module/Top_Module.v Line: 28
-Info (21057): Implemented 1417 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1419 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 81 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 1282 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 153 warnings
+    Info (21061): Implemented 1284 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 157 warnings
     Info: Peak virtual memory: 4891 megabytes
-    Info: Processing ended: Thu Jun 18 22:17:11 2026
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Processing ended: Thu Jun 18 23:18:10 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +------------------------------------------+
